@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Mail\BienvenidaUsuario;
 use App\Models\GestionAdmision;
+use App\Models\Postulante;
 use App\Models\Prepostulante;
 use App\Models\Rol;
 use App\Models\Usuario;
@@ -149,6 +150,37 @@ class UsuarioImportController extends Controller
                     'nombres' => $nombreUsuario,
                     'apellidos' => '',
                     'estado_proceso' => 'prepostulado',
+                ]));
+            }
+
+            if ($rolNombre === 'postulante_oficial') {
+                $gestion = GestionAdmision::where('estado', 'activa')->first()
+                    ?? GestionAdmision::first()
+                    ?? GestionAdmision::create([
+                        'nombre_gestion' => 'CUP FICCT ' . now()->year,
+                        'fecha_inicio' => now()->startOfYear(),
+                        'fecha_fin' => now()->endOfYear(),
+                        'estado' => 'activa',
+                    ]);
+
+                Postulante::withoutEvents(fn() => Postulante::create([
+                    'id_gestion' => $gestion->id_gestion,
+                    'id_usuario' => $usuario->id_usuario,
+                    'correo' => $email,
+                    'ci' => $ci ?? 'SIN_CI',
+                    'nombres' => $nombreUsuario,
+                    'apellidos' => trim($fila['apellidos'] ?? ''),
+                    'carrera_primera_opcion' => trim($fila['carrera_primera_opcion'] ?? ''),
+                    'carrera_segunda_opcion' => trim($fila['carrera_segunda_opcion'] ?? ''),
+                    'colegio_procedencia' => trim($fila['colegio_procedencia'] ?? ''),
+                    'fecha_nacimiento' => trim($fila['fecha_nacimiento'] ?? ''),
+                    'sexo' => trim($fila['sexo'] ?? ''),
+                    'direccion' => trim($fila['direccion'] ?? ''),
+                    'telefono' => trim($fila['telefono'] ?? ''),
+                    'celular' => trim($fila['celular'] ?? ''),
+                    'ciudad' => trim($fila['ciudad'] ?? ''),
+                    'titulo_bachiller' => trim($fila['titulo_bachiller'] ?? ''),
+                    'estado_postulante' => 'inscrito',
                 ]));
             }
 
