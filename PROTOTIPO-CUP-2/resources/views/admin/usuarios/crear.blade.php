@@ -64,7 +64,7 @@
                 </div>
 
                 <div id="campos-prepostulante" style="display:none;margin-top:20px;border-top:2px solid #e2e8f0;padding-top:16px;">
-                    <h3 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#1f2937;">Datos del Prepostulante</h3>
+                    <h3 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#1f2937;">📋 Datos del Prepostulante</h3>
 
                     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
                         <div>
@@ -159,6 +159,102 @@
                     </div>
                 </div>
 
+                <div id="campos-postulante-oficial" style="display:none;margin-top:20px;border-top:2px solid #e2e8f0;padding-top:16px;">
+                    <h3 style="font-size:15px;font-weight:700;margin-bottom:12px;color:#1f2937;">🎯 Datos del Postulante Oficial</h3>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+                        <div>
+                            <label for="po_nombres">Nombres</label>
+                            <input type="text" name="nombres" id="po_nombres" value="{{ old('nombres') }}" placeholder="Nombres del postulante">
+                            @error('nombres') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                        <div>
+                            <label for="po_apellidos">Apellidos</label>
+                            <input type="text" name="apellidos" id="po_apellidos" value="{{ old('apellidos') }}" placeholder="Apellidos del postulante">
+                            @error('apellidos') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;">
+                        <div>
+                            <label for="po_carrera_primera_opcion">Primera Opción *</label>
+                            <select name="carrera_primera_opcion" id="po_carrera_primera_opcion">
+                                <option value="">— Seleccionar —</option>
+                                @foreach ($carreras as $c)
+                                    <option value="{{ $c->id_carrera }}" {{ old('carrera_primera_opcion') == $c->id_carrera ? 'selected' : '' }}>
+                                        {{ $c->codigo_carrera }} — {{ $c->nombre_carrera }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('carrera_primera_opcion') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                        <div>
+                            <label for="po_carrera_segunda_opcion">Segunda Opción</label>
+                            <select name="carrera_segunda_opcion" id="po_carrera_segunda_opcion">
+                                <option value="">— Seleccionar —</option>
+                                @foreach ($carreras as $c)
+                                    <option value="{{ $c->id_carrera }}" {{ old('carrera_segunda_opcion') == $c->id_carrera ? 'selected' : '' }}>
+                                        {{ $c->codigo_carrera }} — {{ $c->nombre_carrera }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('carrera_segunda_opcion') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;">
+                        <div>
+                            <label for="po_fecha_nacimiento">Fecha de Nacimiento</label>
+                            <input type="date" name="fecha_nacimiento" id="po_fecha_nacimiento" value="{{ old('fecha_nacimiento') }}">
+                            @error('fecha_nacimiento') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                        <div>
+                            <label for="po_sexo">Sexo</label>
+                            <select name="sexo" id="po_sexo">
+                                <option value="">— Seleccionar —</option>
+                                <option value="M" {{ old('sexo') === 'M' ? 'selected' : '' }}>Masculino</option>
+                                <option value="F" {{ old('sexo') === 'F' ? 'selected' : '' }}>Femenino</option>
+                                <option value="Otro" {{ old('sexo') === 'Otro' ? 'selected' : '' }}>Otro</option>
+                            </select>
+                            @error('sexo') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;">
+                        <div>
+                            <label for="po_telefono">Teléfono</label>
+                            <input type="text" name="telefono" id="po_telefono" value="{{ old('telefono') }}" placeholder="Teléfono/Celular">
+                            @error('telefono') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                        <div>
+                            <label for="po_direccion">Dirección</label>
+                            <input type="text" name="direccion" id="po_direccion" value="{{ old('direccion') }}" placeholder="Dirección domiciliaria">
+                            @error('direccion') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px;">
+                        <div>
+                            <label for="po_colegio_procedencia">Colegio de Procedencia</label>
+                            <input type="text" name="colegio_procedencia" id="po_colegio_procedencia" value="{{ old('colegio_procedencia') }}" placeholder="Colegio de egreso">
+                            @error('colegio_procedencia') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                        <div>
+                            <label for="po_ciudad">Ciudad</label>
+                            <input type="text" name="ciudad" id="po_ciudad" value="{{ old('ciudad') }}" placeholder="Ciudad de residencia">
+                            @error('ciudad') <span class="error">{{ $message }}</span> @enderror
+                        </div>
+                    </div>
+
+                    <div style="margin-top:10px;">
+                        <label for="po_titulo_bachiller" style="display:flex;align-items:center;gap:8px;">
+                            <input type="checkbox" name="titulo_bachiller" id="po_titulo_bachiller" value="1" {{ old('titulo_bachiller') ? 'checked' : '' }}>
+                            Título de Bachiller
+                        </label>
+                        @error('titulo_bachiller') <span class="error">{{ $message }}</span> @enderror
+                    </div>
+                </div>
+
                 <div style="margin-top:24px;display:flex;justify-content:flex-end;gap:10px;">
                     <a href="{{ route('admin.usuarios.index') }}" class="button button-secondary">Cancelar</a>
                     <button type="submit">Crear Cuenta y Notificar</button>
@@ -171,18 +267,26 @@
         (function() {
             const rolSelect = document.getElementById('id_rol');
             const camposPre = document.getElementById('campos-prepostulante');
+            const camposPO = document.getElementById('campos-postulante-oficial');
 
-            function toggleCamposPre() {
+            function toggleCampos() {
                 const selectedText = rolSelect.options[rolSelect.selectedIndex]?.text || '';
-                if (selectedText.toLowerCase().includes('prepostulante')) {
+                const lower = selectedText.toLowerCase();
+
+                if (lower.includes('prepostulante')) {
                     camposPre.style.display = 'block';
+                    camposPO.style.display = 'none';
+                } else if (lower.includes('postulante_oficial') || lower.includes('postulante oficial')) {
+                    camposPre.style.display = 'none';
+                    camposPO.style.display = 'block';
                 } else {
                     camposPre.style.display = 'none';
+                    camposPO.style.display = 'none';
                 }
             }
 
-            rolSelect.addEventListener('change', toggleCamposPre);
-            toggleCamposPre();
+            rolSelect.addEventListener('change', toggleCampos);
+            toggleCampos();
         })();
     </script>
 </x-layouts.app>

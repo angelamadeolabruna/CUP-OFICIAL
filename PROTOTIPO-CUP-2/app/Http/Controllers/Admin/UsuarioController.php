@@ -7,6 +7,7 @@ use App\Mail\BienvenidaUsuario;
 use App\Models\Carrera;
 use App\Models\DatosRegistroTemporal;
 use App\Models\GestionAdmision;
+use App\Models\Postulante;
 use App\Models\Prepostulante;
 use App\Models\Rol;
 use App\Models\Usuario;
@@ -117,6 +118,34 @@ class UsuarioController extends Controller
                 $request->ip(),
                 $usuario->id_usuario
             );
+
+            // Crear registro en postulantes si el rol es postulante_oficial
+            if ($usuario->rol?->nombre_rol === 'postulante_oficial') {
+                $gestion = GestionAdmision::where('estado', 'activa')->first()
+                    ?? GestionAdmision::first()
+                    ?? GestionAdmision::create([
+                        'nombre_gestion' => 'CUP FICCT ' . now()->year,
+                        'fecha_inicio' => now()->startOfYear(),
+                        'fecha_fin' => now()->endOfYear(),
+                        'estado' => 'activa',
+                    ]);
+
+                Postulante::create([
+                    'id_usuario' => $usuario->id_usuario,
+                    'id_gestion' => $gestion->id_gestion,
+                    'carrera_primera_opcion' => $datos['carrera_primera_opcion'] ?? null,
+                    'carrera_segunda_opcion' => $datos['carrera_segunda_opcion'] ?? null,
+                    'fecha_nacimiento' => $datos['fecha_nacimiento'] ?? null,
+                    'sexo' => $datos['sexo'] ?? null,
+                    'direccion' => $datos['direccion'] ?? '',
+                    'telefono' => $datos['telefono'] ?? '',
+                    'correo' => $usuario->email,
+                    'colegio_procedencia' => $datos['colegio_procedencia'] ?? '',
+                    'ciudad' => $datos['ciudad'] ?? '',
+                    'titulo_bachiller' => $datos['titulo_bachiller'] ?? false,
+                    'estado_postulante' => 'inscrito',
+                ]);
+            }
 
             // Crear registro en prepostulantes si el rol es prepostulante
             if ($usuario->rol?->nombre_rol === 'prepostulante') {
