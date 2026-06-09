@@ -152,12 +152,12 @@ Admin Sistema,admin@ficct.edu.bo,1234567,administrador,AdminPass123</pre>
                                     </tr>
                                     <tr>
                                         <td style="padding:6px 10px;border-right:1px solid #fde68a;border-top:1px solid #fde68a;font-weight:600;">carrera_primera_opcion</td>
-                                        <td style="padding:6px 10px;border-right:1px solid #fde68a;border-top:1px solid #fde68a;">INGENIERIA INFORMATICA</td>
+                                        <td style="padding:6px 10px;border-right:1px solid #fde68a;border-top:1px solid #fde68a;">ING. INFORMATICA</td>
                                         <td style="padding:6px 10px;border-top:1px solid #fde68a;">Primera opción de carrera</td>
                                     </tr>
                                     <tr style="background:#fffbeb;">
                                         <td style="padding:6px 10px;border-right:1px solid #fde68a;border-top:1px solid #fde68a;font-weight:600;">carrera_segunda_opcion</td>
-                                        <td style="padding:6px 10px;border-right:1px solid #fde68a;border-top:1px solid #fde68a;">INGENIERIA DE SISTEMAS</td>
+                                        <td style="padding:6px 10px;border-right:1px solid #fde68a;border-top:1px solid #fde68a;">ING. SISTEMAS</td>
                                         <td style="padding:6px 10px;border-top:1px solid #fde68a;">Segunda opción de carrera</td>
                                     </tr>
                                     <tr>
@@ -197,8 +197,8 @@ Admin Sistema,admin@ficct.edu.bo,1234567,administrador,AdminPass123</pre>
                                     </tr>
                                     <tr style="background:#fffbeb;">
                                         <td style="padding:6px 10px;border-right:1px solid #fde68a;border-top:1px solid #fde68a;font-weight:600;">titulo_bachiller</td>
-                                        <td style="padding:6px 10px;border-right:1px solid #fde68a;border-top:1px solid #fde68a;">Bachiller Humanidades</td>
-                                        <td style="padding:6px 10px;border-top:1px solid #fde68a;">Título de bachiller</td>
+                                        <td style="padding:6px 10px;border-right:1px solid #fde68a;border-top:1px solid #fde68a;">Si</td>
+                                        <td style="padding:6px 10px;border-top:1px solid #fde68a;">Si / No (dejar vacío = No)</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -206,7 +206,7 @@ Admin Sistema,admin@ficct.edu.bo,1234567,administrador,AdminPass123</pre>
                         <p style="font-size:12px;color:#9a3412;margin:10px 0 0;">
                             💡 <strong>Ejemplo completo de fila:</strong><br>
                             <code style="background:#fef3c7;padding:2px 6px;border-radius:3px;font-size:11px;display:inline-block;margin-top:4px;line-height:1.6;">
-                                Ana Maria,agutierrez@email.com,10000001,postulante_oficial,Pass1234!,Gutierrez Lopez,INGENIERIA INFORMATICA,INGENIERIA DE SISTEMAS,Colegio Nacional Bolivar,2005-03-15,Femenino,Calle Sucre 123,4221123,71234501,Sucre,Bachiller Humanidades
+                                Ana Maria,agutierrez@email.com,10000001,postulante_oficial,Pass1234!,Gutierrez Lopez,ING. INFORMATICA,ING. SISTEMAS,Colegio Nacional Bolivar,2005-03-15,Femenino,Calle Sucre 123,4221123,71234501,Sucre,Si
                             </code>
                         </p>
                     </details>
