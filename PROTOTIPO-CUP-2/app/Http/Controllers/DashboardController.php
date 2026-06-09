@@ -67,15 +67,10 @@ class DashboardController extends Controller
         if (!$carreraId) {
             foreach ($carreras as $c) {
                 $totalCarrera = Postulante::where('id_gestion', $gestionId)
-                    ->where(function ($q) use ($c) {
-                        $q->where('carrera_primera_opcion', $c->id_carrera)
-                            ->orWhere('carrera_segunda_opcion', $c->id_carrera);
-                    })->count();
+                    ->where('carrera_primera_opcion', $c->id_carrera)
+                    ->count();
                 $aprobadosCarrera = Postulante::where('id_gestion', $gestionId)
-                    ->where(function ($q) use ($c) {
-                        $q->where('carrera_primera_opcion', $c->id_carrera)
-                            ->orWhere('carrera_segunda_opcion', $c->id_carrera);
-                    })
+                    ->where('carrera_primera_opcion', $c->id_carrera)
                     ->whereHas('resultado', fn($q) => $q->where('estado_academico', 'aprobado'))
                     ->count();
 
