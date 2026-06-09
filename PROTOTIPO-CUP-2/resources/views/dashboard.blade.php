@@ -9,7 +9,7 @@
     {{-- Filtros --}}
     <div class="card" style="margin-bottom:20px;padding:14px 20px;">
         <form method="GET" class="flex" style="flex-wrap:wrap;gap:12px;align-items:flex-end;">
-            <div style="width:250px;">
+            <div class="filter-field">
                 <label style="margin-bottom:3px;">Gestión Académica</label>
                 <select name="id_gestion" style="margin-bottom:0;" onchange="this.form.submit()">
                     @foreach ($gestiones as $g)
@@ -19,7 +19,7 @@
                     @endforeach
                 </select>
             </div>
-            <div style="width:250px;">
+            <div class="filter-field">
                 <label style="margin-bottom:3px;">Carrera</label>
                 <select name="id_carrera" style="margin-bottom:0;" onchange="this.form.submit()">
                     <option value="">Todas las carreras</option>
@@ -45,37 +45,37 @@
     </div>
 
     {{-- Tarjetas de métricas --}}
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-bottom:24px;">
-        <div class="metric" style="border-left:4px solid #3b82f6;">
+    <div class="grid">
+        <div class="metric">
             <div class="label">Total Inscritos</div>
-            <strong style="color:#2563eb;">{{ $totalPostulantes }}</strong>
+            <strong>{{ $totalPostulantes }}</strong>
         </div>
-        <div class="metric" style="border-left:4px solid #059669;">
+        <div class="metric">
             <div class="label">Aprobados</div>
-            <strong style="color:#059669;">{{ $totalAprobados }}</strong>
+            <strong>{{ $totalAprobados }}</strong>
             <div style="font-size:11px;color:#64748b;">{{ $porcentajeAprobados }}% del total</div>
         </div>
-        <div class="metric" style="border-left:4px solid #dc2626;">
+        <div class="metric">
             <div class="label">Reprobados</div>
-            <strong style="color:#dc2626;">{{ $totalReprobados }}</strong>
+            <strong>{{ $totalReprobados }}</strong>
             <div style="font-size:11px;color:#64748b;">{{ $porcentajeReprobados }}% del total</div>
         </div>
-        <div class="metric" style="border-left:4px solid #f59e0b;">
+        <div class="metric">
             <div class="label">Sin Resultado</div>
-            <strong style="color:#f59e0b;">{{ $sinResultado }}</strong>
+            <strong>{{ $sinResultado }}</strong>
         </div>
-        <div class="metric" style="border-left:4px solid #8b5cf6;">
+        <div class="metric">
             <div class="label">Admitidos</div>
-            <strong style="color:#8b5cf6;">{{ $totalAdmitidos }}</strong>
+            <strong>{{ $totalAdmitidos }}</strong>
         </div>
-        <div class="metric" style="border-left:4px solid #06b6d4;">
+        <div class="metric">
             <div class="label">Grupos Habilitados</div>
-            <strong style="color:#06b6d4;">{{ $totalGrupos }}</strong>
+            <strong>{{ $totalGrupos }}</strong>
         </div>
     </div>
 
     {{-- Gráfico de torta (CSS) y detalle --}}
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px;">
+    <div class="grid-2" style="margin-bottom:24px;">
         {{-- Dona --}}
         <div class="card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
             <h3 style="font-size:15px;font-weight:700;margin-bottom:16px;align-self:flex-start;">Distribución de Resultados</h3>
@@ -123,7 +123,7 @@
         {{-- Resumen rápido --}}
         <div class="card">
             <h3 style="font-size:15px;font-weight:700;margin-bottom:12px;">Resumen del Proceso</h3>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;font-size:13px;">
+            <div class="grid-2-4" style="font-size:13px;">
                 <div style="padding:12px;background:#f8fafc;border-radius:6px;">
                     <div style="color:#64748b;font-size:11px;font-weight:600;text-transform:uppercase;">Inscritos</div>
                     <div style="font-size:24px;font-weight:700;color:#2563eb;">{{ $totalPostulantes }}</div>
@@ -148,10 +148,9 @@
 
     {{-- Tabla por carrera --}}
     @if ($statsPorCarrera->isNotEmpty())
-        <div class="card" style="padding:0;overflow:hidden;">
+        <div class="card table-container">
             <h3 style="font-size:15px;font-weight:700;padding:16px 20px 8px;">Postulantes por Carrera</h3>
-            <div style="overflow-x:auto;">
-                <table class="table" style="font-size:13px;">
+            <table class="table" style="font-size:13px;">
                     <thead>
                         <tr>
                             <th>Carrera</th>
@@ -177,7 +176,6 @@
                         @endforeach
                     </tbody>
                 </table>
-            </div>
         </div>
     @endif
 
