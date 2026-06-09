@@ -24,4 +24,9 @@ ENV APACHE_DOCUMENT_ROOT /var/www/html/PROTOTIPO-CUP-2/public
 RUN sed -i 's|/var/www/html|/var/www/html/PROTOTIPO-CUP-2/public|g' /etc/apache2/sites-available/000-default.conf
 RUN a2enmod rewrite
 
+# Entrypoint para ejecutar migraciones al iniciar
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 EXPOSE 80
+CMD ["/entrypoint.sh"]
