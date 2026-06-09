@@ -1,0 +1,2581 @@
+﻿center288Universidad AutÃ³noma Gabriel RenÃ© Moreno00Universidad AutÃ³noma Gabriel RenÃ© MorenoFACULTAD DE INGENIERÃA EN CIENCIAS DE LA COMPUTACIÃ“N Y TELECOMUNICACIONES
+Universidad AutÃ³noma Gabriel RenÃ© Moreno
+Universidad AutÃ³noma Gabriel RenÃ© Moreno
+-762012728800
+
+
+center14605
+
+
+
+
+
+
+
+
+
+
+
+
+
+center139065SISTEMA DE INFORMACIÃ“N PARA LA GESTIÃ“N Y ADMISIÃ“N DEL CURSO PREUNIVERSITARIO (CUP) DE LA FICCT00SISTEMA DE INFORMACIÃ“N PARA LA GESTIÃ“N Y ADMISIÃ“N DEL CURSO PREUNIVERSITARIO (CUP) DE LA FICCT28568651002665Docente: Ing. AngÃ©lica GarzÃ³n CuÃ©llarMateria: Sistemas De InformaciÃ³n 1GestiÃ³n: 1-2026Grupo: 38                                                                                             00Docente: Ing. AngÃ©lica GarzÃ³n CuÃ©llarMateria: Sistemas De InformaciÃ³n 1GestiÃ³n: 1-2026Grupo: 38                                                                                             
+SISTEMA DE INFORMACIÃ“N PARA LA GESTIÃ“N Y ADMISIÃ“N DEL CURSO PREUNIVERSITARIO (CUP) DE LA FICCT
+SISTEMA DE INFORMACIÃ“N PARA LA GESTIÃ“N Y ADMISIÃ“N DEL CURSO PREUNIVERSITARIO (CUP) DE LA FICCT
+Docente: Ing. AngÃ©lica GarzÃ³n CuÃ©llar
+Materia: Sistemas De InformaciÃ³n 1
+GestiÃ³n: 1-2026
+Grupo: 38
+                                                                                             
+
+
+
+
+
+
+
+
+
+
+
+Docente: Ing. AngÃ©lica GarzÃ³n CuÃ©llar
+Materia: Sistemas De InformaciÃ³n 1
+GestiÃ³n: 1-2026
+Grupo: 38
+                                                                                             
+
+
+
+
+
+
+
+
+
+
+
+-260350626745INTEGRANTES:Soto MontaÃ±o Gabriel          22205810200INTEGRANTES:Soto MontaÃ±o Gabriel          222058102
+INTEGRANTES:Soto MontaÃ±o Gabriel          222058102
+
+INTEGRANTES:Soto MontaÃ±o Gabriel          222058102
+
+
+
+Ãndice de contenido
+ TOC \o "1-3" \h \z \u 1 PERFIL PAGEREF _Toc231053433 \h 4
+1.1INTRODUCCIÃ“N PAGEREF _Toc231053434 \h 4
+1.2 OBJETIVOS PAGEREF _Toc231053435 \h 5
+1.2.1 Objetivo General PAGEREF _Toc231053436 \h 5
+1.2.2    Objetivos especÃ­ficos PAGEREF _Toc231053437 \h 5
+1.3 DESCRIPCIÃ“N DEL PROBLEMA PAGEREF _Toc231053438 \h 6
+1.4 ALCANCE PAGEREF _Toc231053439 \h 6
+1.4.1 MÃ³dulo de AutenticaciÃ³n PAGEREF _Toc231053440 \h 6
+1.4.2 MÃ³dulo de Registro de Postulantes PAGEREF _Toc231053441 \h 7
+1.4.3 Â MÃ³dulo de ExÃ¡menes PAGEREF _Toc231053442 \h 7
+1.4.4 MÃ³dulo de AsignaciÃ³n de Grupos PAGEREF _Toc231053443 \h 8
+1.4.5  MÃ³dulo de Reportes PAGEREF _Toc231053444 \h 8
+1.4.6  Panel Administrativo (Dashboard) PAGEREF _Toc231053445 \h 8
+1.4.7  MÃ³dulo de GestiÃ³n de Docentes PAGEREF _Toc231053446 \h 9
+2MARCO TEÃ“RICO PAGEREF _Toc231053447 \h 10
+2.1Marco Conceptual (Dominio de AdmisiÃ³n Universitaria) PAGEREF _Toc231053448 \h 10
+2.2Marco MetodolÃ³gico (IngenierÃ­a de Software) PAGEREF _Toc231053449 \h 10
+2.3Marco TecnolÃ³gico PAGEREF _Toc231053450 \h 11
+3MODELO DE NEGOCIO PAGEREF _Toc231053451 \h 12
+3.1DIAGRAMA DE ACTIVIDADES PAGEREF _Toc231053452 \h 12
+3.1.1Diagrama de Actividad: Proceso de InscripciÃ³n y Registro PAGEREF _Toc231053453 \h 12
+3.1.2Proceso de Registro de Notas y AprobaciÃ³n. PAGEREF _Toc231053454 \h 14
+3.1.3Proceso de AdmisiÃ³n Final (DistribuciÃ³n por Cupos). PAGEREF _Toc231053455 \h 15
+3.1.4ContrataciÃ³n y AsignaciÃ³n de Docentes PAGEREF _Toc231053456 \h 16
+4FLUJO DE TRABAJO: CAPTURA DE REQUISITOS PAGEREF _Toc231053457 \h 17
+4.1 Identificar actores del sistema PAGEREF _Toc231053458 \h 17
+4.1.1Actores internos del sistema PAGEREF _Toc231053459 \h 18
+4.1.2Actores externos del sistema PAGEREF _Toc231053460 \h 19
+4.2Lista de casos de uso PAGEREF _Toc231053461 \h 20
+4.3Priorizar casos de uso PAGEREF _Toc231053462 \h 21
+4.3.1Ciclo #1 IteraciÃ³n: Arquitectura Base, Persistencia y MitigaciÃ³n de Riesgos AlgorÃ­tmicos PAGEREF _Toc231053463 \h 25
+4.4Detallar caso de uso PAGEREF _Toc231053464 \h 26
+4.4.1Ciclo #1 PAGEREF _Toc231053465 \h 26
+4.5Estructurar caso de uso PAGEREF _Toc231053466 \h 48
+4.5.1Ciclo #1 PAGEREF _Toc231053467 \h 48
+5FLUJO DE TRABAJO: ANÃLISIS PAGEREF _Toc231053468 \h 49
+5.1AnÃ¡lisis de arquitectura PAGEREF _Toc231053469 \h 49
+5.1.1Identificar paquetes PAGEREF _Toc231053470 \h 49
+5.1.2Relacionar paquetes y casos de uso PAGEREF _Toc231053471 \h 51
+5.1.3Vista de casos de uso PAGEREF _Toc231053472 \h 53
+5.2Diagrama de comunicaciÃ³n PAGEREF _Toc231053473 \h 56
+5.2.1Ciclo #1 PAGEREF _Toc231053474 \h 56
+5.3AnÃ¡lisis de clases PAGEREF _Toc231053475 \h 64
+5.3.1Ciclo #1 PAGEREF _Toc231053476 \h 64
+5.4Analizar paquetes PAGEREF _Toc231053477 \h 71
+5.4.1Ciclo #1 PAGEREF _Toc231053478 \h 71
+6FLUJO DE TRABAJO: DISEÃ‘O PAGEREF _Toc231053479 \h 72
+6.1DiseÃ±o de arquitectura PAGEREF _Toc231053480 \h 72
+6.1.1DiseÃ±o fÃ­sico (diagrama de despliegue) PAGEREF _Toc231053481 \h 72
+6.1.2DiseÃ±o lÃ³gico (diagrama organizado en capas) PAGEREF _Toc231053482 \h 73
+6.2DiseÃ±o de datos PAGEREF _Toc231053483 \h 75
+6.2.1DiseÃ±o de datos lÃ³gico PAGEREF _Toc231053484 \h 75
+6.2.2DiseÃ±o de datos fÃ­sico PAGEREF _Toc231053485 \h 76
+6.2.3PoblaciÃ³n de datos PAGEREF _Toc231053486 \h 94
+6.2.4Consultas PAGEREF _Toc231053487 \h 108
+6.3DiseÃ±ar un caso de uso (diagrama de secuencia) PAGEREF _Toc231053488 \h 141
+6.3.1Ciclo #1 PAGEREF _Toc231053489 \h 141
+7FLUJO DE TRABAJO: IMPLEMENTACION PAGEREF _Toc231053490 \h 141
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 PERFIL 
+    INTRODUCCIÃ“N
+En la actualidad, la gestiÃ³n eficiente de los procesos acadÃ©micos es un pilar fundamental para el desarrollo de las instituciones de educaciÃ³n superior. La Facultad de IngenierÃ­a en Ciencias de la ComputaciÃ³n y Telecomunicaciones (FICCT) de la Universidad AutÃ³noma Gabriel RenÃ© Moreno (UAGRM) recibe semestralmente a una gran cantidad de bachilleres que aspiran a ingresar a una de sus cuatro carreras a travÃ©s del Curso Preuniversitario (CUP). El manejo manual o semiautomatizado de las inscripciones, la asignaciÃ³n de aulas para miles de postulantes, la distribuciÃ³n de cargas horarias de los docentes y, sobre todo, el cÃ¡lculo de los cupos de admisiÃ³n, representa un desafÃ­o logÃ­stico significativo. Por lo tanto, el presente proyecto se enfoca en el desarrollo de una AplicaciÃ³n Web en PHP orientada a automatizar de manera integral el proceso de registro, evaluaciÃ³n y admisiÃ³n del CUP.
+     1.2 OBJETIVOS
+1.2.1 Objetivo GeneralÂ 
+Desarrollar una aplicaciÃ³n web en lenguaje PHP con base de datos PostgreSQL para administrar y automatizar el proceso de inscripciÃ³n, evaluaciÃ³n, asignaciÃ³n de grupos y admisiÃ³n de los estudiantes postulantes al Curso Preuniversitario (CUP) de la FICCT.
+1.2.2    Objetivos especÃ­ficos
+Implementar un mÃ³dulo de autenticaciÃ³n y seguridad para la administraciÃ³n de usuarios (autoridades, docentes, operadores y postulantes).
+Desarrollar un mÃ³dulo de registro de postulantes que capture sus requisitos (CÃ©dula de identidad, tÃ­tulo de bachiller y opciones de carrera).
+Programar un algoritmo de cÃ¡lculo que asigne a los estudiantes inscritos en grupos con una capacidad mÃ¡xima de 70 alumnos por aula.
+Implementar un sistema de asignaciÃ³n docente que valide perfiles acadÃ©micos (MaestrÃ­a y Diplomado en EducaciÃ³n Superior) y garantice una distribuciÃ³n mÃ¡xima de 4 grupos sin cruce de horarios.
+Desarrollar el mÃ³dulo de exÃ¡menes para calcular promedios finales basados en 3 evaluaciones en las 4 materias (MatemÃ¡ticas, FÃ­sica, ComputaciÃ³n e InglÃ©s).
+Construir el algoritmo central de admisiÃ³n que asigne a los estudiantes aprobados a su primera o segunda opciÃ³n de carrera dependiendo del lÃ­mite de cupos y su orden de mÃ©rito (promedio general).
+Generar reportes estadÃ­sticos e indicadores de gestiÃ³n sobre Ã­ndices de aprobaciÃ³n e historial de gestiones.
+
+ 1.3 DESCRIPCIÃ“N DEL PROBLEMA
+El actual proceso de inscripciÃ³n y admisiÃ³n del CUP enfrenta cuellos de botella severos debido a la alta demanda (superando en ocasiones los 1000 postulantes). La recolecciÃ³n fÃ­sica de documentos genera filas extensas y propensiÃ³n a extravÃ­os. Asimismo, el cÃ¡lculo matemÃ¡tico para la habilitaciÃ³n de la cantidad de grupos necesarios y la asignaciÃ³n manual de docentes sin generar solapamientos de horarios es un proceso lento y susceptible al error humano.
+El problema mÃ¡s crÃ­tico reside en la etapa final de evaluaciÃ³n: tabular manualmente tres exÃ¡menes por estudiante en cuatro materias, validar la condiciÃ³n estricta de aprobaciÃ³n (nota mayor o igual a 60 en todas), y distribuir a los cientos de aprobados ordenÃ¡ndolos por promedio para llenar los cupos exactos de su primera o segunda opciÃ³n de carrera. Este procedimiento manual no solo retrasa la publicaciÃ³n de la lista oficial de admitidos, sino que dificulta la generaciÃ³n de mÃ©tricas y estadÃ­sticas de rendimiento comparativo entre gestiones para la decanatura.
+
+
+  1.4 ALCANCE
+El Sistema Web de AdministraciÃ³n del Curso Preuniversitario (CUP) abarcarÃ¡ en su totalidad la logÃ­stica operativa, el registro documental y la evaluaciÃ³n acadÃ©mica, estructurÃ¡ndose en 6 MÃ³dulos Funcionales clave:
+    1.4.1 MÃ³dulo de AutenticaciÃ³n
+Permite el acceso seguro al sistema mediante credenciales validadas, garantizando que el Usuario Administrador ingrese de forma protegida a la plataforma. Gestiona las sesiones activas para proteger la integridad de los datos de admisiÃ³n y evitar accesos no autorizados. Datos principales y funcionalidades:
+Datos:Â Usuario, ContraseÃ±a (encriptada), Estado de sesiÃ³n.
+Funcionalidades:Â Inicio de sesiÃ³n seguro, Cerrar sesiÃ³n, RecuperaciÃ³n bÃ¡sica de contraseÃ±a (opcional).
+Validaciones:Â Usuario y contraseÃ±a obligatorios, control estricto de sesiones.
+1.4.2 MÃ³dulo de Registro de Postulantes
+Es el componente central para la recolecciÃ³n de datos de los estudiantes que aspiran ingresar a la FICCT. Permite inscribir y administrar toda la informaciÃ³n personal y acadÃ©mica del postulante, controlando validaciones clave como la unicidad del carnet de identidad. Datos principales y funcionalidades:
+Datos requeridos:Â CI, Nombres y Apellidos, Fecha de nacimiento, Sexo, DirecciÃ³n, TelÃ©fono, Correo electrÃ³nico, Colegio de procedencia, Ciudad, Carrera a la que postula, TÃ­tulo de bachiller.
+Funcionalidades:Â Registrar postulante, Modificar datos, Eliminar registro, Buscar postulante, Listar postulantes.
+Validaciones:Â No permitir CI duplicado, validar formato de correo electrÃ³nico, validar campos vacÃ­os.
+
+1.4.3 Â MÃ³dulo de ExÃ¡menes
+Gestiona el registro y procesamiento de las calificaciones obtenidas por los postulantes. Incorpora la lÃ³gica de negocio algorÃ­tmica para promediar automÃ¡ticamente las notas y determinar si el postulante estÃ¡ Aprobado o Reprobado segÃºn el umbral de la facultad, considerando la primera y segunda opciÃ³n de carrera. Datos principales y funcionalidades:
+Datos (Notas):Â ComputaciÃ³n, MatemÃ¡ticas, InglÃ©s y FÃ­sica (Rango de 0 a 100).
+Reglas de Negocio:Â Solo 3 exÃ¡menes por estudiante. El estado se calcula automÃ¡ticamente (APROBADO si el promedio es $\ge 60$, REPROBADO si es $< 60$). Se evalÃºa el cupo de la 1ra opciÃ³n, y si estÃ¡ lleno, pasa a la 2da opciÃ³n de carrera.
+Funcionalidades:Â Registrar notas, Editar notas, Mostrar promedio calculado.
+1.4.4 MÃ³dulo de AsignaciÃ³n de Grupos
+Automatiza la organizaciÃ³n acadÃ©mica del curso de nivelaciÃ³n. Su objetivo es distribuir de manera eficiente a los postulantes inscritos ejecutando un algoritmo que calcula dinÃ¡micamente la cantidad de grupos necesarios para cumplir con el lÃ­mite mÃ¡ximo de estudiantes por aula establecido por la facultad. Datos principales y funcionalidades:
+Datos y CÃ¡lculos:Â Cantidad total de inscritos, Cantidad de grupos habilitados (Aplicando la fÃ³rmula algorÃ­tmica de techo:Â CEIL(TotalInscritos / LÃ­mitePorGrupo)).
+Regla:Â Cada grupo admite un lÃ­mite estricto de estudiantes (ej. mÃ¡ximo 70 u 80 segÃºn parametrizaciÃ³n).
+Funcionalidades:Â Mostrar total de inscritos, Mostrar cantidad de grupos, Mostrar estudiantes asignados por grupo.
+1.4.5  MÃ³dulo de Reportes
+Proporciona informaciÃ³n consolidada y estadÃ­stica para apoyar la toma de decisiones de la administraciÃ³n acadÃ©mica. Genera listas detalladas y resÃºmenes de rendimiento que pueden ser visualizados en el sistema. Datos principales e indicadores:
+Reportes obligatorios:Â Lista general de postulantes, Postulantes aprobados, Postulantes reprobados, Promedios generales, Cantidad de grupos habilitados, EstadÃ­sticas por materia, Docentes por grupos, Grupos con mayor cantidad de aprobados.
+Funcionalidades (Opcionales):Â Exportar a PDF, Exportar a Excel, e integraciÃ³n con IA para generaciÃ³n de reportes por comandos de voz.
+1.4.6  Panel Administrativo (Dashboard)
+ActÃºa como el centro de control principal para el administrador. Centraliza el acceso a todas las funciones del sistema mediante un menÃº intuitivo y presenta un resumen ejecutivo en tiempo real de los indicadores clave del proceso de admisiÃ³n. Datos principales:
+Interfaz:Â MenÃº de navegaciÃ³n y Dashboard principal.
+Indicadores EstadÃ­sticos (KPIs):Â Total de inscritos, Total de aprobados, Total de reprobados, Total de grupos habilitados.
+1.4.7  MÃ³dulo de GestiÃ³n de Docentes
+Administra el ciclo completo de contrataciÃ³n y asignaciÃ³n acadÃ©mica de los docentes del CUP. El sistema valida que cada candidato cumpla con los requisitos mÃ­nimos establecidos por la FICCT antes de habilitarlo para recibir una carga horaria. Garantiza ademÃ©s que ningÃºn docente sea asignado a mÃ¡s grupos de los permitidos ni que existan cruces de horario en su distribuciÃ³n.
+Datos requeridos del docente:Â CI, Nombres y Apellidos, Especialidad profesional, TÃ­tulo de MaestrÃ­a, Diplomado en EducaciÃ³n Superior, Correo electrÃ³nico, TelÃ©fono.
+Funcionalidades:Â Registrar docente, Modificar datos, Eliminar registro, Buscar docente, Listar docentes, Asignar grupos y horarios, Visualizar carga horaria asignada.
+Reglas de negocio:Â El docente debe poseer tÃ­tulo de MaestrÃ­a y Diplomado en EducaciÃ³n Superior para ser contratado. Cada docente puede ser asignado desde 1 hasta un mÃ¡ximo de 4 grupos. El sistema no permite asignaciÃ³n si existe cruce de horario.
+Validaciones:Â No permitir CI duplicado. Verificar existencia de tÃ­tulo de MaestrÃ­a (campo obligatorio). Verificar existencia de Diplomado en EducaciÃ³n Superior (campo obligatorio). Bloquear asignaciÃ³n si el docente ya tiene 4 grupos activos. Detectar y alertar cruce de horarios antes de confirmar asignaciÃ³n.
+Carga masiva de cuentas de usuario (Excel/CSV):Â El sistema permitirÃ¡ importar lotes de cuentas de docentes, autoridades y coordinadores desde archivos Excel o CSV entregados por la administraciÃ³n acadÃ©mica al inicio de cada gestiÃ³n. El sistema genera automÃ¡ticamente las credenciales de acceso y asigna el perfil de rol correspondiente (RBAC) a cada cuenta importada.
+
+
+MARCO TEÃ“RICO
+Marco Conceptual (Dominio de AdmisiÃ³n Universitaria)
+En esta secciÃ³n se definen los pilares operativos y de control que rigen la actividad acadÃ©mica y administrativa del proceso de admisiÃ³n, traduciendo las necesidades de la facultad en conceptos formales de sistemas.
+Sistema de Procesamiento de Transacciones (TPS):Â Un TPS es un tipo de sistema de informaciÃ³n cuya funciÃ³n principal es recolectar, almacenar, modificar y recuperar la informaciÃ³n generada por las transacciones de una organizaciÃ³n. Para el presente proyecto del CUP, este concepto es fundamental, ya que el sistema debe procesar diariamente la inscripciÃ³n de miles de postulantes, la asignaciÃ³n masiva de aulas y el registro continuo de calificaciones, garantizando que ninguna transacciÃ³n concurrente altere el resultado de los exÃ¡menes.
+Control de Accesos Basado en Roles (RBAC):Â Es un mÃ©todo de seguridad que restringe el acceso al sistema basÃ¡ndose en el rol o cargo que ocupa el usuario dentro de la organizaciÃ³n. En el Sistema del CUP, el RBAC es el pilar de la privacidad y seguridad: garantiza que unÂ PostulanteÂ solo tenga permisos de lectura sobre sus propias notas, mientras que elÂ DocenteÂ posee permisos de escritura exclusiva sobre su carga horaria, aislando el control absoluto Ãºnicamente para el rol deÂ Administrador.
+Inteligencia de Negocios (Business Intelligence - BI):Â Comprende las estrategias y tecnologÃ­as utilizadas por las empresas para el anÃ¡lisis de datos. En el contexto de la FICCT, la aplicaciÃ³n de BI justifica la creaciÃ³n del Panel Administrativo (Dashboard), el cual transforma los datos crudos de inscripciones y notas en indicadores grÃ¡ficos de rendimiento y reportes estadÃ­sticos, agilizando la toma de decisiones del coordinador.
+ Marco MetodolÃ³gico (IngenierÃ­a de Software)
+Para garantizar la calidad y el cumplimiento de los estrictos requisitos del proceso de admisiÃ³n, el proyecto se rige bajo estÃ¡ndares formales de la ingenierÃ­a de software.
+Proceso Unificado de Desarrollo de Software (PUDS):Â El PUDS es un marco de desarrollo de software formal. Para la construcciÃ³n de la aplicaciÃ³n web del CUP, se ha adoptado esta metodologÃ­a debido a sus cuatro caracterÃ­sticas esenciales:
+Iterativo e Incremental:Â El sistema no se programa de una sola vez, sino en "ciclos" de desarrollo (entregas parciales) que van sumando funcionalidades hasta tener el producto completo.
+Centrado en la Arquitectura:Â Prioriza la construcciÃ³n de una base de datos y un esqueleto sÃ³lido antes de diseÃ±ar las pantallas.
+Dirigido por Casos de Uso:Â Todo el cÃ³digo que se escribe nace exclusivamente para resolver una necesidad de los actores (Postulantes, Docentes, Administradores).
+Lenguaje Unificado de Modelado (UML 2.5):Â Es el lenguaje estÃ¡ndar a nivel mundial para visualizar, especificar y documentar los artefactos de un sistema de software. En este proyecto, UML se utiliza para abstraer la complejidad del proceso de admisiÃ³n en planos lÃ³gicos (Diagramas de Casos de Uso, Secuencia y Clases) antes de escribir el cÃ³digo fuente.
+ Marco TecnolÃ³gico
+El Ã©xito de la sistematizaciÃ³n del CUP no reside Ãºnicamente en la programaciÃ³n, sino en la selecciÃ³n de un ecosistema tecnolÃ³gico moderno que garantice alta disponibilidad y seguridad de los datos.
+Desarrollo Backend con PHP:Â PHP es un lenguaje de programaciÃ³n de uso general de cÃ³digo del lado del servidor. En el Sistema del CUP, PHP serÃ¡ el motor lÃ³gico responsable de recibir las peticiones, procesar el algoritmo matemÃ¡tico de asignaciÃ³n de grupos (CEIL(Inscritos/LÃ­mite)) y calcular los promedios acadÃ©micos para determinar el estado de aprobaciÃ³n de los postulantes de forma segura.
+Bases de Datos Relacionales (PostgreSQL) y Propiedades ACID:Â PostgreSQL es un sistema de gestiÃ³n de bases de datos relacional y robusto. Su selecciÃ³n se justifica por el cumplimiento estricto de las propiedades ACID (Atomicidad, Consistencia, Aislamiento y Durabilidad). Este concepto teÃ³rico es innegociable para el CUP, ya que asegura que las notas de los exÃ¡menes y las asignaciones de cupos jamÃ¡s se pierdan ni se corrompan ante fallos de red o cortes elÃ©ctricos.
+ComputaciÃ³n en la Nube (Cloud Computing):Â Se refiere a la entrega de servicios informÃ¡ticos a travÃ©s de Internet (la nube). Desplegar el sistema del CUP en la nube (AWS, Azure u otros) elimina la dependencia de servidores fÃ­sicos locales (localhost), garantizando que los miles de postulantes puedan acceder a la plataforma desde sus domicilios las 24 horas del dÃ­a.
+Desarrollo Frontend Responsive (HTML5, CSS3, JavaScript):Â Conjunto de tecnologÃ­as estÃ¡ndar para la creaciÃ³n de interfaces web. Su implementaciÃ³n bajo el paradigma "Responsive Web Design" asegura que el sistema adapte visualmente sus formularios y reportes al tamaÃ±o de pantalla del usuario, permitiendo que el postulante se inscriba desde su telÃ©fono mÃ³vil con la misma fluidez que el administrador en una computadora de escritorio.
+
+
+MODELO DE NEGOCIO
+ DIAGRAMA DE ACTIVIDADES
+Diagrama de Actividad: Proceso de InscripciÃ³n y Registro
+
+
+Proceso de Registro de Notas y AprobaciÃ³n.2457453568700
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+400053949700Proceso de AdmisiÃ³n Final (DistribuciÃ³n por Cupos).
+
+left40449500ContrataciÃ³n y AsignaciÃ³n de Docentes
+
+FLUJO DE TRABAJO: CAPTURA DE REQUISITOS
+-457203124200 Identificar actores del sistema
+
+Actores internos del sistema
+256984524765Administrador / Autoridad:Rol SistÃ©mico: Actor con control total sobre el ecosistema del sistema CUP. Gestiona la contrataciÃ³n de docentes, la distribuciÃ³n de cupos por carrera, la asignaciÃ³n de grupos y horarios, y supervisa el proceso de admisiÃ³n final.Impacto en Vida Real: Inicia el cierre de gestiÃ³n, genera reportes oficiales de admitidos, visualiza el dashboard estadÃ­stico y garantiza que los cupos por carrera no sean superados.00Administrador / Autoridad:Rol SistÃ©mico: Actor con control total sobre el ecosistema del sistema CUP. Gestiona la contrataciÃ³n de docentes, la distribuciÃ³n de cupos por carrera, la asignaciÃ³n de grupos y horarios, y supervisa el proceso de admisiÃ³n final.Impacto en Vida Real: Inicia el cierre de gestiÃ³n, genera reportes oficiales de admitidos, visualiza el dashboard estadÃ­stico y garantiza que los cupos por carrera no sean superados.left4286250Administrador 
+Administrador / Autoridad:
+Rol SistÃ©mico: Actor con control total sobre el ecosistema del sistema CUP. Gestiona la contrataciÃ³n de docentes, la distribuciÃ³n de cupos por carrera, la asignaciÃ³n de grupos y horarios, y supervisa el proceso de admisiÃ³n final.
+Impacto en Vida Real: Inicia el cierre de gestiÃ³n, genera reportes oficiales de admitidos, visualiza el dashboard estadÃ­stico y garantiza que los cupos por carrera no sean superados.
+
+Administrador / Autoridad:
+Rol SistÃ©mico: Actor con control total sobre el ecosistema del sistema CUP. Gestiona la contrataciÃ³n de docentes, la distribuciÃ³n de cupos por carrera, la asignaciÃ³n de grupos y horarios, y supervisa el proceso de admisiÃ³n final.
+Impacto en Vida Real: Inicia el cierre de gestiÃ³n, genera reportes oficiales de admitidos, visualiza el dashboard estadÃ­stico y garantiza que los cupos por carrera no sean superados.
+
+
+Docente
+26536656350Docente:Rol SistÃ©mico: Responsable del registro de notas de los postulantes en el sistema y de su propia carga acadÃ©mica. Ingresa las 3 calificaciones por estudiante, supervisa el proceso de evaluaciÃ³n dentro de su grupo asignado, y es sujeto de contrataciÃ³n y asignaciÃ³n por parte del Administrador (MÃ³dulo de GestiÃ³n de Docentes).Impacto en Vida Real: Accede al mÃ³dulo de exÃ¡menes para registrar y validar notas (rango 0â€“100). El sistema calcula automÃ¡ticamente el promedio y determina el estado APROBADO o REPROBADO. TambiÃ©n puede visualizar su carga horaria asignada (grupos y materias).020000Docente:Rol SistÃ©mico: Responsable del registro de notas de los postulantes en el sistema y de su propia carga acadÃ©mica. Ingresa las 3 calificaciones por estudiante, supervisa el proceso de evaluaciÃ³n dentro de su grupo asignado, y es sujeto de contrataciÃ³n y asignaciÃ³n por parte del Administrador (MÃ³dulo de GestiÃ³n de Docentes).Impacto en Vida Real: Accede al mÃ³dulo de exÃ¡menes para registrar y validar notas (rango 0â€“100). El sistema calcula automÃ¡ticamente el promedio y determina el estado APROBADO o REPROBADO. TambiÃ©n puede visualizar su carga horaria asignada (grupos y materias).17716540322500
+Docente:
+Rol SistÃ©mico: Responsable del registro de notas de los postulantes en el sistema y de su propia carga acadÃ©mica. Ingresa las 3 calificaciones por estudiante, supervisa el proceso de evaluaciÃ³n dentro de su grupo asignado, y es sujeto de contrataciÃ³n y asignaciÃ³n por parte del Administrador (MÃ³dulo de GestiÃ³n de Docentes).
+Impacto en Vida Real: Accede al mÃ³dulo de exÃ¡menes para registrar y validar notas (rango 0â€“100). El sistema calcula automÃ¡ticamente el promedio y determina el estado APROBADO o REPROBADO. TambiÃ©n puede visualizar su carga horaria asignada (grupos y materias).
+Docente:
+Rol SistÃ©mico: Responsable del registro de notas de los postulantes en el sistema y de su propia carga acadÃ©mica. Ingresa las 3 calificaciones por estudiante, supervisa el proceso de evaluaciÃ³n dentro de su grupo asignado, y es sujeto de contrataciÃ³n y asignaciÃ³n por parte del Administrador (MÃ³dulo de GestiÃ³n de Docentes).
+Impacto en Vida Real: Accede al mÃ³dulo de exÃ¡menes para registrar y validar notas (rango 0â€“100). El sistema calcula automÃ¡ticamente el promedio y determina el estado APROBADO o REPROBADO. TambiÃ©n puede visualizar su carga horaria asignada (grupos y materias).
+
+
+
+
+
+
+
+right0Usuario Autenticado:Rol SistÃ©mico: Actor base del sistema que agrupa los privilegios compartidos entre el Docente y el Administrador. Representa a cualquier usuario con sesiÃ³n activa y credenciales vÃ¡lidas.Impacto en Vida Real: Puede acceder a los mÃ³dulos habilitados segÃºn su rol, cerrar sesiÃ³n y operar dentro del sistema con permisos controlados.020000Usuario Autenticado:Rol SistÃ©mico: Actor base del sistema que agrupa los privilegios compartidos entre el Docente y el Administrador. Representa a cualquier usuario con sesiÃ³n activa y credenciales vÃ¡lidas.Impacto en Vida Real: Puede acceder a los mÃ³dulos habilitados segÃºn su rol, cerrar sesiÃ³n y operar dentro del sistema con permisos controlados.Usuario Autenticado
+Usuario Autenticado:
+Rol SistÃ©mico: Actor base del sistema que agrupa los privilegios compartidos entre el Docente y el Administrador. Representa a cualquier usuario con sesiÃ³n activa y credenciales vÃ¡lidas.
+Impacto en Vida Real: Puede acceder a los mÃ³dulos habilitados segÃºn su rol, cerrar sesiÃ³n y operar dentro del sistema con permisos controlados.
+Usuario Autenticado:
+Rol SistÃ©mico: Actor base del sistema que agrupa los privilegios compartidos entre el Docente y el Administrador. Representa a cualquier usuario con sesiÃ³n activa y credenciales vÃ¡lidas.
+Impacto en Vida Real: Puede acceder a los mÃ³dulos habilitados segÃºn su rol, cerrar sesiÃ³n y operar dentro del sistema con permisos controlados.
+-10477523812500
+
+
+Actores externos del sistema
+right10795Postulante:Rol SistÃ©mico: Actor externo que inicia el proceso de admisiÃ³n al CUP. Registra sus datos personales, sube documentos requeridos (CI/TÃ­tulo de bachiller), rinde el examen y recibe su resultado de admisiÃ³n.Impacto en Vida Real: Es el sujeto principal del proceso. Su promedio final determina si accede a un cupo en su 1ra o 2da opciÃ³n de carrera, o si queda sin cupo disponible.020000Postulante:Rol SistÃ©mico: Actor externo que inicia el proceso de admisiÃ³n al CUP. Registra sus datos personales, sube documentos requeridos (CI/TÃ­tulo de bachiller), rinde el examen y recibe su resultado de admisiÃ³n.Impacto en Vida Real: Es el sujeto principal del proceso. Su promedio final determina si accede a un cupo en su 1ra o 2da opciÃ³n de carrera, o si queda sin cupo disponible.Postulante
+Postulante:
+Rol SistÃ©mico: Actor externo que inicia el proceso de admisiÃ³n al CUP. Registra sus datos personales, sube documentos requeridos (CI/TÃ­tulo de bachiller), rinde el examen y recibe su resultado de admisiÃ³n.
+Impacto en Vida Real: Es el sujeto principal del proceso. Su promedio final determina si accede a un cupo en su 1ra o 2da opciÃ³n de carrera, o si queda sin cupo disponible.
+Postulante:
+Rol SistÃ©mico: Actor externo que inicia el proceso de admisiÃ³n al CUP. Registra sus datos personales, sube documentos requeridos (CI/TÃ­tulo de bachiller), rinde el examen y recibe su resultado de admisiÃ³n.
+Impacto en Vida Real: Es el sujeto principal del proceso. Su promedio final determina si accede a un cupo en su 1ra o 2da opciÃ³n de carrera, o si queda sin cupo disponible.
+left31115000
+
+
+
+
+
+
+29356056350Usuario No Autenticado:Rol SistÃ©mico: Actor externo que interactÃºa Ãºnicamente con el mÃ³dulo de seguridad. No tiene acceso a ninguna funcionalidad del sistema hasta completar el proceso de autenticaciÃ³n.Impacto en Vida Real: Puede iniciar sesiÃ³n con sus credenciales o recuperar su contraseÃ±a mediante el sistema. Una vez autenticado, se convierte en Usuario Autenticado con los permisos de su rol asignado.020000Usuario No Autenticado:Rol SistÃ©mico: Actor externo que interactÃºa Ãºnicamente con el mÃ³dulo de seguridad. No tiene acceso a ninguna funcionalidad del sistema hasta completar el proceso de autenticaciÃ³n.Impacto en Vida Real: Puede iniciar sesiÃ³n con sus credenciales o recuperar su contraseÃ±a mediante el sistema. Una vez autenticado, se convierte en Usuario Autenticado con los permisos de su rol asignado.Usuario no autenticado
+Usuario No Autenticado:
+Rol SistÃ©mico: Actor externo que interactÃºa Ãºnicamente con el mÃ³dulo de seguridad. No tiene acceso a ninguna funcionalidad del sistema hasta completar el proceso de autenticaciÃ³n.
+Impacto en Vida Real: Puede iniciar sesiÃ³n con sus credenciales o recuperar su contraseÃ±a mediante el sistema. Una vez autenticado, se convierte en Usuario Autenticado con los permisos de su rol asignado.
+Usuario No Autenticado:
+Rol SistÃ©mico: Actor externo que interactÃºa Ãºnicamente con el mÃ³dulo de seguridad. No tiene acceso a ninguna funcionalidad del sistema hasta completar el proceso de autenticaciÃ³n.
+Impacto en Vida Real: Puede iniciar sesiÃ³n con sus credenciales o recuperar su contraseÃ±a mediante el sistema. Una vez autenticado, se convierte en Usuario Autenticado con los permisos de su rol asignado.
+left95250
+
+
+                                                                          
+
+
+
+
+ Lista de casos de uso
+MÃ³dulo 1: Seguridad y AutenticaciÃ³n
+CU01: Iniciar SesiÃ³n en la Plataforma
+CU02: Cerrar SesiÃ³n Activa
+CU03: Recuperar ContraseÃ±a de Usuario
+CU04: Cambiar ContraseÃ±a Propia
+CU05: Gestionar Cuentas y Roles (RBAC)
+MÃ³dulo 2: Registro y GestiÃ³n de Postulantes
+CU06: Validar Requisitos Documentales (TÃ­tulo/CI)
+CU07: Procesar Pago de InscripciÃ³n (InteracciÃ³n con Pasarela)
+CU08: Registrar Nuevo Postulante (Datos personales y acadÃ©micos)
+CU09: Cargar Documentos de Respaldo Digitalizados
+CU10: Modificar InformaciÃ³n del Postulante
+CU11: Eliminar Registro de Postulante (Baja lÃ³gica)
+CU12: Buscar y Listar Postulantes Inscritos
+MÃ³dulo 3: EvaluaciÃ³n AcadÃ©mica (ExÃ¡menes)
+CU13: Registrar Notas de Materias (ComputaciÃ³n, MatemÃ¡ticas, InglÃ©s, FÃ­sica)
+CU14: Editar Calificaciones de ExÃ¡menes (MÃ¡ximo 3 evaluaciones)
+CU15: Calcular Promedio Final AutomÃ¡ticamente
+CU16: Verificar Estado de AprobaciÃ³n (Promedio â‰¥ 60)
+CU17: Ejecutar Algoritmo de AdmisiÃ³n por Cupos (1ra y 2da opciÃ³n)
+MÃ³dulo 4: OrganizaciÃ³n LogÃ­stica (AsignaciÃ³n de Grupos y Aulas)
+CU18: Configurar ParÃ¡metros de Capacidad de Aula (MÃ¡x. 70/80)
+CU19: Calcular Cantidad de Grupos Necesarios (Algoritmo CEIL)
+CU20: Asignar Postulantes a Grupos y Aulas
+MÃ³dulo 5: Reportes e Inteligencia de Negocio
+CU23: Generar Lista General de Postulantes
+CU24: Generar Reporte de Postulantes Aprobados y Reprobados
+CU25: Generar EstadÃ­sticas de Rendimiento por Materia
+CU26: Generar Reporte de AsignaciÃ³n Docente por Grupo
+CU27: Exportar Reportes a Formato PDF o Excel
+CU28: Consultar Reportes AcadÃ©micos Mediante Comandos de Voz (IA)
+MÃ³dulo 7: GestiÃ³n de Docentes
+CU21: Registrar Nuevo Docente y Validar TÃ­tulos (MaestrÃ­a/Diplomado)
+CU22: Asignar Carga Horaria y Grupos a Docentes (MÃ¡x. 4 grupos)
+CU31: Importar Cuentas de Usuario desde Excel/CSV (Carga Masiva)
+MÃ³dulo 6: Panel Administrativo (Dashboard)
+CU29: Visualizar Dashboard de Indicadores Clave (KPIs)
+CU30: Consultar BitÃ¡cora de AuditorÃ­a del Sistema (TPS)
+ Priorizar casos de uso
+ID
+Caso de Uso
+Prioridad
+JustificaciÃ³n 
+CU01
+Iniciar SesiÃ³n en la Plataforma
+Alto
+ArquitectÃ³nico: Base para el RBAC y seguridad del sistema.
+CU06
+Validar Requisitos Documentales
+Alto
+Riesgo: Primer filtro del flujo de negocio. Define la entrada al sistema.
+CU07
+Procesar Pago de InscripciÃ³n
+Alto
+Riesgo/ArquitectÃ³nico: Dependencia con actor externo (Pasarela). CondiciÃ³n de estado crÃ­tica.
+CU08
+Registrar Nuevo Postulante
+Alto
+ArquitectÃ³nico: Define la entidad "Postulante" y el modelo de datos principal.
+CU13
+Registrar Notas de Materias
+Alto
+Valor: CorazÃ³n del sistema. Entrada para la evaluaciÃ³n acadÃ©mica.
+CU15
+Calcular Promedio Final AutomÃ¡ticamente
+Alto
+Riesgo CrÃ­tico: Algoritmo central de aprobaciÃ³n exigido en el examen.
+CU17
+Ejecutar Algoritmo de AdmisiÃ³n por Cupos
+Alto
+Riesgo CrÃ­tico: LÃ³gica compleja de 1ra/2da opciÃ³n y orden de mÃ©rito.
+CU19
+Calcular Cantidad de Grupos Necesarios
+Alto
+Riesgo CrÃ­tico: Algoritmo matemÃ¡tico CEIL para logÃ­stica de la facultad.
+CU20
+Asignar Postulantes a Grupos y Aulas
+Alto
+ArquitectÃ³nico: Define la organizaciÃ³n fÃ­sica y lÃ³gica de la inscripciÃ³n.
+CU22
+Asignar Carga Horaria y Grupos a Docentes
+Alto
+Riesgo: ValidaciÃ³n de perfiles y restricciÃ³n de mÃ¡ximo 4 grupos.
+CU02
+Cerrar SesiÃ³n Activa
+Media
+Necesario para la integridad, pero de baja complejidad tÃ©cnica.
+CU05
+Gestionar Cuentas y Roles (RBAC)
+Media
+Administrativo. Importante pero no es el nÃºcleo de la admisiÃ³n.
+CU09
+Cargar Documentos de Respaldo
+Media
+Complemento digital del registro de postulantes.
+CU10
+Modificar InformaciÃ³n del Postulante
+Media
+Mantenimiento de datos (CRUD). Riesgo tÃ©cnico bajo.
+CU12
+Buscar y Listar Postulantes Inscritos
+Media
+Consulta esencial para la operaciÃ³n diaria.
+CU14
+Editar Calificaciones de ExÃ¡menes
+Media
+Mantenimiento de la entidad "Nota". Importante para correcciÃ³n de errores.
+CU16
+Verificar Estado de AprobaciÃ³n
+Media
+LÃ³gica derivada del CU15 (CÃ¡lculo de promedios).
+CU18
+Configurar ParÃ¡metros de Capacidad
+Media
+ConfiguraciÃ³n de reglas de negocio (70 u 80 alumnos).
+CU21
+Registrar Nuevo Docente
+Media
+Mantenimiento de datos. Requisito para la asignaciÃ³n de carga.
+CU23
+Generar Lista General de Postulantes
+Media
+Salida de informaciÃ³n bÃ¡sica requerida.
+CU24
+Generar Reporte de Aprobados y Reprobados
+Media
+Resultado del proceso acadÃ©mico. Valor informativo alto.
+CU29
+Visualizar Dashboard de Indicadores (KPIs)
+Media
+ArquitectÃ³nico: Punto de integraciÃ³n de datos para BI.
+CU03
+Recuperar ContraseÃ±a de Usuario
+Bajo
+Funcionalidad de soporte opcional segÃºn el alcance.
+CU04
+Cambiar ContraseÃ±a Propia
+Bajo
+Mejora de seguridad de usuario final, no crÃ­tica para el flujo.
+CU11
+Eliminar Registro de Postulante
+Bajo
+AcciÃ³n poco frecuente. Se recomienda baja lÃ³gica.
+CU25
+Generar EstadÃ­sticas por Materia
+Bajo
+Refinamiento de reportes. No detiene la operaciÃ³n central.
+CU26
+Generar Reporte de AsignaciÃ³n Docente
+Bajo
+Reporte operativo secundario.
+CU27
+Exportar Reportes a PDF o Excel
+Bajo
+Funcionalidad opcional de formato de salida.
+CU28
+Consultar Reportes por Voz (IA)
+Bajo
+Opcional: Valor estÃ©tico o de innovaciÃ³n, no funcional base.
+CU31
+Importar Cuentas desde Excel/CSV
+Alto
+Requerimiento explÃ­cito del enunciado: generaciÃ³n automÃ¡tica de cuentas en lotes por gestiÃ³n acadÃ©mica.
+CU30
+Consultar BitÃ¡cora de AuditorÃ­a (TPS)
+Bajo
+FunciÃ³n tÃ©cnica para control interno y rastreo de transacciones.
+
+
+
+
+Ciclo #1 IteraciÃ³n: Arquitectura Base, Persistencia y MitigaciÃ³n de Riesgos AlgorÃ­tmicos
+JustificaciÃ³n (PUDS/RUP): Esta iteraciÃ³n tiene como objetivo establecer la LÃ­nea Base de la Arquitectura. Mitiga el riesgo tÃ©cnico mediante la implementaciÃ³n de la persistencia de datos en PostgreSQL para la entidad central (Postulante) y la resoluciÃ³n de los algoritmos matemÃ¡ticos crÃ­ticos (CEIL para grupos y promedios de notas). Siguiendo a Jacobson, se ataca primero la "parte difÃ­cil" para estabilizar el sistema antes de la construcciÃ³n masiva.
+Actores Implicados: Administrador / Autoridad, Postulante, Docente, Pasarela de Pagos (Actor Sistema Externo).
+R.F (Casos de Uso a implementar):
+ID
+Caso de Uso
+Prioridad
+CU01
+Iniciar SesiÃ³n en la Plataforma
+Alto
+CU02
+Cerrar SesiÃ³n Activa
+Alto
+CU05
+Gestionar Cuentas de Usuario y Roles (RBAC)
+Alto
+CU07
+Procesar Pago de InscripciÃ³n (InteracciÃ³n Pasarela)
+Alto
+CU08
+Registrar Nuevo Postulante (Persistencia Base)
+Alto
+CU13
+Registrar Notas de Materias (ComputaciÃ³n, MatemÃ¡ticas, etc.)
+Alto
+CU15
+Calcular Promedio Final AutomÃ¡ticamente (Algoritmo 1)
+Alto
+CU16
+Verificar Estado de AprobaciÃ³n (Promedio â‰¥ 60)
+Alto
+CU19
+Calcular Cantidad de Grupos Necesarios (Algoritmo CEIL)
+Alto
+CU20
+Asignar Postulantes a Grupos y Aulas
+Alto
+CU29
+Visualizar Dashboard de Indicadores Clave (KPIs)
+Media
+CU30
+Consultar BitÃ¡cora de Transacciones (AuditorÃ­a del TPS)
+Media
+CU04
+Cambiar ContraseÃ±a Propia
+Bajo
+CU03
+Recuperar ContraseÃ±a de Usuario
+Bajo
+CU17
+Ejecutar Algoritmo de AdmisiÃ³n por Cupos (1ra y 2da opciÃ³n)
+Alto
+CU31
+Importar Cuentas de Usuario desde Excel/CSV (Carga Masiva)
+Alto
+
+ Detallar caso de uso
+Ciclo #1
+CU01:             Iniciar SesiÃ³n en la Plataforma                                             [Prioridad: Alta]
+Caso de Uso
+CU01 : Iniciar SesiÃ³n.
+PropÃ³sito
+Restringir y asegurar el acceso al sistema autenticando la identidad del usuario.
+DescripciÃ³n
+Permite que usuarios (Admin, Docente, Postulante) ingresen sus credenciales para obtener un token de acceso segÃºn su rol (RBAC).
+Actores
+Administrador, Docente, Postulante (Usuario autenticado con cualquier rol).
+Actor iniciador
+Usuario (Cualquier rol registrado).
+PrecondiciÃ³n
+El usuario debe existir en PostgreSQL y su estado debe ser "Activo".
+Flujo principal
+1. El actor ingresa a la URL del CUP FICCT.<br>2. El sistema despliega el formulario de Login.<br>3. El actor introduce Email y ContraseÃ±a.<br>4. El sistema encripta la clave y valida el hash contra la BD.<br>5. El sistema identifica el rol y carga los permisos (RBAC).<br>6. El sistema registra el ingreso en la bitÃ¡cora (TPS).<br>7. El sistema redirige al Dashboard correspondiente.
+Post condiciÃ³n
+SesiÃ³n activa vinculada al ID de usuario, habilitando transacciones segÃºn perfil.
+Excepciones
+E1: Credenciales invÃ¡lidas (Notifica error). E2: Usuario bloqueado (Impide acceso).
+
+CU07:                   Procesar Pago de InscripciÃ³n                    [Prioridad: Alta]
+Caso de Uso
+CU07 : Procesar Pago de InscripciÃ³n.
+PropÃ³sito
+Validar el pago arancelario obligatorio para habilitar el registro.
+DescripciÃ³n
+El sistema interactÃºa con una pasarela de pagos externa para confirmar la transacciÃ³n del postulante.
+Actores
+Postulante, Pasarela de Pagos (Sistema Externo).
+Actor iniciador
+Postulante.
+PrecondiciÃ³n
+El postulante debe haber validado sus documentos (CI/TÃ­tulo).
+Flujo principal
+1. El actor selecciona "Realizar Pago".<br>2. El sistema genera un ID de orden y redirige a la pasarela externa.<br>3. El actor completa el pago en la plataforma externa.<br>4. La pasarela devuelve confirmaciÃ³n de Ã©xito al sistema.<br>5. El sistema registra el pago en PostgreSQL (Propiedades ACID).<br>6. El sistema cambia el estado a "Habilitado para Registro".
+Post condiciÃ³n
+El estado de pago queda persistido, desbloqueando el CU08.
+Excepciones
+E1: TransacciÃ³n rechazada por la pasarela (Permite reintento).
+ 
+CU08:                        Registrar Nuevo Postulante                     [Prioridad: Alta]                                                   
+Caso de Uso
+CU08 : Registrar Postulante.
+Prioridad
+Alta (ArquitectÃ³nico: Define la entidad principal y modelo de datos).
+PropÃ³sito
+Capturar y persistir los datos maestros del aspirante a la FICCT.
+DescripciÃ³n
+Registro integral de informaciÃ³n personal y acadÃ©mica en la base de datos PostgreSQL.
+Actores
+Postulante, Administrador (Operador de inscripciÃ³n).
+Actor iniciador
+Postulante / Operador.
+PrecondiciÃ³n
+El pago debe estar verificado con Ã©xito en el sistema (CU07).
+Flujo principal
+1. El actor llena el formulario (CI, Nombres, Colegio, Carreras 1 y 2).<br>2. El sistema valida que el CI no sea duplicado.<br>3. El sistema valida formato de correo y campos obligatorios.<br>4. El sistema guarda el registro en PostgreSQL (Garantizando Integridad ACID).<br>5. El sistema confirma el registro exitoso.
+Post condiciÃ³n
+El postulante queda almacenado y listo para asignaciÃ³n de grupos.
+Excepciones
+E1: CI Duplicado (Muestra alerta de error).
+
+CU15:                       Calcular Promedio Final AutomÃ¡ticamente      [Prioridad: Alta]            
+Caso de Uso
+CU15 : Calcular Promedio Final.
+Prioridad
+Alta (Riesgo CrÃ­tico: Algoritmo central de aprobaciÃ³n exigido).
+PropÃ³sito
+Ejecutar la lÃ³gica algorÃ­tmica de evaluaciÃ³n acadÃ©mica por materia.
+DescripciÃ³n
+El sistema procesa las 3 notas de las 4 materias troncales para obtener el promedio final.
+Actores
+Sistema Web CUP (actor automÃ¡tico, se dispara tras registrar la 3ra nota).
+Actor iniciador
+Sistema (AutomÃ¡tico tras el registro de la tercera nota).
+PrecondiciÃ³n
+Deben existir las 3 notas cargadas por cada materia (MatemÃ¡ticas, FÃ­sica, etc.).
+Flujo principal
+1. El sistema recupera las notas registradas.<br>2. El sistema aplica la fÃ³rmula: Promedio = (Nota1+Nota2+Nota3)/3.<br>3. El sistema actualiza el registro del postulante con su nota final.<br>4. El sistema verifica si Promedio >= 60 para asignar estado "Aprobado".
+Post condiciÃ³n
+Promedio calculado y persistido, habilitando el proceso de admisiÃ³n por cupos.
+Excepciones
+E1: Faltan notas por registrar (Detiene el cÃ¡lculo).
+
+CU19:                Calcular Cantidad de Grupos Necesarios              [Prioridad: Alta] 
+Caso de Uso
+CU19 : Calcular Cantidad de Grupos.
+Prioridad
+Alta (Riesgo CrÃ­tico: Algoritmo logÃ­stico fundamental).
+PropÃ³sito
+Determinar la logÃ­stica de aulas basÃ¡ndose en la demanda real de inscritos.
+DescripciÃ³n
+AplicaciÃ³n del algoritmo matemÃ¡tico de techo para organizar a los inscritos en grupos.
+Actores
+Administrador / Autoridad.
+Actor iniciador
+Administrador / Autoridad.
+PrecondiciÃ³n
+El proceso de inscripciÃ³n debe estar en fase de auditorÃ­a o cierre.
+Flujo principal
+1. El sistema cuenta el total de alumnos en estado "Inscrito".<br>2. El sistema aplica la fÃ³rmula: CantGrupos = CEIL(TotalInscritos / 80).<br>3. El sistema muestra la cantidad de grupos resultantes.<br>4. El Administrador aprueba la creaciÃ³n de los grupos en la base de datos.
+Post condiciÃ³n
+Grupos creados y habilitados para la asignaciÃ³n de docentes.
+Excepciones
+E1: Total de inscritos es cero (Notifica advertencia).
+
+CU13:               Registrar Notas de Materias                                                         [Prioridad: Alta]
+Caso de Uso
+CU13 : Registrar Notas de Materias.
+Prioridad
+Alta (Valor: Entrada de datos para la lÃ³gica central de evaluaciÃ³n).
+PropÃ³sito
+Registrar las calificaciones de los exÃ¡menes de las materias troncales (ComputaciÃ³n, MatemÃ¡ticas, InglÃ©s y FÃ­sica).
+DescripciÃ³n
+Permite que el Docente o Administrador ingrese hasta 3 evaluaciones por cada una de las 4 materias obligatorias.
+Actores
+Docente, Administrador.
+Actor iniciador
+Docente / Administrador.
+PrecondiciÃ³n
+El postulante debe estar debidamente registrado en el sistema y el periodo de evaluaciÃ³n debe estar abierto.
+Flujo principal
+1. El actor selecciona al postulante de una lista.<br>2. El sistema despliega el formulario de notas por materia.<br>3. El actor ingresa el valor de la calificaciÃ³n (0-100).<br>4. El sistema valida que el valor estÃ© en el rango permitido.<br>5. El sistema persiste la nota en la tabla de PostgreSQL.<br>6. El sistema dispara el cÃ¡lculo automÃ¡tico del promedio (CU15).
+Post condiciÃ³n
+Notas almacenadas de forma Ã­ntegra, listas para el procesamiento acadÃ©mico.
+Excepciones
+E1: Nota fuera de rango (Muestra error y no guarda). E2: Intento de registrar mÃ¡s de 3 notas por materia (Bloquea acciÃ³n).
+
+CU16:                 Verificar Estado de AprobaciÃ³n                                   [Prioridad: Alta]
+Caso de Uso
+CU16 : Verificar Estado de AprobaciÃ³n.
+Prioridad
+Alta (Valor: Define el resultado acadÃ©mico inmediato segÃºn reglas de la FICCT).
+PropÃ³sito
+Clasificar formalmente al postulante como "Aprobado" o "Reprobado".
+DescripciÃ³n
+Basado en el promedio final calculado, el sistema aplica la regla estricta de aprobaciÃ³n de la facultad.
+Actores
+Sistema (AutomÃ¡tico).
+Actor iniciador
+Sistema (Se dispara tras CU15).
+PrecondiciÃ³n
+El promedio final debe haber sido calculado y persistido en la BD.
+Flujo principal
+1. El sistema recupera el valor de "promedio_final" del postulante.<br>2. El sistema aplica la regla de negocio: Si promedio >= 60 ENTONCES estado = 'APROBADO'.<br>3. El sistema actualiza el campo de estado en el registro del estudiante.<br>4. El sistema notifica el cambio de estado internamente para reportes futuros.
+Post condiciÃ³n
+El estado del postulante queda actualizado, habilitÃ¡ndolo para el Algoritmo de AdmisiÃ³n.
+Excepciones
+E1: Promedio inexistente o nulo (Interrumpe la validaciÃ³n).
+ 
+
+
+
+
+
+
+
+
+CU17:                      Ejecutar Algoritmo de AdmisiÃ³n por Cupos                   [Prioridad: Alta]
+
+Caso de Uso
+CU17 : Ejecutar Algoritmo de AdmisiÃ³n por Cupos.
+Prioridad
+Alta (Riesgo CrÃ­tico: LÃ³gica compleja de 1ra/2da opciÃ³n y orden de mÃ©rito).
+PropÃ³sito
+Distribuir a los postulantes APROBADOS en las carreras disponibles respetando el lÃ­mite de cupos por gestiÃ³n y el orden de mÃ©rito (promedio mayor tiene prioridad).
+DescripciÃ³n
+El sistema procesa la lista de aprobados ordenada por promedio de mayor a menor. Para cada postulante verifica si hay cupo disponible en su 1ra opciÃ³n de carrera; si no hay cupo, intenta su 2da opciÃ³n. Si ninguna opciÃ³n tiene cupo disponible, el postulante queda en lista de espera.
+Actores
+Sistema Web CUP (actor automÃ¡tico). Administrador / Autoridad (aprueba el cierre del proceso).
+Actor iniciador
+Administrador (ejecuta el cierre del proceso de admisiÃ³n).
+PrecondiciÃ³n
+El proceso de evaluaciÃ³n debe estar cerrado. Todos los promedios deben estar calculados y persistidos (CU15). Cada carrera debe tener configurado su cupo mÃ¡ximo de admitidos por gestiÃ³n.
+Flujo principal
+1. El Administrador selecciona "Ejecutar proceso de admisiÃ³n". 2. El sistema recupera la lista de postulantes con estado APROBADO. 3. El sistema ordena la lista de mayor a menor por promedio_final. 4. Para cada postulante en orden de mÃ©rito:    a. El sistema verifica si la 1ra opciÃ³n de carrera tiene cupo disponible.    b. Si SÃ: asigna al postulante a la 1ra opciÃ³n y descuenta 1 cupo.    c. Si NO: el sistema verifica la 2da opciÃ³n de carrera.    d. Si la 2da opciÃ³n tiene cupo: asigna al postulante y descuenta 1 cupo.    e. Si ninguna opciÃ³n tiene cupo: el postulante queda en estado Lista de Espera. 5. El sistema persiste las asignaciones finales en la base de datos. 6. El sistema genera el reporte oficial de admitidos por carrera.
+PostcondiciÃ³n
+Cada postulante APROBADO tiene asignada una carrera o consta en Lista de Espera. Los cupos por carrera quedan actualizados. El reporte de admitidos queda disponible para publicaciÃ³n.
+Excepciones
+E1: Total de aprobados es cero (el sistema notifica y no ejecuta el algoritmo). E2: Una carrera tiene cupo configurado en cero (el sistema advierte al Administrador antes de ejecutar). E3: Empate de promedios en el Ãºltimo cupo disponible (el sistema aplica criterio secundario: fecha de inscripciÃ³n mÃ¡s temprana tiene prioridad).
+
+CU20:                   Asignar Postulantes a Grupos y Aulas                      [Prioridad: Alta]
+Caso de Uso
+CU20 : Asignar Postulantes a Grupos.
+Prioridad
+Alta (ArquitectÃ³nico: Define la organizaciÃ³n operativa bÃ¡sica).
+PropÃ³sito
+Distribuir fÃ­sicamente a los estudiantes inscritos en las aulas habilitadas.
+DescripciÃ³n
+Proceso logÃ­stico que vincula a cada postulante con un grupo especÃ­fico, respetando el lÃ­mite de capacidad.
+Actores
+Administrador / Sistema Web CUP (asignaciÃ³n automÃ¡tica).
+Actor iniciador
+Administrador / Sistema.
+PrecondiciÃ³n
+Se debe haber ejecutado previamente el cÃ¡lculo de grupos necesarios (CU19).
+Flujo principal
+1. El sistema recupera la lista de estudiantes inscritos sin grupo asignado.<br>2. El sistema distribuye a los estudiantes secuencialmente en los grupos habilitados.<br>3. El sistema valida que ningÃºn grupo supere el lÃ­mite mÃ¡ximo de 70 estudiantes.<br>4. El sistema guarda la relaciÃ³n postulante-grupo en la base de datos.<br>5. Se confirma la asignaciÃ³n exitosa.
+Post condiciÃ³n
+Postulantes organizados en grupos, listos para la asistencia a clases.
+Excepciones
+E1: Capacidad de grupos excedida (Requiere habilitar nuevo grupo).
+
+CU05:            Gestionar Cuentas de Usuario y Roles (RBAC)          [Prioridad: Alta]
+Caso de Uso
+CU05 : Gestionar Cuentas y Roles.
+Prioridad
+Alta (ArquitectÃ³nico: Pilar de la seguridad y privacidad de datos).
+PropÃ³sito
+Administrar perfiles de usuario y asignar permisos especÃ­ficos basados en el rol (Admin, Docente, Postulante).
+DescripciÃ³n
+CreaciÃ³n y configuraciÃ³n de credenciales de acceso para garantizar que los docentes solo vean su carga horaria y los postulantes sus notas.
+Actores
+Administrador General.
+Actor iniciador
+Administrador General.
+PrecondiciÃ³n
+El Administrador debe estar autenticado con privilegios mÃ¡ximos.
+Flujo principal
+1. El actor accede al panel de GestiÃ³n de Usuarios.<br>2. El actor selecciona "Crear Nuevo Usuario" o "Editar Rol".<br>3. El sistema permite vincular al usuario con un perfil (RBAC).<br>4. El sistema asigna los permisos de lectura/escritura correspondientes.<br>5. El sistema registra la acciÃ³n en la bitÃ¡cora de auditorÃ­a.<br>6. El sistema confirma la actualizaciÃ³n del perfil.
+Post condiciÃ³n
+Perfiles de seguridad actualizados en PostgreSQL, garantizando la privacidad de la informaciÃ³n.
+Excepciones
+E1: Rol no definido en el sistema (Impide la asignaciÃ³n).
+
+CU02:               Cerrar SesiÃ³n Activa                                        [Prioridad: Media]
+Caso de Uso
+CU02 : Cerrar SesiÃ³n.
+Prioridad
+Media (Importante para la integridad de la sesiÃ³n y seguridad).
+PropÃ³sito
+Finalizar de forma segura la interacciÃ³n del usuario con la plataforma para evitar accesos no autorizados.
+DescripciÃ³n
+Permite que el usuario autenticado invalide su token de acceso y salga del entorno del sistema.
+Actores
+Usuario autenticado (cualquier rol: Administrador, Docente, Postulante).
+Actor iniciador
+Usuario autenticado (Cualquier rol).
+PrecondiciÃ³n
+Debe existir una sesiÃ³n activa en el navegador.
+Flujo principal
+1. El actor selecciona la opciÃ³n "Cerrar SesiÃ³n" en el menÃº de perfil.<br>2. El sistema destruye la sesiÃ³n del lado servidor.<br>3. El sistema limpia las cookies/tokens locales en el navegador.<br>4. El sistema redirige al actor a la pantalla de Login (CU01).
+Post condiciÃ³n
+La sesiÃ³n queda invalidada; el acceso a rutas protegidas es bloqueado.
+Excepciones
+E1: Falla de red (La sesiÃ³n expira por tiempo o el usuario debe limpiar cachÃ©).
+
+CU30:        Consultar BitÃ¡cora de Transacciones (TPS)                      [Prioridad: Media]
+Caso de Uso
+CU30 : Consultar BitÃ¡cora de Transacciones.
+Prioridad
+Media (ArquitectÃ³nico: Garantiza la auditabilidad y las propiedades ACID).
+PropÃ³sito
+Monitorear y auditar las acciones crÃ­ticas realizadas por los usuarios en el sistema.
+DescripciÃ³n
+Permite al administrador visualizar un registro histÃ³rico (log) de inserciones, modificaciones y eliminaciones.
+Actores
+Administrador, Tabla PostgreSQL (bitacora_transacciones).
+Actor iniciador
+Administrador.
+PrecondiciÃ³n
+El administrador debe tener permisos de auditorÃ­a.
+Flujo principal
+1. El actor accede al mÃ³dulo de AuditorÃ­a.<br>2. El sistema consulta la tabla de bitÃ¡cora en PostgreSQL.<br>3. El sistema muestra la lista de transacciones con fecha, hora, IP y usuario iniciador.<br>4. El actor puede filtrar por fecha o tipo de operaciÃ³n (Login, Registro, Notas).
+Post condiciÃ³n
+Visibilidad del rastro de auditorÃ­a para control interno.
+Excepciones
+E1: Tabla vacÃ­a (Muestra mensaje: "Sin registros para el periodo").
+
+CU04:             Cambiar ContraseÃ±a Propia                                         [Prioridad: Bajo]
+Caso de Uso
+CU04 : Cambiar ContraseÃ±a.
+Prioridad
+Bajo (Funcionalidad de soporte y mantenimiento de credenciales).
+PropÃ³sito
+Permitir que el usuario actualice sus credenciales por seguridad.
+DescripciÃ³n
+El usuario ingresa su clave actual y define una nueva cumpliendo parÃ¡metros de seguridad.
+Actores
+Usuario autenticado (cualquier rol).
+Actor iniciador
+Usuario autenticado.
+PrecondiciÃ³n
+El usuario debe estar logueado satisfactoriamente.
+Flujo principal
+1. El actor selecciona "Cambiar ContraseÃ±a".<br>2. El actor ingresa contraseÃ±a actual y la nueva contraseÃ±a (dos veces).<br>3. El sistema valida que la contraseÃ±a actual coincida con el hash de la BD.<br>4. El sistema encripta la nueva clave y actualiza PostgreSQL.<br>5. El sistema confirma el cambio exitoso.
+Post condiciÃ³n
+Credenciales actualizadas; se requiere la nueva clave en el prÃ³ximo login.
+Excepciones
+E1: ContraseÃ±a actual incorrecta (Bloquea el cambio). E2: Las nuevas contraseÃ±as no coinciden.
+
+CU03: Recuperar ContraseÃ±a de Usuario [Prioridad: Bajo]
+Caso de Uso
+CU03 : Recuperar ContraseÃ±a.
+Prioridad
+Bajo (Opcional segÃºn el alcance del proyecto).
+PropÃ³sito
+Restablecer el acceso al sistema para usuarios que olvidaron su clave.
+DescripciÃ³n
+Proceso mediante el cual el sistema envÃ­a un enlace de reinicio o genera una clave temporal vÃ­a correo electrÃ³nico.
+Actores
+Usuario no autenticado, Servidor de Correo Externo.
+Actor iniciador
+Usuario (Admin, Docente, Postulante).
+PrecondiciÃ³n
+El correo electrÃ³nico ingresado debe existir en la base de datos.
+Flujo principal
+1. El actor pulsa "Â¿OlvidÃ³ su contraseÃ±a?" en el login.<br>2. El actor introduce su correo electrÃ³nico registrado.<br>3. El sistema valida el correo y genera un token de seguridad temporal.<br>4. El sistema envÃ­a un email con el enlace de recuperaciÃ³n.<br>5. El actor accede al enlace y define una nueva clave.
+Post condiciÃ³n
+El acceso del usuario es restaurado con una nueva contraseÃ±a.
+Excepciones
+E1: Correo no registrado (Notifica que el usuario no existe).
+CU17:             Ejecutar Algoritmo de AdmisiÃ³n por Cupos                                         [Prioridad: Alto]
+Caso de Uso
+CU17 : Ejecutar Algoritmo de AdmisiÃ³n por Cupos.
+PropÃ³sito
+Asignar automÃ¡ticamente postulantes a carreras segÃºn sus puntajes, opciones preferidas y cupos disponibles.
+DescripciÃ³n
+El Administrador dispara el algoritmo de admisiÃ³n que recorre todos los postulantes aprobados, los ordena por puntaje descendente y los asigna a su 1ra o 2da opciÃ³n de carrera segÃºn disponibilidad de cupos. El resultado queda registrado en la BD.
+Actores
+Administrador.
+PrecondiciÃ³n
+Existen postulantes con estado â€œAprobadoâ€ y cupos configurados por carrera. El periodo de admisiÃ³n estÃ¡ activo.
+Flujo principal
+1. Administrador inicia el proceso de admisiÃ³n. 2. Sistema recupera postulantes aprobados y los ordena por puntaje. 3. Sistema recorre la lista asignando cada postulante a su 1ra opciÃ³n si hay cupo; si no, a la 2da. 4. Sistema persiste resultados y genera reporte de asignaciÃ³n.
+Flujo alternativo
+Si ambas opciones de un postulante estÃ¡n sin cupo, el sistema lo marca como â€œSin plazaâ€ y notifica al administrador.
+PostcondiciÃ³n
+Todos los postulantes aprobados tienen un estado de asignaciÃ³n registrado (carrera asignada o sin plaza). Los cupos de cada carrera se actualizaron.
+Prioridad
+Alto
+CU31:             Importar Cuentas de Usuario desde Excel/CSV                                         [Prioridad: Alto]
+Caso de Uso
+CU31 : Importar Cuentas de Usuario desde Excel/CSV.
+PropÃ³sito
+Permitir la carga masiva de cuentas de docentes y postulantes desde archivos Excel o CSV, evitando el registro manual uno a uno.
+DescripciÃ³n
+El Administrador sube un archivo Excel o CSV con columnas predefinidas (nombre, CI, correo, rol, carrera). El sistema valida el formato, detecta duplicados y crea las cuentas en bloque generando contraseÃ±as temporales automÃ¡ticas.
+Actores
+Administrador.
+PrecondiciÃ³n
+El administrador tiene el archivo Excel/CSV con el formato correcto de columnas. Tiene sesion activa con rol Administrador.
+Flujo principal
+1. Administrador sube el archivo Excel/CSV. 2. Sistema valida estructura de columnas y formato. 3. Sistema detecta duplicados por CI o correo. 4. Sistema crea cuentas nuevas en bloque con contraseÃ±a temporal. 5. Sistema devuelve resumen: X creadas, Y duplicadas, Z con error.
+Flujo alternativo
+Si el archivo tiene formato incorrecto o columnas faltantes, el sistema rechaza la importaciÃ³n y muestra los errores especÃ­ficos por fila.
+PostcondiciÃ³n
+Las cuentas vÃ¡lidas del archivo quedan creadas en el sistema con contraseÃ±a temporal. El administrador tiene el reporte de resultados de la importaciÃ³n.
+Prioridad
+Alto
+
+CU29:          Visualizar Dashboard de Indicadores (KPIs)                    [Prioridad: Media]
+Caso de Uso
+CU29 : Visualizar Dashboard.
+Prioridad
+Media (ArquitectÃ³nico: Punto de integraciÃ³n de datos para la toma de decisiones).
+PropÃ³sito
+Facilitar el control administrativo mediante un resumen ejecutivo en tiempo real de los indicadores clave del proceso de admisiÃ³n.
+DescripciÃ³n
+Panel grÃ¡fico que transforma los datos crudos de inscripciones y notas en indicadores estadÃ­sticos para agilizar la toma de decisiones del coordinador.
+Actores
+Administrador / Autoridades de la FICCT.
+Actor iniciador
+Administrador.
+PrecondiciÃ³n
+El usuario debe estar autenticado con rol de Administrador y deben existir registros previos en PostgreSQL.
+Flujo principal
+1. El actor selecciona la opciÃ³n "Dashboard" en el menÃº de navegaciÃ³n.<br>2. El sistema realiza consultas agregadas a las tablas de PostgreSQL (postulantes, notas, grupos).<br>3. El sistema calcula en tiempo real los 4 KPIs principales: Total inscritos, Total aprobados, Total reprobados y Total grupos habilitados.<br>4. El sistema procesa los datos mediante lÃ³gica de BI para generar grÃ¡ficos de rendimiento por materia.<br>5. El sistema renderiza el panel visual adaptado al dispositivo (Responsive).
+Post condiciÃ³n
+Visibilidad total del estado operativo y acadÃ©mico del CUP para las autoridades.
+Excepciones
+E1: Base de datos vacÃ­a (El sistema muestra los indicadores en cero). E2: Error de concurrencia (El sistema refresca los datos garantizando aislamiento - ACID).
+CU31:                      Importar Cuentas de Usuario desde Excel/CSV              [Prioridad: Alta]
+
+Caso de Uso
+CU31 : Importar Cuentas de Usuario desde Excel/CSV.
+Prioridad
+Alta (Requerimiento explÃ­cito del enunciado: generaciÃ³n automÃ¡tica de cuentas en lotes).
+PropÃ³sito
+Permitir que la administraciÃ³n acadÃ©mica cargue masivamente las cuentas de docentes, autoridades y coordinadores al inicio de cada gestiÃ³n, evitando la creaciÃ³n manual una por una.
+DescripciÃ³n
+El Administrador carga un archivo Excel (.xlsx) o CSV con los datos del personal acadÃ©mico. El sistema valida el formato, procesa cada fila, genera automÃ¡ticamente las credenciales de acceso y asigna el perfil de rol (RBAC) correspondiente a cada cuenta importada.
+Actores
+Administrador General. Archivo Excel/CSV (fuente de datos externa provista por la administraciÃ³n de la FICCT).
+Actor iniciador
+Administrador General.
+PrecondiciÃ³n
+El Administrador debe estar autenticado con privilegios mÃ¡ximos. El archivo Excel/CSV debe seguir la plantilla oficial del sistema (columnas: CI, Nombres, Apellidos, Correo, Rol, Especialidad).
+Flujo principal
+1. El actor accede al mÃ³dulo "ImportaciÃ³n masiva de usuarios". 2. El actor sube el archivo Excel o CSV desde su dispositivo. 3. El sistema valida que el formato del archivo sea correcto (extensiÃ³n y estructura de columnas). 4. El sistema procesa cada fila del archivo:    a. Verifica que el CI no estÃ© duplicado en la base de datos.    b. Valida que el campo Rol tenga un valor permitido (Docente, Autoridad, Coordinador).    c. Genera automÃ¡ticamente la contraseÃ±a temporal encriptada.    d. Crea la cuenta de usuario en PostgreSQL con el perfil RBAC asignado. 5. El sistema genera un reporte de importaciÃ³n con: filas exitosas, filas con error y motivo de cada error. 6. El sistema notifica al Administrador el resultado total de la importaciÃ³n.
+PostcondiciÃ³n
+Las cuentas vÃ¡lidas quedan creadas en el sistema con credenciales generadas y perfil RBAC asignado. Las filas con error quedan registradas en el reporte para correcciÃ³n manual.
+Excepciones
+E1: Formato de archivo incorrecto (el sistema rechaza la carga y muestra el formato esperado). E2: CI duplicado en el archivo o en la BD (la fila se marca como error, el resto se procesa). E3: Rol invÃ¡lido en una fila (la fila se descarta y se reporta). E4: Archivo vacÃ­o o sin datos (el sistema notifica y cancela la importaciÃ³n).
+
+
+
+
+
+ Estructurar caso de uso
+-470535292100Ciclo #1
+
+
+
+
+FLUJO DE TRABAJO: ANÃLISIS
+ AnÃ¡lisis de arquitectura
+Identificar paquetes
+33166056350SEGURIDAD Y ACCESOEste paquete comprende los mecanismos de protecciÃ³n y control de acceso al sistema CUP. Su propÃ³sito es validar las credenciales del personal administrativo, docentes y postulantes mediante el esquema RBAC, gestionando sesiones seguras y la bitÃ¡cora de transacciones (TPS) para proteger la integridad de los datos acadÃ©micos.00SEGURIDAD Y ACCESOEste paquete comprende los mecanismos de protecciÃ³n y control de acceso al sistema CUP. Su propÃ³sito es validar las credenciales del personal administrativo, docentes y postulantes mediante el esquema RBAC, gestionando sesiones seguras y la bitÃ¡cora de transacciones (TPS) para proteger la integridad de los datos acadÃ©micos.
+SEGURIDAD Y ACCESO
+Este paquete comprende los mecanismos de protecciÃ³n y control de acceso al sistema CUP. Su propÃ³sito es validar las credenciales del personal administrativo, docentes y postulantes mediante el esquema RBAC, gestionando sesiones seguras y la bitÃ¡cora de transacciones (TPS) para proteger la integridad de los datos acadÃ©micos.
+
+
+SEGURIDAD Y ACCESO
+Este paquete comprende los mecanismos de protecciÃ³n y control de acceso al sistema CUP. Su propÃ³sito es validar las credenciales del personal administrativo, docentes y postulantes mediante el esquema RBAC, gestionando sesiones seguras y la bitÃ¡cora de transacciones (TPS) para proteger la integridad de los datos acadÃ©micos.
+
+
+
+34766254445REGISTRO Y ADMISIÃ“NEncargado del flujo de inscripciÃ³n formal del postulante. Gestiona la captura de datos maestros en PostgreSQL, la validaciÃ³n de requisitos documentales y la integraciÃ³n con la pasarela de pagos externa, asegurando que solo los bachilleres habilitados financieramente procedan a la fase de evaluaciÃ³n.00REGISTRO Y ADMISIÃ“NEncargado del flujo de inscripciÃ³n formal del postulante. Gestiona la captura de datos maestros en PostgreSQL, la validaciÃ³n de requisitos documentales y la integraciÃ³n con la pasarela de pagos externa, asegurando que solo los bachilleres habilitados financieramente procedan a la fase de evaluaciÃ³n.lefttop
+REGISTRO Y ADMISIÃ“N
+Encargado del flujo de inscripciÃ³n formal del postulante. Gestiona la captura de datos maestros en PostgreSQL, la validaciÃ³n de requisitos documentales y la integraciÃ³n con la pasarela de pagos externa, asegurando que solo los bachilleres habilitados financieramente procedan a la fase de evaluaciÃ³n.
+
+REGISTRO Y ADMISIÃ“N
+Encargado del flujo de inscripciÃ³n formal del postulante. Gestiona la captura de datos maestros en PostgreSQL, la validaciÃ³n de requisitos documentales y la integraciÃ³n con la pasarela de pagos externa, asegurando que solo los bachilleres habilitados financieramente procedan a la fase de evaluaciÃ³n.
+
+
+347662510160EVALUACIÃ“N ACADÃ‰MICAContiene la lÃ³gica de negocio central para el procesamiento de calificaciones. Implementa los controladores responsables de gestionar las notas de las 4 materias troncales y ejecutar el Algoritmo de Promedios exigido para determinar el estado de aprobaciÃ³n (>=60) de forma automatizada.00EVALUACIÃ“N ACADÃ‰MICAContiene la lÃ³gica de negocio central para el procesamiento de calificaciones. Implementa los controladores responsables de gestionar las notas de las 4 materias troncales y ejecutar el Algoritmo de Promedios exigido para determinar el estado de aprobaciÃ³n (>=60) de forma automatizada.
+EVALUACIÃ“N ACADÃ‰MICA
+Contiene la lÃ³gica de negocio central para el procesamiento de calificaciones. Implementa los controladores responsables de gestionar las notas de las 4 materias troncales y ejecutar el Algoritmo de Promedios exigido para determinar el estado de aprobaciÃ³n (>=60) de forma automatizada.
+
+
+EVALUACIÃ“N ACADÃ‰MICA
+Contiene la lÃ³gica de negocio central para el procesamiento de calificaciones. Implementa los controladores responsables de gestionar las notas de las 4 materias troncales y ejecutar el Algoritmo de Promedios exigido para determinar el estado de aprobaciÃ³n (>=60) de forma automatizada.
+
+
+-1962152368550030880052383790INTELIGENCIA DE NEGOCIOS (BI)Este paquete transforma los datos transaccionales brutos en informaciÃ³n estratÃ©gica. Es responsable de la generaciÃ³n de indicadores clave (KPIs) visualizados en el Dashboard, permitiendo a las autoridades de la FICCT monitorear en tiempo real los Ã­ndices de aprobaciÃ³n y la ocupaciÃ³n de grupos.00INTELIGENCIA DE NEGOCIOS (BI)Este paquete transforma los datos transaccionales brutos en informaciÃ³n estratÃ©gica. Es responsable de la generaciÃ³n de indicadores clave (KPIs) visualizados en el Dashboard, permitiendo a las autoridades de la FICCT monitorear en tiempo real los Ã­ndices de aprobaciÃ³n y la ocupaciÃ³n de grupos.391668082550LOGÃSTICA ORGANIZACIONALAdministra la organizaciÃ³n fÃ­sica del curso de nivelaciÃ³n. Su funciÃ³n principal es ejecutar el algoritmo matemÃ¡tico CEIL para calcular la cantidad de grupos necesarios basÃ¡ndose en el lÃ­mite de capacidad de aulas (70 u 80 alumnos) y realizar la asignaciÃ³n masiva de estudiantes inscritos.00LOGÃSTICA ORGANIZACIONALAdministra la organizaciÃ³n fÃ­sica del curso de nivelaciÃ³n. Su funciÃ³n principal es ejecutar el algoritmo matemÃ¡tico CEIL para calcular la cantidad de grupos necesarios basÃ¡ndose en el lÃ­mite de capacidad de aulas (70 u 80 alumnos) y realizar la asignaciÃ³n masiva de estudiantes inscritos.-2743200
+INTELIGENCIA DE NEGOCIOS (BI)
+Este paquete transforma los datos transaccionales brutos en informaciÃ³n estratÃ©gica. Es responsable de la generaciÃ³n de indicadores clave (KPIs) visualizados en el Dashboard, permitiendo a las autoridades de la FICCT monitorear en tiempo real los Ã­ndices de aprobaciÃ³n y la ocupaciÃ³n de grupos.
+
+INTELIGENCIA DE NEGOCIOS (BI)
+Este paquete transforma los datos transaccionales brutos en informaciÃ³n estratÃ©gica. Es responsable de la generaciÃ³n de indicadores clave (KPIs) visualizados en el Dashboard, permitiendo a las autoridades de la FICCT monitorear en tiempo real los Ã­ndices de aprobaciÃ³n y la ocupaciÃ³n de grupos.
+
+LOGÃSTICA ORGANIZACIONAL
+Administra la organizaciÃ³n fÃ­sica del curso de nivelaciÃ³n. Su funciÃ³n principal es ejecutar el algoritmo matemÃ¡tico CEIL para calcular la cantidad de grupos necesarios basÃ¡ndose en el lÃ­mite de capacidad de aulas (70 u 80 alumnos) y realizar la asignaciÃ³n masiva de estudiantes inscritos.
+
+
+LOGÃSTICA ORGANIZACIONAL
+Administra la organizaciÃ³n fÃ­sica del curso de nivelaciÃ³n. Su funciÃ³n principal es ejecutar el algoritmo matemÃ¡tico CEIL para calcular la cantidad de grupos necesarios basÃ¡ndose en el lÃ­mite de capacidad de aulas (70 u 80 alumnos) y realizar la asignaciÃ³n masiva de estudiantes inscritos.
+
+
+
+3895725528955GESTIÃ“N DE DOCENTES â€” Administra el ciclo completo de los docentes dentro de la plataforma. Su funciÃ³n principal es permitir al Administrador registrar nuevos docentes (CU21), asignarlos a grupos y materias especÃ­ficas (CU22) e importar cuentas masivamente desde archivos Excel/CSV (CU31), garantizando que cada grupo del curso de nivelaciÃ³n cuente con un docente asignado antes del inicio de clases.020000GESTIÃ“N DE DOCENTES â€” Administra el ciclo completo de los docentes dentro de la plataforma. Su funciÃ³n principal es permitir al Administrador registrar nuevos docentes (CU21), asignarlos a grupos y materias especÃ­ficas (CU22) e importar cuentas masivamente desde archivos Excel/CSV (CU31), garantizando que cada grupo del curso de nivelaciÃ³n cuente con un docente asignado antes del inicio de clases.-17526054864000
+GESTIÃ“N DE DOCENTES â€” Administra el ciclo completo de los docentes dentro de la plataforma. Su funciÃ³n principal es permitir al Administrador registrar nuevos docentes (CU21), asignarlos a grupos y materias especÃ­ficas (CU22) e importar cuentas masivamente desde archivos Excel/CSV (CU31), garantizando que cada grupo del curso de nivelaciÃ³n cuente con un docente asignado antes del inicio de clases.
+GESTIÃ“N DE DOCENTES â€” Administra el ciclo completo de los docentes dentro de la plataforma. Su funciÃ³n principal es permitir al Administrador registrar nuevos docentes (CU21), asignarlos a grupos y materias especÃ­ficas (CU22) e importar cuentas masivamente desde archivos Excel/CSV (CU31), garantizando que cada grupo del curso de nivelaciÃ³n cuente con un docente asignado antes del inicio de clases.
+Relacionar paquetes y casos de uso
+736600963390
+
+
+
+
+
+
+
+
+
+
+
+
+161099588900
+
+
+
+
+
+
+
+
+
+
+center19240500
+
+
+
+
+
+
+
+
+558165571500
+
+
+
+
+
+right22860000
+
+       
+
+
+
+left35687000
+
+Vista de casos de uso
+Ciclo #1
+-42291046545500
+-33337513779500            
+
+94297538925500
+
+
+
+
+
+-247650000
+
+
+
+
+
+
+
+2476514351000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Diagrama de comunicaciÃ³n 
+Ciclo #1
+center374015CU01: Iniciar sesiÃ³n en plataforma
+
+
+center94615CU01: Iniciar SesiÃ³n en la Plataforma: El flujo comienza cuando el Usuario envÃ­a 1: ingresarCredenciales(user, pass) al objeto <<boundary>> IU_Login. Esta interfaz invoca 2: validarAcceso() en el <<control>> CTR_Auth, el cual ejecuta 3: buscarUsuario() en la <<entity>> CE_Usuario. Tras recibir 4: retornoHash(), el controlador verifica la clave, genera un token JWT y ordena 5: redirigirADashboard() a la interfaz.020000CU01: Iniciar SesiÃ³n en la Plataforma: El flujo comienza cuando el Usuario envÃ­a 1: ingresarCredenciales(user, pass) al objeto <<boundary>> IU_Login. Esta interfaz invoca 2: validarAcceso() en el <<control>> CTR_Auth, el cual ejecuta 3: buscarUsuario() en la <<entity>> CE_Usuario. Tras recibir 4: retornoHash(), el controlador verifica la clave, genera un token JWT y ordena 5: redirigirADashboard() a la interfaz.
+CU01: Iniciar SesiÃ³n en la Plataforma: El flujo comienza cuando el Usuario envÃ­a 1: ingresarCredenciales(user, pass) al objeto <<boundary>> IU_Login. Esta interfaz invoca 2: validarAcceso() en el <<control>> CTR_Auth, el cual ejecuta 3: buscarUsuario() en la <<entity>> CE_Usuario. Tras recibir 4: retornoHash(), el controlador verifica la clave, genera un token JWT y ordena 5: redirigirADashboard() a la interfaz.
+CU01: Iniciar SesiÃ³n en la Plataforma: El flujo comienza cuando el Usuario envÃ­a 1: ingresarCredenciales(user, pass) al objeto <<boundary>> IU_Login. Esta interfaz invoca 2: validarAcceso() en el <<control>> CTR_Auth, el cual ejecuta 3: buscarUsuario() en la <<entity>> CE_Usuario. Tras recibir 4: retornoHash(), el controlador verifica la clave, genera un token JWT y ordena 5: redirigirADashboard() a la interfaz.
+CU02: Cerrar sesiÃ³n-33718547815500
+
+CU02: Cerrar SesiÃ³n Activa: El usuario solicita la salida desde el menÃº. El CTR_Auth destruye la sesiÃ³n en el servidor, invalida el token y solicita a la interfaz limpiar el almacenamiento local y mostrar la pantalla de acceso.
+
+-45148532829500CU05: Gestionar Cuentas y Roles (RBAC)
+
+CU05: Gestionar Cuentas y Roles (RBAC): El Administrador en IU_Usuarios envÃ­a parÃ¡metros de perfil al <<control>> CTR_Admin. Este interactÃºa con las entidades CE_Usuario y CE_Rol para actualizar privilegios, garantizando que el personal acceda solo a funciones autorizadas (ej. Docentes solo a sus notas).
+
+-2800354394200CU07: Procesar Pago de InscripciÃ³n (InteracciÃ³n con Pasarela)
+CU07: Procesar Pago de InscripciÃ³n: El Postulante activa la transacciÃ³n en la IU_Pago. El <<control>> CTR_Transaccion crea una orden de pago y se comunica con el Actor Externo Pasarela de Pagos. Al recibir el mensaje de Ã©xito, el controlador persiste el registro en CE_Pago y actualiza el estado del postulante a "Habilitado".
+
+-2990854083050CU08: Registrar Nuevo Postulante (Datos personales y acadÃ©micos)
+CU08: Registrar Nuevo Postulante: En la IU_Registro, se capturan los datos personales y acadÃ©micos. El <<control>> CTR_Postulante valida la unicidad del CI en la entidad CE_Postulante. Si es correcto, guarda la informaciÃ³n y vincula el registro con el pago previo, estableciendo la entidad base del sistema.
+
+right37846000CU13: Registrar Notas de Materias (ComputaciÃ³n, MatemÃ¡ticas, InglÃ©s, FÃ­sica)
+CU13: Registrar Notas de Materias: El Docente ingresa calificaciones en IU_Evaluacion. El <<control>> CTR_Academico valida que el rango sea 0-100 y persiste el dato en la entidad CE_Nota. Al terminar, dispara automÃ¡ticamente el cÃ¡lculo de promedios.
+
+
+right45847000CU15: Calcular Promedio Final AutomÃ¡ticamente
+CU15: Calcular Promedio Final AutomÃ¡ticamente: Tras la tercera nota, el sistema activa el controlador para recuperar los valores de CE_Nota. El objeto aplica la fÃ³rmula (N1+N2+N3)/3 y actualiza el campo promedio_final en la entidad CE_Postulante.
+
+right45148500CU16: Verificar Estado de AprobaciÃ³n (Promedio â‰¥ 60)
+CU16: Verificar Estado de AprobaciÃ³n: El controlador acadÃ©mico lee el promedio final de CE_Postulante. Aplica la regla: si promedio >= 60, entonces estado = 'APROBADO'. El resultado se persiste en el registro del estudiante.
+
+
+99060032448500CU19: Calcular Cantidad de Grupos Necesarios (Algoritmo CEIL)
+
+CU19: Calcular Cantidad de Grupos Necesarios: El Administrador solicita el cÃ¡lculo en IU_Logistica. El <<control>> CTR_Distribucion cuenta los inscritos en CE_Postulante, aplica el Algoritmo CEIL (Total/80) y crea masivamente las entidades CE_Grupo necesarias.
+
+right32321500CU20: Asignar Postulantes a Grupos y Aulas
+
+CU20: Asignar Postulantes a Grupos y Aulas: El sistema activa el controlador para recuperar estudiantes sin aula. El controlador recorre los grupos disponibles, valida el lÃ­mite de 70 alumnos por aula y persiste la asignaciÃ³n en la entidad CE_Postulante_Grupo.
+
+-26098544958000CU29: Visualizar Dashboard de Indicadores Clave (KPIs)
+
+CU29: Visualizar Dashboard de Indicadores (KPIs): Al ingresar a la IU_Dashboard, el <<control>> CTR_BI realiza consultas agregadas (conteo, sumatoria, promedios) sobre las entidades del sistema. Procesa los datos en tiempo real y los envÃ­a a la interfaz para generar grÃ¡ficos de rendimiento y estados de admisiÃ³n.
+
+right32258000CU30: Consultar BitÃ¡cora de AuditorÃ­a del Sistema (TPS)
+
+CU30: Consultar BitÃ¡cora de Transacciones (TPS): El Administrador accede a IU_Auditoria. El <<control>> CTR_Audit recupera los registros histÃ³ricos de la entidad CE_TPS, permitiendo visualizar quiÃ©n, cuÃ¡ndo y quÃ© transacciÃ³n realizÃ³ para auditorÃ­a interna.
+
+-34671047180500CU03: Recuperar ContraseÃ±a de Usuario
+
+CU03: Recuperar ContraseÃ±a de Usuario: La IU_Login recibe el correo y lo envÃ­a al CTR_Auth, el cual valida la existencia en CE_Usuario. Si es vÃ¡lido, genera un enlace temporal Ãºnico y activa el envÃ­o de un correo electrÃ³nico externo.
+
+right36004500CU04: Cambiar ContraseÃ±a Propia
+CU04: Cambiar ContraseÃ±a Propia: Desde el perfil de usuario, el CTR_Auth recibe la clave antigua y la nueva. Valida el hash actual en la entidad y, tras confirmar, sobrescribe el registro con la nueva clave encriptada
+
+-25146041211500CU17: Ejecutar Algoritmo de AdmisiÃ³n por Cupos (1ra y 2da opciÃ³n)
+
+CU17: Ejecutar Algoritmo de AdmisiÃ³n por Cupos: El Administrador activa el proceso desde IU_Admision. El controlador ordena a los postulantes por mÃ©rito acadÃ©mico, recorre los cupos disponibles por carrera y asigna la 1ra o 2da opciÃ³n, actualizando la relaciÃ³n en la base de datos.
+CU31: Importar Cuentas de Usuario desde Excel/CSV (Carga Masiva)
+-3657601397000
+CU31: Importar Cuentas desde Excel/CSV: El Administrador carga un archivo en IU_Importacion. El <<control>> CTR_Usuario procesa los registros masivos, valida duplicados contra la base de datos y crea automÃ¡ticamente las cuentas de acceso en CE_Usuario asignando los perfiles correspondientes.
+
+ AnÃ¡lisis de clases 
+Ciclo #1
+-40576535687000
+
+
+
+
+right35242500
+right282638500
+right220789500
+
+-591185276987000-60515500
+
+
+
+
+-4095750
+
+
+
+
+right3575050
+right22733000
+
+
+-318135235966000-323850628650
+center236582800
+
+
+-2801252767784-356235000
+-2305051705701
+
+
+-450215222377000-421640000
+
+ Analizar paquetes 
+Ciclo #1
+520-924  
+
+
+FLUJO DE TRABAJO: DISEÃ‘O
+ DiseÃ±o de arquitectura
+-41529035242500DiseÃ±o fÃ­sico (diagrama de despliegue)
+
+
+
+-720263243828400right35306000DiseÃ±o lÃ³gico (diagrama organizado en capas)
+
+
+
+
+-532014-5200
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ DiseÃ±o de datos
+DiseÃ±o de datos lÃ³gico 
+
+-40957524193500
+
+
+Mapeo y normalizaciÃ³n:
+
+
+
+
+DiseÃ±o de datos fÃ­sico
+-- ============================================================
+--  DISEÃ‘O FÃSICO â€” Sistema CUP (FICCT - UAGRM)
+--  Motor: PostgreSQL 15+
+--  GestiÃ³n: 1-2026
+-- ============================================================
+
+-- ============================================================
+--  EXTENSIONES
+-- ============================================================
+CREATE EXTENSION IF NOT EXISTS "pgcrypto";   -- gen_random_uuid(), crypt()
+CREATE EXTENSION IF NOT EXISTS "pg_trgm";    -- bÃºsqueda full-text en nombres
+
+-- ============================================================
+--  1. ROL
+-- ============================================================
+CREATE TABLE rol (
+    id_rol        SERIAL          PRIMARY KEY,
+    nombre_rol    VARCHAR(50)     NOT NULL UNIQUE,
+    descripcion   VARCHAR(255),
+    created_at    TIMESTAMPTZ     NOT NULL DEFAULT NOW()
+);
+
+COMMENT ON TABLE  rol              IS 'Roles RBAC del sistema (Administrador, Docente, Postulante).';
+COMMENT ON COLUMN rol.nombre_rol   IS 'Nombre Ãºnico del rol, p.ej. ADMIN, DOCENTE, POSTULANTE.';
+
+-- ============================================================
+--  2. USUARIO
+-- ============================================================
+CREATE TABLE usuario (
+    id_usuario     SERIAL          PRIMARY KEY,
+    ci             VARCHAR(20)     NOT NULL UNIQUE,
+    nombre         VARCHAR(100)    NOT NULL,
+    apellido       VARCHAR(100)    NOT NULL,
+    email          VARCHAR(150)    NOT NULL UNIQUE,
+    password_hash  VARCHAR(255)    NOT NULL,
+    id_rol         INT             NOT NULL REFERENCES rol(id_rol)
+                                   ON UPDATE CASCADE ON DELETE RESTRICT,
+    activo         BOOLEAN         NOT NULL DEFAULT TRUE,
+    created_at     TIMESTAMPTZ     NOT NULL DEFAULT NOW(),
+    updated_at     TIMESTAMPTZ     NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_usuario_rol    ON usuario(id_rol);
+CREATE INDEX idx_usuario_email  ON usuario(email);
+
+COMMENT ON TABLE  usuario              IS 'Cuenta de acceso al sistema. Cada persona (docente o postulante) tiene exactamente un usuario.';
+COMMENT ON COLUMN usuario.ci           IS 'CÃ©dula de identidad boliviana, sin extensiÃ³n departamental.';
+COMMENT ON COLUMN usuario.password_hash IS 'Hash bcrypt generado con pgcrypto.crypt(). Nunca almacenar texto plano.';
+COMMENT ON COLUMN usuario.id_rol       IS 'FK al rol RBAC asignado.';
+
+-- ============================================================
+--  3. BITACORA_AUDITORIA
+-- ============================================================
+CREATE TABLE bitacora_auditoria (
+    id_bitacora     BIGSERIAL       PRIMARY KEY,
+    id_usuario      INT             REFERENCES usuario(id_usuario)
+                                    ON UPDATE CASCADE ON DELETE SET NULL,
+    accion          VARCHAR(50)     NOT NULL
+                                    CHECK (accion IN ('LOGIN','LOGOUT','INSERT','UPDATE','DELETE','EXPORT')),
+    tabla_afectada  VARCHAR(100),
+    descripcion     TEXT,
+    ip_origen       INET,
+    fecha_hora      TIMESTAMPTZ     NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_bitacora_usuario   ON bitacora_auditoria(id_usuario);
+CREATE INDEX idx_bitacora_fecha     ON bitacora_auditoria(fecha_hora DESC);
+
+COMMENT ON TABLE  bitacora_auditoria           IS 'Registro inmutable de todas las acciones relevantes del sistema (trazabilidad RBAC).';
+COMMENT ON COLUMN bitacora_auditoria.ip_origen  IS 'Tipo INET de PostgreSQL; soporta IPv4 e IPv6 sin conversiÃ³n.';
+COMMENT ON COLUMN bitacora_auditoria.accion     IS 'Conjunto cerrado de acciones auditables.';
+
+-- ============================================================
+--  4. PARAMETRO_SISTEMA  (no modelado en MDJ; inferido del doc)
+-- ============================================================
+CREATE TABLE parametro_sistema (
+    id_parametro    SERIAL          PRIMARY KEY,
+    clave           VARCHAR(100)    NOT NULL UNIQUE,
+    valor           TEXT            NOT NULL,
+    descripcion     VARCHAR(255),
+    updated_at      TIMESTAMPTZ     NOT NULL DEFAULT NOW()
+);
+
+COMMENT ON TABLE parametro_sistema IS 'ParÃ¡metros configurables en caliente: cupo_min_grupo, nota_aprobacion, etc.';
+
+-- ============================================================
+--  5. PERIODO_ADMISION
+-- ============================================================
+CREATE TABLE periodo_admision (
+    id_periodo   SERIAL          PRIMARY KEY,
+    nombre       VARCHAR(100)    NOT NULL,
+    fecha_inicio DATE            NOT NULL,
+    fecha_fin    DATE            NOT NULL,
+    estado       VARCHAR(20)     NOT NULL DEFAULT 'PLANIFICADO'
+                                 CHECK (estado IN ('PLANIFICADO','ACTIVO','CERRADO')),
+    created_at   TIMESTAMPTZ     NOT NULL DEFAULT NOW(),
+    CONSTRAINT ck_periodo_fechas CHECK (fecha_fin > fecha_inicio)
+);
+
+COMMENT ON TABLE  periodo_admision        IS 'Convocatoria acadÃ©mica del CUP. Solo puede existir un perÃ­odo ACTIVO a la vez (controlado en aplicaciÃ³n).';
+COMMENT ON COLUMN periodo_admision.estado IS 'Ciclo de vida del perÃ­odo.';
+
+-- ============================================================
+--  6. CARRERA
+-- ============================================================
+CREATE TABLE carrera (
+    id_carrera        SERIAL          PRIMARY KEY,
+    nombre_carrera    VARCHAR(150)    NOT NULL,
+    sigla             VARCHAR(10)     NOT NULL UNIQUE,
+    cupos_totales     INT             NOT NULL CHECK (cupos_totales > 0),
+    cupos_disponibles INT             NOT NULL CHECK (cupos_disponibles >= 0),
+    activo            BOOLEAN         NOT NULL DEFAULT TRUE,
+    CONSTRAINT ck_cupos CHECK (cupos_disponibles <= cupos_totales)
+);
+
+COMMENT ON TABLE  carrera                   IS 'Carreras de la FICCT disponibles para postulaciÃ³n.';
+COMMENT ON COLUMN carrera.sigla             IS 'CÃ³digo corto Ãºnico, p.ej. ING-SIS, ING-IND.';
+COMMENT ON COLUMN carrera.cupos_disponibles IS 'Se decrementa automÃ¡ticamente al confirmar admisiÃ³n (trigger o lÃ³gica de negocio).';
+
+-- ============================================================
+--  7. POSTULANTE
+-- ============================================================
+CREATE TABLE postulante (
+    id_postulante    SERIAL          PRIMARY KEY,
+    id_usuario       INT             NOT NULL UNIQUE
+                                     REFERENCES usuario(id_usuario)
+                                     ON UPDATE CASCADE ON DELETE RESTRICT,
+    ci               VARCHAR(20)     NOT NULL UNIQUE,
+    nombre           VARCHAR(100)    NOT NULL,
+    apellido         VARCHAR(100)    NOT NULL,
+    fecha_nacimiento DATE            NOT NULL,
+    telefono         VARCHAR(20),
+    colegio_origen   VARCHAR(200),
+    created_at       TIMESTAMPTZ     NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_postulante_usuario ON postulante(id_usuario);
+
+COMMENT ON TABLE  postulante            IS 'Datos acadÃ©micos y personales del aspirante al CUP.';
+COMMENT ON COLUMN postulante.id_usuario IS 'RelaciÃ³n 1-a-1 con USUARIO (UNIQUE). El usuario tiene rol POSTULANTE.';
+
+-- ============================================================
+--  8. POSTULACION
+-- ============================================================
+CREATE TABLE postulacion (
+    id_postulacion      SERIAL          PRIMARY KEY,
+    id_postulante       INT             NOT NULL REFERENCES postulante(id_postulante)
+                                        ON UPDATE CASCADE ON DELETE RESTRICT,
+    id_carrera_opcion1  INT             NOT NULL REFERENCES carrera(id_carrera)
+                                        ON UPDATE CASCADE ON DELETE RESTRICT,
+    id_carrera_opcion2  INT             REFERENCES carrera(id_carrera)
+                                        ON UPDATE CASCADE ON DELETE SET NULL,
+    puntaje_total       NUMERIC(5,2)    CHECK (puntaje_total BETWEEN 0 AND 100),
+    estado              VARCHAR(20)     NOT NULL DEFAULT 'PENDIENTE'
+                                        CHECK (estado IN ('PENDIENTE','APROBADO','REPROBADO','ADMITIDO')),
+    id_carrera_asignada INT             REFERENCES carrera(id_carrera)
+                                        ON UPDATE CASCADE ON DELETE SET NULL,
+    fecha_postulacion   TIMESTAMPTZ     NOT NULL DEFAULT NOW(),
+    CONSTRAINT ck_opciones_distintas CHECK (id_carrera_opcion1 <> id_carrera_opcion2)
+);
+
+CREATE INDEX idx_postulacion_postulante ON postulacion(id_postulante);
+CREATE INDEX idx_postulacion_estado     ON postulacion(estado);
+
+COMMENT ON TABLE  postulacion                   IS 'Solicitud formal de ingreso al CUP. Registra las dos opciones de carrera y el resultado final.';
+COMMENT ON COLUMN postulacion.puntaje_total      IS 'Promedio ponderado calculado por CU17 (Algoritmo AdmisiÃ³n).';
+COMMENT ON COLUMN postulacion.id_carrera_asignada IS 'Carrera asignada al concluir el algoritmo de admisiÃ³n (CU17).';
+
+-- ============================================================
+--  9. DOCUMENTO
+-- ============================================================
+CREATE TABLE documento (
+    id_documento         SERIAL          PRIMARY KEY,
+    id_postulante        INT             NOT NULL REFERENCES postulante(id_postulante)
+                                         ON UPDATE CASCADE ON DELETE CASCADE,
+    tipo_documento       VARCHAR(50)     NOT NULL
+                                         CHECK (tipo_documento IN ('CI','CERTIFICADO_BACHILLER','FOTO','COMPROBANTE_PAGO','OTRO')),
+    nombre_archivo       VARCHAR(255)    NOT NULL,
+    ruta_archivo         VARCHAR(500)    NOT NULL,
+    estado_verificacion  VARCHAR(20)     NOT NULL DEFAULT 'PENDIENTE'
+                                         CHECK (estado_verificacion IN ('PENDIENTE','VERIFICADO','RECHAZADO')),
+    fecha_subida         TIMESTAMPTZ     NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_documento_postulante ON documento(id_postulante);
+
+COMMENT ON TABLE  documento                      IS 'Archivos digitales requeridos durante la inscripciÃ³n del postulante.';
+COMMENT ON COLUMN documento.ruta_archivo          IS 'Ruta relativa en el sistema de archivos o URL del bucket de almacenamiento en nube.';
+COMMENT ON COLUMN documento.estado_verificacion   IS 'Estado de revisiÃ³n manual por el Administrador.';
+
+-- ============================================================
+-- 10. PAGO
+-- ============================================================
+CREATE TABLE pago (
+    id_pago            SERIAL          PRIMARY KEY,
+    id_postulante      INT             NOT NULL REFERENCES postulante(id_postulante)
+                                       ON UPDATE CASCADE ON DELETE RESTRICT,
+    monto              NUMERIC(8,2)    NOT NULL CHECK (monto > 0),
+    concepto           VARCHAR(150)    NOT NULL,
+    estado_pago        VARCHAR(20)     NOT NULL DEFAULT 'PENDIENTE'
+                                       CHECK (estado_pago IN ('PENDIENTE','CONFIRMADO','RECHAZADO')),
+    codigo_comprobante VARCHAR(100)    UNIQUE,
+    fecha_pago         TIMESTAMPTZ     NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_pago_postulante ON pago(id_postulante);
+CREATE INDEX idx_pago_estado     ON pago(estado_pago);
+
+COMMENT ON TABLE  pago                    IS 'Registro de pagos de inscripciÃ³n procesados a travÃ©s de la pasarela externa (CU07).';
+COMMENT ON COLUMN pago.codigo_comprobante  IS 'CÃ³digo Ãºnico devuelto por la pasarela de pago. UNIQUE garantiza idempotencia.';
+
+-- ============================================================
+-- 11. MATERIA
+-- ============================================================
+CREATE TABLE materia (
+    id_materia     SERIAL          PRIMARY KEY,
+    nombre_materia VARCHAR(100)    NOT NULL,
+    sigla          VARCHAR(10)     NOT NULL UNIQUE,
+    horas_semana   INT             NOT NULL CHECK (horas_semana > 0),
+    activo         BOOLEAN         NOT NULL DEFAULT TRUE
+);
+
+COMMENT ON TABLE materia IS 'Materias del plan de estudios del CUP (MatemÃ¡ticas, FÃ­sica, QuÃ­mica, etc.).';
+
+-- ============================================================
+-- 12. EVALUACION
+-- ============================================================
+CREATE TABLE evaluacion (
+    id_evaluacion    SERIAL          PRIMARY KEY,
+    id_postulante    INT             NOT NULL REFERENCES postulante(id_postulante)
+                                     ON UPDATE CASCADE ON DELETE RESTRICT,
+    id_materia       INT             NOT NULL REFERENCES materia(id_materia)
+                                     ON UPDATE CASCADE ON DELETE RESTRICT,
+    nota1            NUMERIC(5,2)    CHECK (nota1 BETWEEN 0 AND 100),
+    nota2            NUMERIC(5,2)    CHECK (nota2 BETWEEN 0 AND 100),
+    nota3            NUMERIC(5,2)    CHECK (nota3 BETWEEN 0 AND 100),
+    promedio         NUMERIC(5,2)    GENERATED ALWAYS AS
+                                     (ROUND((COALESCE(nota1,0) + COALESCE(nota2,0) + COALESCE(nota3,0)) / 3.0, 2))
+                                     STORED,
+    estado           VARCHAR(20)     NOT NULL DEFAULT 'PENDIENTE'
+                                     CHECK (estado IN ('PENDIENTE','APROBADO','REPROBADO')),
+    fecha_evaluacion TIMESTAMPTZ     NOT NULL DEFAULT NOW(),
+    CONSTRAINT uq_evaluacion UNIQUE (id_postulante, id_materia)
+);
+
+CREATE INDEX idx_evaluacion_postulante ON evaluacion(id_postulante);
+CREATE INDEX idx_evaluacion_materia    ON evaluacion(id_materia);
+
+COMMENT ON TABLE  evaluacion          IS 'Calificaciones del postulante por materia. El promedio es una columna GENERATED ALWAYS AS STORED (calculada automÃ¡ticamente por PostgreSQL).';
+COMMENT ON COLUMN evaluacion.promedio  IS 'Columna calculada: (nota1+nota2+nota3)/3. No requiere trigger ni CU15 adicional; PostgreSQL la actualiza al hacer INSERT/UPDATE.';
+COMMENT ON COLUMN evaluacion.estado    IS 'Derivado del promedio: APROBADO si promedio >= 60, REPROBADO en caso contrario (actualizado por trigger o lÃ³gica CU16).';
+
+-- ============================================================
+-- 13. GRUPO
+-- ============================================================
+CREATE TABLE grupo (
+    id_grupo        SERIAL          PRIMARY KEY,
+    nombre_grupo    VARCHAR(50)     NOT NULL UNIQUE,
+    capacidad_maxima INT            NOT NULL DEFAULT 80 CHECK (capacidad_maxima > 0),
+    aula            VARCHAR(50),
+    turno           VARCHAR(10)     NOT NULL
+                                    CHECK (turno IN ('MAÃ‘ANA','TARDE','NOCHE')),
+    activo          BOOLEAN         NOT NULL DEFAULT TRUE
+);
+
+COMMENT ON TABLE  grupo             IS 'Grupo de estudio del CUP. La capacidad mÃ¡xima (80) es el divisor del algoritmo CEIL en CU19.';
+COMMENT ON COLUMN grupo.nombre_grupo IS 'Identificador visual del grupo, p.ej. A-MAÃ‘-2026, B-TAR-2026.';
+
+-- ============================================================
+-- 14. GRUPO_POSTULANTE
+-- ============================================================
+CREATE TABLE grupo_postulante (
+    id_grupo_postulante SERIAL      PRIMARY KEY,
+    id_grupo            INT         NOT NULL REFERENCES grupo(id_grupo)
+                                    ON UPDATE CASCADE ON DELETE RESTRICT,
+    id_postulante       INT         NOT NULL REFERENCES postulante(id_postulante)
+                                    ON UPDATE CASCADE ON DELETE RESTRICT,
+    fecha_asignacion    TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    CONSTRAINT uq_grupo_postulante UNIQUE (id_grupo, id_postulante)
+);
+
+CREATE INDEX idx_gp_grupo      ON grupo_postulante(id_grupo);
+CREATE INDEX idx_gp_postulante ON grupo_postulante(id_postulante);
+
+COMMENT ON TABLE grupo_postulante IS 'Tabla de uniÃ³n N:M entre GRUPO y POSTULANTE. Un postulante pertenece a un solo grupo (controlado en aplicaciÃ³n).';
+
+-- ============================================================
+-- 15. GRUPO_MATERIA
+-- ============================================================
+CREATE TABLE grupo_materia (
+    id_grupo_materia SERIAL       PRIMARY KEY,
+    id_grupo         INT          NOT NULL REFERENCES grupo(id_grupo)
+                                  ON UPDATE CASCADE ON DELETE CASCADE,
+    id_materia       INT          NOT NULL REFERENCES materia(id_materia)
+                                  ON UPDATE CASCADE ON DELETE RESTRICT,
+    horario          VARCHAR(100),
+    CONSTRAINT uq_grupo_materia UNIQUE (id_grupo, id_materia)
+);
+
+COMMENT ON TABLE grupo_materia IS 'Materias asignadas a cada grupo con su horario de clase.';
+
+-- ============================================================
+-- 16. DOCENTE
+-- ============================================================
+CREATE TABLE docente (
+    id_docente       SERIAL          PRIMARY KEY,
+    id_usuario       INT             NOT NULL UNIQUE
+                                     REFERENCES usuario(id_usuario)
+                                     ON UPDATE CASCADE ON DELETE RESTRICT,
+    especialidad     VARCHAR(150),
+    titulo_academico VARCHAR(50)     NOT NULL
+                                     CHECK (titulo_academico IN ('LICENCIATURA','MAESTRIA','DOCTORADO','DIPLOMADO')),
+    telefono         VARCHAR(20),
+    activo           BOOLEAN         NOT NULL DEFAULT TRUE,
+    created_at       TIMESTAMPTZ     NOT NULL DEFAULT NOW()
+);
+
+CREATE INDEX idx_docente_usuario ON docente(id_usuario);
+
+COMMENT ON TABLE  docente                  IS 'Perfil acadÃ©mico del docente. La validaciÃ³n de tÃ­tulo (maestrÃ­a o superior) se realiza en CU21.';
+COMMENT ON COLUMN docente.titulo_academico  IS 'Conjunto cerrado de tÃ­tulos aceptados por el reglamento FICCT.';
+
+-- ============================================================
+-- 17. ASIGNACION_DOCENTE
+-- ============================================================
+CREATE TABLE asignacion_docente (
+    id_asignacion    SERIAL          PRIMARY KEY,
+    id_docente       INT             NOT NULL REFERENCES docente(id_docente)
+                                     ON UPDATE CASCADE ON DELETE RESTRICT,
+    id_grupo         INT             NOT NULL REFERENCES grupo(id_grupo)
+                                     ON UPDATE CASCADE ON DELETE RESTRICT,
+    id_materia       INT             NOT NULL REFERENCES materia(id_materia)
+                                     ON UPDATE CASCADE ON DELETE RESTRICT,
+    fecha_asignacion TIMESTAMPTZ     NOT NULL DEFAULT NOW(),
+    activo           BOOLEAN         NOT NULL DEFAULT TRUE,
+    CONSTRAINT uq_asignacion UNIQUE (id_grupo, id_materia)   -- un docente por grupo-materia
+);
+
+CREATE INDEX idx_asignacion_docente  ON asignacion_docente(id_docente);
+CREATE INDEX idx_asignacion_grupo    ON asignacion_docente(id_grupo);
+
+COMMENT ON TABLE asignacion_docente IS 'Carga horaria: un docente asignado a un grupo y una materia especÃ­fica (CU22). La restricciÃ³n UNIQUE garantiza que no haya duplicados por grupo-materia.';
+
+-- ============================================================
+-- FIN DEL DISEÃ‘O FÃSICO
+-- ============================================================
+PoblaciÃ³n de datos
+-- ============================================================
+--  POBLACIÃ“N DE DATOS â€” Sistema CUP (FICCT - UAGRM)
+--  Motor: PostgreSQL 15+
+--  GestiÃ³n: 1-2026
+--  Nota: passwords en texto real se mostrarÃ­an como hash bcrypt
+--        en producciÃ³n usar: crypt('password', gen_salt('bf'))
+-- ============================================================
+
+-- ============================================================
+--  1. ROL
+-- ============================================================
+INSERT INTO rol (id_rol, nombre_rol, descripcion) VALUES
+(1, 'ADMIN',      'Administrador con acceso total al sistema CUP'),
+(2, 'DOCENTE',    'Docente con acceso a registro de notas y grupos asignados'),
+(3, 'POSTULANTE', 'Aspirante al curso de nivelaciÃ³n con acceso a su perfil y resultados');
+
+-- ============================================================
+--  2. USUARIO  (passwords: Admin123!, Docente01!, Postulante01! ... en hash bcrypt simulado)
+-- ============================================================
+INSERT INTO usuario (id_usuario, ci, nombre, apellido, email, password_hash, id_rol, activo) VALUES
+-- Administradores
+(1,  '5012347',   'Carlos',    'Vaca Diez',      'cvacadiez@ficct.uagrm.edu.bo',   '$2a$12$AdmHash0000000000001', 1, TRUE),
+(2,  '5089231',   'Lorena',    'Antelo SuÃ¡rez',  'lantelo@ficct.uagrm.edu.bo',      '$2a$12$AdmHash0000000000002', 1, TRUE),
+-- Docentes
+(3,  '4123456',   'Hugo',      'Rocha Vargas',   'hrocha@ficct.uagrm.edu.bo',       '$2a$12$DocHash0000000000001', 2, TRUE),
+(4,  '4234567',   'Patricia',  'MÃ©ndez Torres',  'pmendez@ficct.uagrm.edu.bo',      '$2a$12$DocHash0000000000002', 2, TRUE),
+(5,  '4345678',   'Rodrigo',   'Salinas Paz',    'rsalinas@ficct.uagrm.edu.bo',     '$2a$12$DocHash0000000000003', 2, TRUE),
+(6,  '4456789',   'Carla',     'IbÃ¡Ã±ez Vaca',    'cibanez@ficct.uagrm.edu.bo',      '$2a$12$DocHash0000000000004', 2, TRUE),
+(7,  '4567890',   'Marcelo',   'Torrez Aguilar', 'mtorrez@ficct.uagrm.edu.bo',      '$2a$12$DocHash0000000000005', 2, TRUE),
+-- Postulantes
+(8,  '8123456',   'Ana',       'Flores Quiroga', 'ana.flores@gmail.com',            '$2a$12$PosHash0000000000001', 3, TRUE),
+(9,  '8234567',   'Luis',      'Peredo Castro',  'luis.peredo@gmail.com',           '$2a$12$PosHash0000000000002', 3, TRUE),
+(10, '8345678',   'Valeria',   'GuzmÃ¡n RÃ­os',    'valeria.guzman@gmail.com',        '$2a$12$PosHash0000000000003', 3, TRUE),
+(11, '8456789',   'Diego',     'Montero SuÃ¡rez', 'diego.montero@gmail.com',         '$2a$12$PosHash0000000000004', 3, TRUE),
+(12, '8567890',   'Daniela',   'Rivero Mamani',  'daniela.rivero@gmail.com',        '$2a$12$PosHash0000000000005', 3, TRUE),
+(13, '8678901',   'Sergio',    'Ãlvarez Pinto',  'sergio.alvarez@gmail.com',        '$2a$12$PosHash0000000000006', 3, TRUE),
+(14, '8789012',   'Camila',    'DurÃ¡n Heredia',  'camila.duran@gmail.com',          '$2a$12$PosHash0000000000007', 3, TRUE),
+(15, '8890123',   'Fernanda',  'CossÃ­o Velasco', 'fernanda.cossio@gmail.com',       '$2a$12$PosHash0000000000008', 3, TRUE);
+
+SELECT setval('usuario_id_usuario_seq', 15);
+
+-- ============================================================
+--  3. BITACORA_AUDITORIA
+-- ============================================================
+INSERT INTO bitacora_auditoria (id_usuario, accion, tabla_afectada, descripcion, ip_origen, fecha_hora) VALUES
+(1, 'LOGIN',  NULL,       'Inicio de sesiÃ³n exitoso - Admin',                      '192.168.1.10', '2026-03-01 08:00:00-04'),
+(1, 'INSERT', 'carrera',  'Registro de carrera ING-SIS',                           '192.168.1.10', '2026-03-01 08:15:00-04'),
+(1, 'INSERT', 'periodo_admision', 'CreaciÃ³n del perÃ­odo GestiÃ³n 1-2026',           '192.168.1.10', '2026-03-01 08:30:00-04'),
+(8, 'LOGIN',  NULL,       'Inicio de sesiÃ³n - Postulante Ana Flores',              '190.121.44.12','2026-03-05 09:10:00-04'),
+(8, 'INSERT', 'postulante','Registro de postulante Ana Flores Quiroga',            '190.121.44.12','2026-03-05 09:12:00-04'),
+(3, 'LOGIN',  NULL,       'Inicio de sesiÃ³n - Docente Hugo Rocha',                 '192.168.1.21', '2026-03-10 07:45:00-04'),
+(3, 'INSERT', 'evaluacion','Registro de notas materia MAT - grupo A',              '192.168.1.21', '2026-03-10 10:00:00-04'),
+(1, 'UPDATE', 'postulacion','EjecuciÃ³n algoritmo admisiÃ³n CU17 - 8 postulantes',   '192.168.1.10', '2026-04-01 14:00:00-04'),
+(1, 'EXPORT', 'reporte',  'ExportaciÃ³n Dashboard KPIs - PDF',                      '192.168.1.10', '2026-04-02 09:00:00-04'),
+(2, 'LOGIN',  NULL,       'Inicio de sesiÃ³n - Admin Lorena Antelo',                '192.168.1.11', '2026-04-05 08:00:00-04');
+
+-- ============================================================
+--  4. PARAMETRO_SISTEMA
+-- ============================================================
+INSERT INTO parametro_sistema (clave, valor, descripcion) VALUES
+('nota_minima_aprobacion', '60',   'Promedio mÃ­nimo para aprobar el CUP'),
+('capacidad_maxima_grupo', '80',   'Divisor del algoritmo CEIL(n/80) para calcular grupos (CU19)'),
+('monto_inscripcion_bs',   '150',  'Monto de inscripciÃ³n en bolivianos (CU07)'),
+('periodo_activo_id',      '1',    'ID del perÃ­odo de admisiÃ³n actualmente activo'),
+('max_notas_por_materia',  '3',    'NÃºmero mÃ¡ximo de calificaciones por materia por postulante'),
+('intentos_login_max',     '5',    'MÃ¡ximo de intentos fallidos antes de bloquear cuenta');
+
+-- ============================================================
+--  5. PERIODO_ADMISION
+-- ============================================================
+INSERT INTO periodo_admision (id_periodo, nombre, fecha_inicio, fecha_fin, estado) VALUES
+(1, 'GestiÃ³n 1-2026', '2026-03-01', '2026-06-30', 'ACTIVO');
+
+-- ============================================================
+--  6. CARRERA
+-- ============================================================
+INSERT INTO carrera (id_carrera, nombre_carrera, sigla, cupos_totales, cupos_disponibles, activo) VALUES
+(1, 'IngenierÃ­a en Sistemas Computacionales',     'ING-SIS', 200, 155, TRUE),
+(2, 'IngenierÃ­a Industrial',                      'ING-IND', 150, 120, TRUE),
+(3, 'IngenierÃ­a Civil',                           'ING-CIV', 180, 145, TRUE),
+(4, 'IngenierÃ­a ElÃ©ctrica',                       'ING-ELE', 100,  88, TRUE),
+(5, 'IngenierÃ­a ElectrÃ³nica y Telecomunicaciones','ING-ELC', 120, 105, TRUE);
+
+-- ============================================================
+--  7. POSTULANTE
+-- ============================================================
+INSERT INTO postulante (id_postulante, id_usuario, ci, nombre, apellido, fecha_nacimiento, telefono, colegio_origen) VALUES
+(1, 8,  '8123456', 'Ana',     'Flores Quiroga', '2007-04-12', '77812345', 'Colegio Nacional Florida'),
+(2, 9,  '8234567', 'Luis',    'Peredo Castro',  '2007-08-23', '77823456', 'Colegio Santa Ana'),
+(3, 10, '8345678', 'Valeria', 'GuzmÃ¡n RÃ­os',    '2006-11-05', '77834567', 'Colegio Juan Pablo II'),
+(4, 11, '8456789', 'Diego',   'Montero SuÃ¡rez', '2007-01-30', '77845678', 'U.E. La Salle'),
+(5, 12, '8567890', 'Daniela', 'Rivero Mamani',  '2006-07-17', '77856789', 'U.E. Santo Domingo'),
+(6, 13, '8678901', 'Sergio',  'Ãlvarez Pinto',  '2007-02-28', '77867890', 'Colegio Nacional Florida'),
+(7, 14, '8789012', 'Camila',  'DurÃ¡n Heredia',  '2006-09-14', '77878901', 'U.E. Santa Teresa'),
+(8, 15, '8890123', 'Fernanda','CossÃ­o Velasco',  '2007-05-03', '77889012', 'Colegio Juan Pablo II');
+
+SELECT setval('postulante_id_postulante_seq', 8);
+
+-- ============================================================
+--  8. POSTULACION
+-- ============================================================
+INSERT INTO postulacion (id_postulacion, id_postulante, id_carrera_opcion1, id_carrera_opcion2, puntaje_total, estado, id_carrera_asignada, fecha_postulacion) VALUES
+(1, 1, 1, 2, 78.33, 'ADMITIDO',  1, '2026-03-05 09:20:00-04'),
+(2, 2, 1, 3, 65.00, 'ADMITIDO',  1, '2026-03-06 10:00:00-04'),
+(3, 3, 2, 1, 82.67, 'ADMITIDO',  2, '2026-03-07 11:15:00-04'),
+(4, 4, 1, 5, 55.33, 'REPROBADO', NULL,'2026-03-08 08:30:00-04'),
+(5, 5, 3, 2, 70.00, 'ADMITIDO',  3, '2026-03-09 09:45:00-04'),
+(6, 6, 1, 4, 91.00, 'ADMITIDO',  1, '2026-03-10 10:30:00-04'),
+(7, 7, 4, 1, 60.33, 'ADMITIDO',  4, '2026-03-11 11:00:00-04'),
+(8, 8, 2, 3, 48.00, 'REPROBADO', NULL,'2026-03-12 08:00:00-04');
+
+-- ============================================================
+--  9. DOCUMENTO
+-- ============================================================
+INSERT INTO documento (id_postulante, tipo_documento, nombre_archivo, ruta_archivo, estado_verificacion) VALUES
+(1, 'CI',                  'ci_ana_flores.pdf',      '/uploads/docs/ci/ci_ana_flores.pdf',        'VERIFICADO'),
+(1, 'CERTIFICADO_BACHILLER','bach_ana_flores.pdf',   '/uploads/docs/bach/bach_ana_flores.pdf',    'VERIFICADO'),
+(1, 'COMPROBANTE_PAGO',    'pago_ana_flores.pdf',    '/uploads/docs/pagos/pago_ana_flores.pdf',   'VERIFICADO'),
+(2, 'CI',                  'ci_luis_peredo.pdf',     '/uploads/docs/ci/ci_luis_peredo.pdf',       'VERIFICADO'),
+(2, 'CERTIFICADO_BACHILLER','bach_luis_peredo.pdf',  '/uploads/docs/bach/bach_luis_peredo.pdf',   'VERIFICADO'),
+(3, 'CI',                  'ci_valeria_guzman.pdf',  '/uploads/docs/ci/ci_valeria_guzman.pdf',    'VERIFICADO'),
+(3, 'CERTIFICADO_BACHILLER','bach_valeria.pdf',      '/uploads/docs/bach/bach_valeria.pdf',       'PENDIENTE'),
+(4, 'CI',                  'ci_diego_montero.pdf',   '/uploads/docs/ci/ci_diego_montero.pdf',     'VERIFICADO'),
+(5, 'CI',                  'ci_daniela_rivero.pdf',  '/uploads/docs/ci/ci_daniela_rivero.pdf',    'VERIFICADO'),
+(5, 'COMPROBANTE_PAGO',    'pago_daniela.pdf',       '/uploads/docs/pagos/pago_daniela.pdf',      'VERIFICADO');
+
+-- ============================================================
+-- 10. PAGO
+-- ============================================================
+INSERT INTO pago (id_postulante, monto, concepto, estado_pago, codigo_comprobante, fecha_pago) VALUES
+(1, 150.00, 'InscripciÃ³n CUP GestiÃ³n 1-2026', 'CONFIRMADO', 'TIGO-20260305-000001', '2026-03-05 09:15:00-04'),
+(2, 150.00, 'InscripciÃ³n CUP GestiÃ³n 1-2026', 'CONFIRMADO', 'TIGO-20260306-000002', '2026-03-06 09:55:00-04'),
+(3, 150.00, 'InscripciÃ³n CUP GestiÃ³n 1-2026', 'CONFIRMADO', 'BNB-20260307-000003',  '2026-03-07 11:10:00-04'),
+(4, 150.00, 'InscripciÃ³n CUP GestiÃ³n 1-2026', 'CONFIRMADO', 'TIGO-20260308-000004', '2026-03-08 08:25:00-04'),
+(5, 150.00, 'InscripciÃ³n CUP GestiÃ³n 1-2026', 'CONFIRMADO', 'BNB-20260309-000005',  '2026-03-09 09:40:00-04'),
+(6, 150.00, 'InscripciÃ³n CUP GestiÃ³n 1-2026', 'CONFIRMADO', 'TIGO-20260310-000006', '2026-03-10 10:25:00-04'),
+(7, 150.00, 'InscripciÃ³n CUP GestiÃ³n 1-2026', 'CONFIRMADO', 'BNB-20260311-000007',  '2026-03-11 10:55:00-04'),
+(8, 150.00, 'InscripciÃ³n CUP GestiÃ³n 1-2026', 'RECHAZADO',  NULL,                   '2026-03-12 07:55:00-04');
+
+-- ============================================================
+-- 11. MATERIA
+-- ============================================================
+INSERT INTO materia (id_materia, nombre_materia, sigla, horas_semana, activo) VALUES
+(1, 'MatemÃ¡ticas',  'MAT', 6, TRUE),
+(2, 'FÃ­sica',       'FIS', 4, TRUE),
+(3, 'QuÃ­mica',      'QUI', 4, TRUE);
+
+-- ============================================================
+-- 12. EVALUACION
+--     (promedio es GENERATED ALWAYS AS, no se inserta)
+-- ============================================================
+INSERT INTO evaluacion (id_postulante, id_materia, nota1, nota2, nota3, estado, fecha_evaluacion) VALUES
+-- Ana Flores â€” Aprobada (prom 78.33)
+(1, 1, 80.00, 75.00, 82.00, 'APROBADO',  '2026-03-25 10:00:00-04'),
+(1, 2, 77.00, 78.00, 76.00, 'APROBADO',  '2026-03-25 10:00:00-04'),
+(1, 3, 79.00, 80.00, 78.00, 'APROBADO',  '2026-03-25 10:00:00-04'),
+-- Luis Peredo â€” Aprobado (prom 65)
+(2, 1, 60.00, 70.00, 65.00, 'APROBADO',  '2026-03-25 10:30:00-04'),
+(2, 2, 62.00, 68.00, 65.00, 'APROBADO',  '2026-03-25 10:30:00-04'),
+(2, 3, 65.00, 63.00, 67.00, 'APROBADO',  '2026-03-25 10:30:00-04'),
+-- Valeria GuzmÃ¡n â€” Aprobada (prom 82.67)
+(3, 1, 85.00, 80.00, 84.00, 'APROBADO',  '2026-03-25 11:00:00-04'),
+(3, 2, 82.00, 83.00, 81.00, 'APROBADO',  '2026-03-25 11:00:00-04'),
+(3, 3, 84.00, 82.00, 83.00, 'APROBADO',  '2026-03-25 11:00:00-04'),
+-- Diego Montero â€” Reprobado (prom 55.33)
+(4, 1, 50.00, 58.00, 55.00, 'REPROBADO', '2026-03-25 11:30:00-04'),
+(4, 2, 52.00, 60.00, 54.00, 'REPROBADO', '2026-03-25 11:30:00-04'),
+(4, 3, 55.00, 57.00, 53.00, 'REPROBADO', '2026-03-25 11:30:00-04'),
+-- Daniela Rivero â€” Aprobada (prom 70)
+(5, 1, 70.00, 68.00, 72.00, 'APROBADO',  '2026-03-25 12:00:00-04'),
+(5, 2, 71.00, 69.00, 70.00, 'APROBADO',  '2026-03-25 12:00:00-04'),
+(5, 3, 70.00, 70.00, 70.00, 'APROBADO',  '2026-03-25 12:00:00-04'),
+-- Sergio Ãlvarez â€” Aprobado (prom 91)
+(6, 1, 92.00, 90.00, 93.00, 'APROBADO',  '2026-03-25 12:30:00-04'),
+(6, 2, 90.00, 92.00, 91.00, 'APROBADO',  '2026-03-25 12:30:00-04'),
+(6, 3, 91.00, 90.00, 91.00, 'APROBADO',  '2026-03-25 12:30:00-04'),
+-- Camila DurÃ¡n â€” Aprobada (prom 60.33)
+(7, 1, 60.00, 61.00, 60.00, 'APROBADO',  '2026-03-25 13:00:00-04'),
+(7, 2, 60.00, 60.00, 61.00, 'APROBADO',  '2026-03-25 13:00:00-04'),
+(7, 3, 60.00, 60.00, 61.00, 'APROBADO',  '2026-03-25 13:00:00-04'),
+-- Fernanda CossÃ­o â€” Reprobada (prom 48)
+(8, 1, 45.00, 50.00, 48.00, 'REPROBADO', '2026-03-25 13:30:00-04'),
+(8, 2, 47.00, 49.00, 48.00, 'REPROBADO', '2026-03-25 13:30:00-04'),
+(8, 3, 48.00, 47.00, 49.00, 'REPROBADO', '2026-03-25 13:30:00-04');
+
+-- ============================================================
+-- 13. GRUPO
+--     8 postulantes aprobados â†’ CEIL(6/80) = 1 grupo
+--     Se crean 2 grupos de demostraciÃ³n
+-- ============================================================
+INSERT INTO grupo (id_grupo, nombre_grupo, capacidad_maxima, aula, turno, activo) VALUES
+(1, 'A-MAÃ‘-2026', 80, 'Aula 101 - FICCT', 'MAÃ‘ANA', TRUE),
+(2, 'B-TAR-2026', 80, 'Aula 205 - FICCT', 'TARDE',  TRUE);
+
+-- ============================================================
+-- 14. GRUPO_POSTULANTE  (solo los 6 admitidos)
+-- ============================================================
+INSERT INTO grupo_postulante (id_grupo, id_postulante, fecha_asignacion) VALUES
+(1, 1, '2026-04-01 14:30:00-04'),   -- Ana
+(1, 2, '2026-04-01 14:30:00-04'),   -- Luis
+(1, 3, '2026-04-01 14:30:00-04'),   -- Valeria
+(1, 5, '2026-04-01 14:30:00-04'),   -- Daniela
+(2, 6, '2026-04-01 14:30:00-04'),   -- Sergio
+(2, 7, '2026-04-01 14:30:00-04');   -- Camila
+
+-- ============================================================
+-- 15. GRUPO_MATERIA
+-- ============================================================
+INSERT INTO grupo_materia (id_grupo, id_materia, horario) VALUES
+(1, 1, 'Lunes-MiÃ©rcoles-Viernes 08:00-10:00'),
+(1, 2, 'Martes-Jueves 08:00-10:00'),
+(1, 3, 'Lunes-MiÃ©rcoles 10:00-12:00'),
+(2, 1, 'Lunes-MiÃ©rcoles-Viernes 14:00-16:00'),
+(2, 2, 'Martes-Jueves 14:00-16:00'),
+(2, 3, 'Lunes-MiÃ©rcoles 16:00-18:00');
+
+-- ============================================================
+-- 16. DOCENTE
+-- ============================================================
+INSERT INTO docente (id_docente, id_usuario, especialidad, titulo_academico, telefono, activo) VALUES
+(1, 3, 'CÃ¡lculo Diferencial e Integral', 'MAESTRIA',   '70312345', TRUE),
+(2, 4, 'FÃ­sica MecÃ¡nica y Ondas',        'MAESTRIA',   '70323456', TRUE),
+(3, 5, 'QuÃ­mica General e InorgÃ¡nica',   'LICENCIATURA','70334567', TRUE),
+(4, 6, 'Ãlgebra Lineal',                 'DOCTORADO',  '70345678', TRUE),
+(5, 7, 'Electromagnetismo',              'MAESTRIA',   '70356789', TRUE);
+
+-- ============================================================
+-- 17. ASIGNACION_DOCENTE
+-- ============================================================
+INSERT INTO asignacion_docente (id_docente, id_grupo, id_materia, fecha_asignacion, activo) VALUES
+(1, 1, 1, '2026-04-02 08:00:00-04', TRUE),   -- Hugo â†’ Grupo A, MatemÃ¡ticas
+(2, 1, 2, '2026-04-02 08:00:00-04', TRUE),   -- Patricia â†’ Grupo A, FÃ­sica
+(3, 1, 3, '2026-04-02 08:00:00-04', TRUE),   -- Rodrigo â†’ Grupo A, QuÃ­mica
+(4, 2, 1, '2026-04-02 08:00:00-04', TRUE),   -- Carla â†’ Grupo B, MatemÃ¡ticas
+(5, 2, 2, '2026-04-02 08:00:00-04', TRUE),   -- Marcelo â†’ Grupo B, FÃ­sica
+(3, 2, 3, '2026-04-02 08:00:00-04', TRUE);   -- Rodrigo â†’ Grupo B, QuÃ­mica (carga compartida)
+
+-- ============================================================
+--  VERIFICACIÃ“N RÃPIDA (ejecutar despuÃ©s del INSERT)
+-- ============================================================
+-- SELECT COUNT(*) FROM usuario;           -- esperado: 15
+-- SELECT COUNT(*) FROM postulante;        -- esperado: 8
+-- SELECT COUNT(*) FROM evaluacion;        -- esperado: 24
+-- SELECT COUNT(*) FROM grupo_postulante;  -- esperado: 6
+-- SELECT id_postulante, id_materia, nota1, nota2, nota3, promedio
+--   FROM evaluacion ORDER BY id_postulante, id_materia;  -- promedio calculado automÃ¡ticamente
+
+-- ============================================================
+--  FIN DE LA POBLACIÃ“N DE DATOS
+-- ============================================================
+Consultas
+-- ============================================================
+--  CONSULTAS SQL â€” Sistema CUP (FICCT - UAGRM)
+--  Motor: PostgreSQL 15+
+--  GestiÃ³n: 1-2026
+--  Organizadas por mÃ³dulo del sistema (segÃºn casos de uso)
+-- ============================================================
+
+
+-- ============================================================
+--  MÃ“DULO 1: AUTENTICACIÃ“N (CU01, CU02, CU04)
+-- ============================================================
+
+-- CU01: Iniciar sesiÃ³n â€” verificar credenciales por email
+SELECT u.id_usuario,
+       u.ci,
+       u.nombre,
+       u.apellido,
+       u.email,
+       u.password_hash,
+       u.activo,
+       r.nombre_rol
+FROM   usuario u
+JOIN   rol r ON r.id_rol = u.id_rol
+WHERE  u.email = 'ana.flores@gmail.com'
+  AND  u.activo = TRUE;
+
+-- CU01: Registrar evento de login en bitÃ¡cora
+INSERT INTO bitacora_auditoria (id_usuario, accion, tabla_afectada, descripcion, ip_origen)
+VALUES (8, 'LOGIN', NULL, 'Inicio de sesiÃ³n exitoso', '190.121.44.12');
+
+-- CU02: Cerrar sesiÃ³n â€” registrar logout en bitÃ¡cora
+INSERT INTO bitacora_auditoria (id_usuario, accion, tabla_afectada, descripcion, ip_origen)
+VALUES (8, 'LOGOUT', NULL, 'Cierre de sesiÃ³n', '190.121.44.12');
+
+-- CU04: Cambiar contraseÃ±a â€” actualizar hash
+UPDATE usuario
+SET    password_hash = '$2a$12$NuevoHashBcrypt',
+       updated_at    = NOW()
+WHERE  id_usuario = 8
+  AND  activo = TRUE;
+
+-- CU01: Bloquear cuenta tras N intentos fallidos (verificaciÃ³n de estado)
+SELECT activo FROM usuario WHERE email = 'ana.flores@gmail.com';
+
+-- Consulta de auditorÃ­a: Ãºltimos 10 intentos de login de un usuario
+SELECT accion, descripcion, ip_origen, fecha_hora
+FROM   bitacora_auditoria
+WHERE  id_usuario = 8
+  AND  accion IN ('LOGIN','LOGOUT')
+ORDER  BY fecha_hora DESC
+LIMIT  10;
+
+
+-- ============================================================
+--  MÃ“DULO 2: GESTIÃ“N DE CUENTAS RBAC (CU05, CU31)
+-- ============================================================
+
+-- CU05: Listar todos los usuarios con su rol
+SELECT u.id_usuario,
+       u.ci,
+       u.nombre || ' ' || u.apellido AS nombre_completo,
+       u.email,
+       r.nombre_rol,
+       u.activo,
+       u.created_at
+FROM   usuario u
+JOIN   rol r ON r.id_rol = u.id_rol
+ORDER  BY r.nombre_rol, u.apellido;
+
+-- CU05: Crear nuevo usuario con rol asignado
+INSERT INTO usuario (ci, nombre, apellido, email, password_hash, id_rol)
+VALUES ('9012345', 'Nuevo', 'Usuario', 'nuevo@ficct.edu.bo', '$2a$12$HashNuevo', 2);
+
+-- CU05: Actualizar rol de un usuario (cambio de permisos)
+UPDATE usuario
+SET    id_rol     = 1,
+       updated_at = NOW()
+WHERE  id_usuario = 5;
+
+-- CU05: Desactivar cuenta (baja lÃ³gica, nunca DELETE)
+UPDATE usuario
+SET    activo     = FALSE,
+       updated_at = NOW()
+WHERE  id_usuario = 10;
+
+-- CU05: Reactivar cuenta
+UPDATE usuario
+SET    activo     = TRUE,
+       updated_at = NOW()
+WHERE  id_usuario = 10;
+
+-- CU05: Listar usuarios por rol especÃ­fico
+SELECT u.id_usuario, u.nombre, u.apellido, u.email, u.activo
+FROM   usuario u
+JOIN   rol r ON r.id_rol = u.id_rol
+WHERE  r.nombre_rol = 'DOCENTE'
+ORDER  BY u.apellido;
+
+-- CU31: Importar cuentas masivas desde Excel/CSV
+--       (simulaciÃ³n de inserciÃ³n masiva con ON CONFLICT para idempotencia)
+INSERT INTO usuario (ci, nombre, apellido, email, password_hash, id_rol)
+VALUES
+  ('9111111', 'Pedro',  'Mamani',  'pmamani@ficct.edu.bo',  '$2a$12$Hash001', 2),
+  ('9222222', 'Sandra', 'Cuellar', 'scuellar@ficct.edu.bo', '$2a$12$Hash002', 2),
+  ('9333333', 'Jorge',  'Vaca',    'jvaca@ficct.edu.bo',    '$2a$12$Hash003', 2)
+ON CONFLICT (email) DO UPDATE
+  SET nombre     = EXCLUDED.nombre,
+      apellido   = EXCLUDED.apellido,
+      updated_at = NOW();
+
+-- CU31: Verificar cuÃ¡ntos usuarios se importaron en el Ãºltimo lote
+SELECT COUNT(*) AS total_importados
+FROM   bitacora_auditoria
+WHERE  accion = 'INSERT'
+  AND  tabla_afectada = 'usuario'
+  AND  fecha_hora >= NOW() - INTERVAL '1 hour';
+
+
+-- ============================================================
+--  MÃ“DULO 3: REGISTRO DE POSTULANTES (CU07, CU08)
+-- ============================================================
+
+-- CU08: Registrar nuevo postulante (se hace junto con el usuario en transacciÃ³n)
+BEGIN;
+  INSERT INTO usuario (ci, nombre, apellido, email, password_hash, id_rol)
+  VALUES ('8999999', 'Mario', 'ChÃ¡vez', 'mario.chavez@gmail.com', '$2a$12$HashPos', 3)
+  RETURNING id_usuario;
+
+  -- Usar el id_usuario retornado en la siguiente INSERT
+  INSERT INTO postulante (id_usuario, ci, nombre, apellido, fecha_nacimiento, telefono, colegio_origen)
+  VALUES (currval('usuario_id_usuario_seq'), '8999999', 'Mario', 'ChÃ¡vez', '2007-03-10', '70399999', 'U.E. La Salle');
+COMMIT;
+
+-- CU08: Verificar si el CI ya estÃ¡ registrado (evitar duplicados)
+SELECT COUNT(*) FROM postulante WHERE ci = '8999999';
+
+-- CU08: Ver perfil completo de un postulante
+SELECT p.id_postulante,
+       p.ci,
+       p.nombre || ' ' || p.apellido AS nombre_completo,
+       p.fecha_nacimiento,
+       EXTRACT(YEAR FROM AGE(p.fecha_nacimiento)) AS edad,
+       p.telefono,
+       p.colegio_origen,
+       u.email,
+       u.activo,
+       p.created_at
+FROM   postulante p
+JOIN   usuario u ON u.id_usuario = p.id_usuario
+WHERE  p.id_postulante = 1;
+
+-- CU08: Listar todos los postulantes registrados
+SELECT p.id_postulante,
+       p.ci,
+       p.nombre || ' ' || p.apellido AS nombre_completo,
+       p.colegio_origen,
+       u.email,
+       p.created_at
+FROM   postulante p
+JOIN   usuario u ON u.id_usuario = p.id_usuario
+ORDER  BY p.apellido, p.nombre;
+
+-- CU07: Registrar pago de inscripciÃ³n
+INSERT INTO pago (id_postulante, monto, concepto, estado_pago, codigo_comprobante)
+VALUES (1, 150.00, 'InscripciÃ³n CUP GestiÃ³n 1-2026', 'PENDIENTE', NULL);
+
+-- CU07: Confirmar pago (respuesta de pasarela externa)
+UPDATE pago
+SET    estado_pago        = 'CONFIRMADO',
+       codigo_comprobante = 'TIGO-20260315-000099',
+       fecha_pago         = NOW()
+WHERE  id_pago = 1;
+
+-- CU07: Verificar si un postulante ya pagÃ³
+SELECT estado_pago, codigo_comprobante, fecha_pago
+FROM   pago
+WHERE  id_postulante = 1
+  AND  estado_pago = 'CONFIRMADO';
+
+-- CU07: Historial de pagos de un postulante
+SELECT id_pago, monto, concepto, estado_pago, codigo_comprobante, fecha_pago
+FROM   pago
+WHERE  id_postulante = 1
+ORDER  BY fecha_pago DESC;
+
+-- CU08: Subir documento del postulante
+INSERT INTO documento (id_postulante, tipo_documento, nombre_archivo, ruta_archivo)
+VALUES (1, 'CI', 'ci_mario_chavez.pdf', '/uploads/docs/ci/ci_mario_chavez.pdf');
+
+-- CU08: Verificar documentos pendientes de un postulante
+SELECT tipo_documento, nombre_archivo, estado_verificacion, fecha_subida
+FROM   documento
+WHERE  id_postulante = 1
+ORDER  BY fecha_subida;
+
+-- CU08: Verificar/rechazar documento (Admin)
+UPDATE documento
+SET    estado_verificacion = 'VERIFICADO'
+WHERE  id_documento = 1;
+
+-- CU08: Postulantes con documentaciÃ³n incompleta
+SELECT p.id_postulante,
+       p.nombre || ' ' || p.apellido AS nombre_completo,
+       COUNT(d.id_documento) FILTER (WHERE d.estado_verificacion = 'PENDIENTE') AS docs_pendientes,
+       COUNT(d.id_documento) FILTER (WHERE d.estado_verificacion = 'RECHAZADO') AS docs_rechazados
+FROM   postulante p
+LEFT   JOIN documento d ON d.id_postulante = p.id_postulante
+GROUP  BY p.id_postulante, p.nombre, p.apellido
+HAVING COUNT(d.id_documento) FILTER (WHERE d.estado_verificacion IN ('PENDIENTE','RECHAZADO')) > 0
+ORDER  BY p.apellido;
+
+
+-- ============================================================
+--  MÃ“DULO 4: EXÃMENES Y NOTAS (CU13, CU15, CU16)
+-- ============================================================
+
+-- CU13: Listar postulantes de un grupo para registrar notas (vista del docente)
+SELECT p.id_postulante,
+       p.ci,
+       p.nombre || ' ' || p.apellido AS nombre_completo,
+       gp.fecha_asignacion
+FROM   grupo_postulante gp
+JOIN   postulante p ON p.id_postulante = gp.id_postulante
+WHERE  gp.id_grupo = 1
+ORDER  BY p.apellido, p.nombre;
+
+-- CU13: Registrar notas de un postulante en una materia
+INSERT INTO evaluacion (id_postulante, id_materia, nota1, nota2, nota3, estado)
+VALUES (1, 1, 80.00, 75.00, 82.00, 'PENDIENTE')
+ON CONFLICT (id_postulante, id_materia) DO UPDATE
+  SET nota1            = EXCLUDED.nota1,
+      nota2            = EXCLUDED.nota2,
+      nota3            = EXCLUDED.nota3,
+      fecha_evaluacion = NOW();
+
+-- CU13: Verificar que una nota estÃ© en rango (validaciÃ³n en DB como respaldo)
+--       La restricciÃ³n CHECK ya lo garantiza, pero se puede consultar:
+SELECT id_evaluacion, nota1, nota2, nota3, promedio
+FROM   evaluacion
+WHERE  id_postulante = 1 AND id_materia = 1;
+
+-- CU15: Consultar promedio calculado (GENERATED ALWAYS AS STORED)
+--       El promedio se actualiza solo; no requiere UPDATE manual.
+SELECT e.id_evaluacion,
+       p.nombre || ' ' || p.apellido AS postulante,
+       m.nombre_materia,
+       e.nota1, e.nota2, e.nota3,
+       e.promedio,
+       e.estado
+FROM   evaluacion e
+JOIN   postulante p ON p.id_postulante = e.id_postulante
+JOIN   materia    m ON m.id_materia    = e.id_materia
+WHERE  e.id_postulante = 1
+ORDER  BY m.nombre_materia;
+
+-- CU15: Calcular promedio global de un postulante entre todas las materias
+SELECT p.id_postulante,
+       p.nombre || ' ' || p.apellido AS nombre_completo,
+       ROUND(AVG(e.promedio), 2)     AS promedio_global
+FROM   evaluacion e
+JOIN   postulante p ON p.id_postulante = e.id_postulante
+WHERE  e.id_postulante = 1
+GROUP  BY p.id_postulante, p.nombre, p.apellido;
+
+-- CU16: Actualizar estado de aprobaciÃ³n segÃºn promedio (>= 60 = APROBADO)
+UPDATE evaluacion
+SET    estado = CASE WHEN promedio >= 60 THEN 'APROBADO' ELSE 'REPROBADO' END
+WHERE  id_postulante = 1;
+
+-- CU16: Actualizar estado de TODAS las evaluaciones en lote (cierre de perÃ­odo)
+UPDATE evaluacion
+SET    estado = CASE WHEN promedio >= 60 THEN 'APROBADO' ELSE 'REPROBADO' END
+WHERE  estado = 'PENDIENTE';
+
+-- CU13: Vista completa de notas de un grupo con promedios
+SELECT p.nombre || ' ' || p.apellido AS postulante,
+       m.sigla,
+       e.nota1, e.nota2, e.nota3,
+       e.promedio,
+       e.estado
+FROM   evaluacion e
+JOIN   postulante     p  ON p.id_postulante = e.id_postulante
+JOIN   materia        m  ON m.id_materia    = e.id_materia
+JOIN   grupo_postulante gp ON gp.id_postulante = e.id_postulante
+WHERE  gp.id_grupo = 1
+ORDER  BY p.apellido, m.sigla;
+
+-- CU13: Verificar que no se ingresen mÃ¡s de 3 notas por materia
+--       (la tabla tiene nota1, nota2, nota3 â€” estructura fija; restricciÃ³n en diseÃ±o)
+SELECT COUNT(*) FROM evaluacion
+WHERE  id_postulante = 1 AND id_materia = 1;
+
+
+-- ============================================================
+--  MÃ“DULO 5: ALGORITMO DE ADMISIÃ“N (CU17)
+-- ============================================================
+
+-- CU17: Calcular puntaje total de cada postulante (promedio de promedios por materia)
+SELECT p.id_postulante,
+       p.nombre || ' ' || p.apellido      AS nombre_completo,
+       ROUND(AVG(e.promedio), 2)          AS puntaje_total,
+       CASE WHEN AVG(e.promedio) >= 60
+            THEN 'APROBADO' ELSE 'REPROBADO' END AS resultado
+FROM   evaluacion e
+JOIN   postulante p ON p.id_postulante = e.id_postulante
+GROUP  BY p.id_postulante, p.nombre, p.apellido
+ORDER  BY puntaje_total DESC;
+
+-- CU17: Actualizar puntaje_total y estado en POSTULACION
+UPDATE postulacion po
+SET    puntaje_total = sub.puntaje_total,
+       estado        = CASE WHEN sub.puntaje_total >= 60 THEN 'APROBADO' ELSE 'REPROBADO' END
+FROM (
+    SELECT id_postulante, ROUND(AVG(promedio), 2) AS puntaje_total
+    FROM   evaluacion
+    GROUP  BY id_postulante
+) sub
+WHERE  po.id_postulante = sub.id_postulante;
+
+-- CU17: Asignar carrera segÃºn opciÃ³n 1 (si hay cupos disponibles)
+UPDATE postulacion
+SET    id_carrera_asignada = id_carrera_opcion1,
+       estado              = 'ADMITIDO'
+WHERE  estado = 'APROBADO'
+  AND  id_carrera_opcion1 IN (
+      SELECT id_carrera FROM carrera WHERE cupos_disponibles > 0
+  );
+
+-- CU17: Si no hay cupos en opciÃ³n 1, intentar con opciÃ³n 2
+UPDATE postulacion
+SET    id_carrera_asignada = id_carrera_opcion2,
+       estado              = 'ADMITIDO'
+WHERE  estado = 'APROBADO'
+  AND  id_carrera_asignada IS NULL
+  AND  id_carrera_opcion2 IN (
+      SELECT id_carrera FROM carrera WHERE cupos_disponibles > 0
+  );
+
+-- CU17: Decrementar cupos al confirmar admisiÃ³n
+UPDATE carrera
+SET    cupos_disponibles = cupos_disponibles - 1
+WHERE  id_carrera IN (
+    SELECT id_carrera_asignada
+    FROM   postulacion
+    WHERE  estado = 'ADMITIDO'
+      AND  id_carrera_asignada IS NOT NULL
+);
+
+-- CU17: Listado final de admitidos con carrera asignada
+SELECT p.nombre || ' ' || p.apellido AS postulante,
+       po.puntaje_total,
+       c1.sigla                       AS opcion_1,
+       c2.sigla                       AS opcion_2,
+       ca.nombre_carrera              AS carrera_asignada,
+       po.estado
+FROM   postulacion po
+JOIN   postulante p   ON p.id_postulante   = po.id_postulante
+JOIN   carrera    c1  ON c1.id_carrera     = po.id_carrera_opcion1
+LEFT   JOIN carrera c2 ON c2.id_carrera   = po.id_carrera_opcion2
+LEFT   JOIN carrera ca ON ca.id_carrera   = po.id_carrera_asignada
+ORDER  BY po.puntaje_total DESC;
+
+
+-- ============================================================
+--  MÃ“DULO 6: GRUPOS (CU19, CU20)
+-- ============================================================
+
+-- CU19: Calcular nÃºmero de grupos necesarios â€” CEIL(total_aprobados / 80)
+SELECT CEIL(COUNT(*)::NUMERIC / 80) AS grupos_necesarios
+FROM   postulacion
+WHERE  estado IN ('APROBADO', 'ADMITIDO');
+
+-- CU19: Registrar nuevos grupos calculados
+INSERT INTO grupo (nombre_grupo, capacidad_maxima, aula, turno)
+VALUES ('A-MAÃ‘-2026', 80, 'Aula 101 - FICCT', 'MAÃ‘ANA'),
+       ('B-TAR-2026', 80, 'Aula 205 - FICCT', 'TARDE');
+
+-- CU20: Asignar postulantes a grupos (distribuciÃ³n ordenada por puntaje DESC)
+--       Asigna grupo segÃºn nÃºmero de fila / capacidad
+INSERT INTO grupo_postulante (id_grupo, id_postulante)
+SELECT g.id_grupo,
+       sub.id_postulante
+FROM (
+    SELECT po.id_postulante,
+           ROW_NUMBER() OVER (ORDER BY po.puntaje_total DESC) AS fila
+    FROM   postulacion po
+    WHERE  po.estado IN ('APROBADO','ADMITIDO')
+) sub
+JOIN grupo g ON g.id_grupo = CEIL(sub.fila::NUMERIC / 80)
+ON CONFLICT (id_grupo, id_postulante) DO NOTHING;
+
+-- CU20: Ver distribuciÃ³n de postulantes por grupo
+SELECT g.nombre_grupo,
+       g.turno,
+       COUNT(gp.id_postulante) AS total_asignados,
+       g.capacidad_maxima,
+       g.capacidad_maxima - COUNT(gp.id_postulante) AS cupos_restantes
+FROM   grupo g
+LEFT   JOIN grupo_postulante gp ON gp.id_grupo = g.id_grupo
+WHERE  g.activo = TRUE
+GROUP  BY g.id_grupo, g.nombre_grupo, g.turno, g.capacidad_maxima
+ORDER  BY g.nombre_grupo;
+
+-- CU20: Ver listado de postulantes de un grupo especÃ­fico
+SELECT g.nombre_grupo,
+       p.ci,
+       p.nombre || ' ' || p.apellido AS nombre_completo,
+       po.puntaje_total,
+       gp.fecha_asignacion
+FROM   grupo_postulante gp
+JOIN   grupo      g  ON g.id_grupo        = gp.id_grupo
+JOIN   postulante p  ON p.id_postulante   = gp.id_postulante
+JOIN   postulacion po ON po.id_postulante = gp.id_postulante
+WHERE  gp.id_grupo = 1
+ORDER  BY po.puntaje_total DESC;
+
+
+-- ============================================================
+--  MÃ“DULO 7: GESTIÃ“N DE DOCENTES (CU21, CU22)
+-- ============================================================
+
+-- CU21: Registrar nuevo docente (transacciÃ³n con usuario)
+BEGIN;
+  INSERT INTO usuario (ci, nombre, apellido, email, password_hash, id_rol)
+  VALUES ('4999999', 'Elena', 'Soria', 'esoria@ficct.edu.bo', '$2a$12$DocHashNew', 2)
+  RETURNING id_usuario;
+
+  INSERT INTO docente (id_usuario, especialidad, titulo_academico, telefono)
+  VALUES (currval('usuario_id_usuario_seq'), 'EstadÃ­stica Aplicada', 'MAESTRIA', '70399888');
+COMMIT;
+
+-- CU21: Validar que el docente tenga tÃ­tulo requerido (MAESTRIA o superior)
+SELECT id_docente, titulo_academico
+FROM   docente
+WHERE  id_docente = 1
+  AND  titulo_academico IN ('MAESTRIA','DOCTORADO');
+
+-- CU21: Listar todos los docentes activos con sus datos
+SELECT d.id_docente,
+       u.ci,
+       u.nombre || ' ' || u.apellido AS nombre_completo,
+       d.especialidad,
+       d.titulo_academico,
+       d.telefono,
+       u.email,
+       d.activo
+FROM   docente d
+JOIN   usuario u ON u.id_usuario = d.id_usuario
+WHERE  d.activo = TRUE
+ORDER  BY u.apellido;
+
+-- CU22: Asignar docente a grupo-materia
+INSERT INTO asignacion_docente (id_docente, id_grupo, id_materia)
+VALUES (1, 1, 1)
+ON CONFLICT (id_grupo, id_materia) DO UPDATE
+  SET id_docente       = EXCLUDED.id_docente,
+      fecha_asignacion = NOW(),
+      activo           = TRUE;
+
+-- CU22: Ver carga horaria de un docente
+SELECT d.id_docente,
+       u.nombre || ' ' || u.apellido AS docente,
+       g.nombre_grupo,
+       g.turno,
+       m.nombre_materia,
+       m.horas_semana,
+       gm.horario,
+       ad.fecha_asignacion
+FROM   asignacion_docente ad
+JOIN   docente  d ON d.id_docente = ad.id_docente
+JOIN   usuario  u ON u.id_usuario = d.id_usuario
+JOIN   grupo    g ON g.id_grupo   = ad.id_grupo
+JOIN   materia  m ON m.id_materia = ad.id_materia
+LEFT   JOIN grupo_materia gm ON gm.id_grupo = ad.id_grupo AND gm.id_materia = ad.id_materia
+WHERE  ad.id_docente = 1 AND ad.activo = TRUE
+ORDER  BY g.nombre_grupo, m.nombre_materia;
+
+-- CU22: Docentes sin asignaciÃ³n (para detectar sin carga horaria)
+SELECT d.id_docente,
+       u.nombre || ' ' || u.apellido AS docente,
+       d.especialidad
+FROM   docente d
+JOIN   usuario u ON u.id_usuario = d.id_usuario
+WHERE  d.activo = TRUE
+  AND  d.id_docente NOT IN (
+      SELECT DISTINCT id_docente FROM asignacion_docente WHERE activo = TRUE
+  );
+
+-- CU22: Grupos sin docente asignado en alguna materia
+SELECT g.nombre_grupo,
+       m.nombre_materia
+FROM   grupo   g
+CROSS  JOIN materia m
+WHERE  g.activo = TRUE AND m.activo = TRUE
+  AND  NOT EXISTS (
+      SELECT 1 FROM asignacion_docente ad
+      WHERE  ad.id_grupo   = g.id_grupo
+        AND  ad.id_materia = m.id_materia
+        AND  ad.activo     = TRUE
+  )
+ORDER  BY g.nombre_grupo, m.nombre_materia;
+
+
+-- ============================================================
+--  MÃ“DULO 8: DASHBOARD KPIs (CU29)
+-- ============================================================
+
+-- CU29: KPI 1 â€” Total de postulantes inscritos
+SELECT COUNT(*) AS total_inscritos FROM postulante;
+
+-- CU29: KPI 2 â€” Total de aprobados
+SELECT COUNT(*) AS total_aprobados
+FROM   postulacion
+WHERE  estado IN ('APROBADO', 'ADMITIDO');
+
+-- CU29: KPI 3 â€” Total de reprobados
+SELECT COUNT(*) AS total_reprobados
+FROM   postulacion
+WHERE  estado = 'REPROBADO';
+
+-- CU29: KPI 4 â€” Total de grupos habilitados
+SELECT COUNT(*) AS total_grupos FROM grupo WHERE activo = TRUE;
+
+-- CU29: KPI 5 â€” Total de admitidos con carrera asignada
+SELECT COUNT(*) AS total_admitidos
+FROM   postulacion
+WHERE  estado = 'ADMITIDO';
+
+-- CU29: KPI 6 â€” Total recaudado en pagos confirmados
+SELECT SUM(monto) AS total_recaudado_bs
+FROM   pago
+WHERE  estado_pago = 'CONFIRMADO';
+
+-- CU29: Todos los KPIs en una sola consulta (para el panel principal)
+SELECT
+    (SELECT COUNT(*) FROM postulante)                                          AS total_inscritos,
+    (SELECT COUNT(*) FROM postulacion WHERE estado IN ('APROBADO','ADMITIDO')) AS total_aprobados,
+    (SELECT COUNT(*) FROM postulacion WHERE estado = 'REPROBADO')              AS total_reprobados,
+    (SELECT COUNT(*) FROM grupo WHERE activo = TRUE)                           AS total_grupos,
+    (SELECT COUNT(*) FROM postulacion WHERE estado = 'ADMITIDO')               AS total_admitidos,
+    (SELECT COALESCE(SUM(monto),0) FROM pago WHERE estado_pago = 'CONFIRMADO') AS total_recaudado_bs;
+
+-- CU29: GrÃ¡fico â€” Rendimiento promedio por materia
+SELECT m.nombre_materia,
+       ROUND(AVG(e.promedio), 2)                                    AS promedio_general,
+       COUNT(*) FILTER (WHERE e.estado = 'APROBADO')                AS aprobados,
+       COUNT(*) FILTER (WHERE e.estado = 'REPROBADO')               AS reprobados,
+       ROUND(COUNT(*) FILTER (WHERE e.estado = 'APROBADO')::NUMERIC
+             / NULLIF(COUNT(*),0) * 100, 1)                         AS porcentaje_aprobacion
+FROM   evaluacion e
+JOIN   materia m ON m.id_materia = e.id_materia
+GROUP  BY m.id_materia, m.nombre_materia
+ORDER  BY m.nombre_materia;
+
+-- CU29: GrÃ¡fico â€” DistribuciÃ³n de postulantes por carrera de opciÃ³n 1
+SELECT c.sigla,
+       c.nombre_carrera,
+       COUNT(po.id_postulacion)  AS total_postulaciones,
+       c.cupos_totales,
+       c.cupos_disponibles
+FROM   carrera c
+LEFT   JOIN postulacion po ON po.id_carrera_opcion1 = c.id_carrera
+GROUP  BY c.id_carrera, c.sigla, c.nombre_carrera, c.cupos_totales, c.cupos_disponibles
+ORDER  BY total_postulaciones DESC;
+
+-- CU29: GrÃ¡fico â€” Postulantes por colegio de origen (top 10)
+SELECT colegio_origen,
+       COUNT(*) AS total
+FROM   postulante
+WHERE  colegio_origen IS NOT NULL
+GROUP  BY colegio_origen
+ORDER  BY total DESC
+LIMIT  10;
+
+-- CU29: GrÃ¡fico â€” EvoluciÃ³n de inscripciones por dÃ­a
+SELECT DATE(created_at)           AS fecha,
+       COUNT(*)                   AS inscripciones_del_dia,
+       SUM(COUNT(*)) OVER (ORDER BY DATE(created_at)) AS acumulado
+FROM   postulante
+GROUP  BY DATE(created_at)
+ORDER  BY fecha;
+
+-- CU29: Ranking de postulantes por puntaje (top 10)
+SELECT ROW_NUMBER() OVER (ORDER BY po.puntaje_total DESC) AS puesto,
+       p.nombre || ' ' || p.apellido AS nombre_completo,
+       po.puntaje_total,
+       ca.sigla AS carrera_asignada,
+       po.estado
+FROM   postulacion po
+JOIN   postulante p   ON p.id_postulante   = po.id_postulante
+LEFT   JOIN carrera ca ON ca.id_carrera    = po.id_carrera_asignada
+ORDER  BY po.puntaje_total DESC
+LIMIT  10;
+
+
+-- ============================================================
+--  MÃ“DULO 9: AUDITORÃA Y BITÃCORA
+-- ============================================================
+
+-- Consultar toda la bitÃ¡cora ordenada por fecha
+SELECT ba.id_bitacora,
+       u.nombre || ' ' || u.apellido AS usuario,
+       r.nombre_rol,
+       ba.accion,
+       ba.tabla_afectada,
+       ba.descripcion,
+       ba.ip_origen,
+       ba.fecha_hora
+FROM   bitacora_auditoria ba
+LEFT   JOIN usuario u ON u.id_usuario = ba.id_usuario
+LEFT   JOIN rol     r ON r.id_rol     = u.id_rol
+ORDER  BY ba.fecha_hora DESC
+LIMIT  50;
+
+-- Filtrar bitÃ¡cora por tipo de acciÃ³n
+SELECT * FROM bitacora_auditoria
+WHERE  accion = 'LOGIN'
+ORDER  BY fecha_hora DESC;
+
+-- Filtrar bitÃ¡cora por rango de fechas
+SELECT ba.id_bitacora,
+       u.nombre || ' ' || u.apellido AS usuario,
+       ba.accion,
+       ba.descripcion,
+       ba.ip_origen,
+       ba.fecha_hora
+FROM   bitacora_auditoria ba
+LEFT   JOIN usuario u ON u.id_usuario = ba.id_usuario
+WHERE  ba.fecha_hora BETWEEN '2026-03-01' AND '2026-04-30'
+ORDER  BY ba.fecha_hora DESC;
+
+-- Acciones por usuario (resumen)
+SELECT u.nombre || ' ' || u.apellido AS usuario,
+       ba.accion,
+       COUNT(*) AS total
+FROM   bitacora_auditoria ba
+JOIN   usuario u ON u.id_usuario = ba.id_usuario
+GROUP  BY u.id_usuario, u.nombre, u.apellido, ba.accion
+ORDER  BY usuario, ba.accion;
+
+-- IPs con mÃ¡s actividad (detecciÃ³n de accesos sospechosos)
+SELECT ip_origen,
+       COUNT(*) AS total_accesos,
+       COUNT(DISTINCT id_usuario) AS usuarios_distintos
+FROM   bitacora_auditoria
+WHERE  accion = 'LOGIN'
+GROUP  BY ip_origen
+ORDER  BY total_accesos DESC;
+
+
+-- ============================================================
+--  MÃ“DULO 10: REPORTES Y CONSULTAS GENERALES DEL SISTEMA
+-- ============================================================
+
+-- Reporte general: estado completo de cada postulante
+SELECT p.ci,
+       p.nombre || ' ' || p.apellido           AS nombre_completo,
+       p.colegio_origen,
+       pg.estado_pago,
+       po.puntaje_total,
+       po.estado                               AS estado_postulacion,
+       ca.sigla                                AS carrera_asignada,
+       g.nombre_grupo                          AS grupo_asignado
+FROM   postulante p
+LEFT   JOIN pago pg ON pg.id_postulante = p.id_postulante
+                    AND pg.estado_pago  = 'CONFIRMADO'
+LEFT   JOIN postulacion po ON po.id_postulante  = p.id_postulante
+LEFT   JOIN carrera ca     ON ca.id_carrera     = po.id_carrera_asignada
+LEFT   JOIN grupo_postulante gp ON gp.id_postulante = p.id_postulante
+LEFT   JOIN grupo g            ON g.id_grupo    = gp.id_grupo
+ORDER  BY p.apellido, p.nombre;
+
+-- Reporte de notas completo por postulante y materia
+SELECT p.nombre || ' ' || p.apellido AS postulante,
+       m.nombre_materia,
+       e.nota1, e.nota2, e.nota3,
+       e.promedio,
+       e.estado
+FROM   evaluacion e
+JOIN   postulante p ON p.id_postulante = e.id_postulante
+JOIN   materia    m ON m.id_materia    = e.id_materia
+ORDER  BY p.apellido, p.nombre, m.nombre_materia;
+
+-- ParÃ¡metros del sistema
+SELECT clave, valor, descripcion, updated_at
+FROM   parametro_sistema
+ORDER  BY clave;
+
+-- Actualizar un parÃ¡metro del sistema
+UPDATE parametro_sistema
+SET    valor      = '65',
+       updated_at = NOW()
+WHERE  clave = 'nota_minima_aprobacion';
+
+-- Consulta de carreras con cupos
+SELECT sigla, nombre_carrera, cupos_totales, cupos_disponibles,
+       cupos_totales - cupos_disponibles AS cupos_ocupados,
+       ROUND((cupos_totales - cupos_disponibles)::NUMERIC / cupos_totales * 100, 1) AS porcentaje_ocupacion
+FROM   carrera
+WHERE  activo = TRUE
+ORDER  BY sigla;
+
+-- Materias activas del CUP
+SELECT id_materia, nombre_materia, sigla, horas_semana
+FROM   materia
+WHERE  activo = TRUE
+ORDER  BY nombre_materia;
+
+-- Estado del perÃ­odo de admisiÃ³n activo
+SELECT id_periodo, nombre, fecha_inicio, fecha_fin, estado,
+       fecha_fin - CURRENT_DATE AS dias_restantes
+FROM   periodo_admision
+WHERE  estado = 'ACTIVO';
+
+-- ============================================================
+--  FIN DE CONSULTAS
+-- ============================================================
+ DiseÃ±ar un caso de uso (diagrama de secuencia)
+Ciclo #1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FLUJO DE TRABAJO: IMPLEMENTACION
+
+ 
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+*.log
+.DS_Store
+Thumbs.db
+*.tmp
+*.code-workspace
+
+# .env files
+.env
+.env.backup
+.env.production
+
+# Ejemplos y pruebas
+ejemplos de otros proyectos/
+FUENTES/
+LIBROS/
+*.xlsx
+*.xls
+*.csv
