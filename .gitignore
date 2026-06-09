@@ -3,6 +3,7 @@
 Thumbs.db
 *.tmp
 *.code-workspace
+~$*
 
 # .env files
 .env
@@ -16,3 +17,6 @@ LIBROS/
 *.xlsx
 *.xls
 *.csv
+DOCUMENTACION/temp_docx/
+DOCUMENTACION/~$*
+DOCUMENTACION/texto_limpio.txt
