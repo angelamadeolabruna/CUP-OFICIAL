@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\BienvenidaUsuario;
+use App\Models\Carrera;
 use App\Models\GestionAdmision;
 use App\Models\Postulante;
 use App\Models\Prepostulante;
@@ -74,6 +75,12 @@ class UsuarioImportController extends Controller
 
         // Convertir llaves a minúsculas
         $rolesMap = array_change_key_case($rolesMap, CASE_LOWER);
+
+        // Mapa nombre_carrera → id_carrera (insensible a mayúsculas)
+        $carrerasMap = Carrera::where('estado_activo', true)
+            ->pluck('id_carrera', 'nombre_carrera')
+            ->toArray();
+        $carrerasMap = array_change_key_case($carrerasMap, CASE_LOWER);
 
         $creados         = 0;
         $correosEnviados = 0;
@@ -163,25 +170,33 @@ class UsuarioImportController extends Controller
                         'estado' => 'activa',
                     ]);
 
-                Postulante::withoutEvents(fn() => Postulante::create([
+                $carreraPrimera = trim($fila['carrera_primera_opcion'] ?? '');
+                $carreraSegunda = trim($fila['carrera_segunda_opcion'] ?? '');
+                $tituloBachiller = trim($fila['titulo_bachiller'] ?? '');
+
+                $data = [
                     'id_gestion' => $gestion->id_gestion,
                     'id_usuario' => $usuario->id_usuario,
                     'correo' => $email,
-                    'ci' => $ci ?? 'SIN_CI',
-                    'nombres' => $nombreUsuario,
-                    'apellidos' => trim($fila['apellidos'] ?? ''),
-                    'carrera_primera_opcion' => trim($fila['carrera_primera_opcion'] ?? ''),
-                    'carrera_segunda_opcion' => trim($fila['carrera_segunda_opcion'] ?? ''),
                     'colegio_procedencia' => trim($fila['colegio_procedencia'] ?? ''),
-                    'fecha_nacimiento' => trim($fila['fecha_nacimiento'] ?? ''),
-                    'sexo' => trim($fila['sexo'] ?? ''),
+                    'fecha_nacimiento' => trim($fila['fecha_nacimiento'] ?? now()->subYears(18)),
+                    'sexo' => trim($fila['sexo'] ?? 'No especificado'),
                     'direccion' => trim($fila['direccion'] ?? ''),
                     'telefono' => trim($fila['telefono'] ?? ''),
-                    'celular' => trim($fila['celular'] ?? ''),
                     'ciudad' => trim($fila['ciudad'] ?? ''),
-                    'titulo_bachiller' => trim($fila['titulo_bachiller'] ?? ''),
+                    'titulo_bachiller' => !empty($tituloBachiller),
                     'estado_postulante' => 'inscrito',
-                ]));
+                ];
+
+                if ($carreraPrimera && isset($carrerasMap[strtolower($carreraPrimera)])) {
+                    $data['carrera_primera_opcion'] = $carrerasMap[strtolower($carreraPrimera)];
+                }
+
+                if ($carreraSegunda && isset($carrerasMap[strtolower($carreraSegunda)])) {
+                    $data['carrera_segunda_opcion'] = $carrerasMap[strtolower($carreraSegunda)];
+                }
+
+                Postulante::withoutEvents(fn() => Postulante::create($data));
             }
 
             $creados++;
