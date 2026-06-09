@@ -170,11 +170,22 @@ class UsuarioImportController extends Controller
                         'estado' => 'activa',
                     ]);
 
+                $prepostulante = Prepostulante::withoutEvents(fn() => Prepostulante::create([
+                    'id_gestion' => $gestion->id_gestion,
+                    'correo' => $email,
+                    'ci' => $ci ?? 'SIN_CI',
+                    'nombres' => $nombreUsuario,
+                    'apellidos' => trim($fila['apellidos'] ?? ''),
+                    'telefono' => trim($fila['telefono'] ?? ''),
+                    'estado_proceso' => 'registro_completo',
+                ]));
+
                 $carreraPrimera = trim($fila['carrera_primera_opcion'] ?? '');
                 $carreraSegunda = trim($fila['carrera_segunda_opcion'] ?? '');
                 $tituloBachiller = trim($fila['titulo_bachiller'] ?? '');
 
                 $data = [
+                    'id_prepostulante' => $prepostulante->id_prepostulante,
                     'id_gestion' => $gestion->id_gestion,
                     'id_usuario' => $usuario->id_usuario,
                     'correo' => $email,
