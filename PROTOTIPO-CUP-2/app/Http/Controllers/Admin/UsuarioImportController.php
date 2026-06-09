@@ -184,11 +184,17 @@ class UsuarioImportController extends Controller
                 $carreraSegunda = trim($fila['carrera_segunda_opcion'] ?? '');
                 $tituloBachiller = trim($fila['titulo_bachiller'] ?? '');
 
+                if (!$carreraPrimera || !isset($carrerasMap[strtolower($carreraPrimera)])) {
+                    $errores[] = "Fila {$linea}: carrera_primera_opcion '{$carreraPrimera}' no existe en la base de datos.";
+                    continue;
+                }
+
                 $data = [
                     'id_prepostulante' => $prepostulante->id_prepostulante,
                     'id_gestion' => $gestion->id_gestion,
                     'id_usuario' => $usuario->id_usuario,
                     'correo' => $email,
+                    'carrera_primera_opcion' => $carrerasMap[strtolower($carreraPrimera)],
                     'colegio_procedencia' => trim($fila['colegio_procedencia'] ?? ''),
                     'fecha_nacimiento' => trim($fila['fecha_nacimiento'] ?? now()->subYears(18)),
                     'sexo' => trim($fila['sexo'] ?? 'No especificado'),
@@ -198,10 +204,6 @@ class UsuarioImportController extends Controller
                     'titulo_bachiller' => !empty($tituloBachiller),
                     'estado_postulante' => 'inscrito',
                 ];
-
-                if ($carreraPrimera && isset($carrerasMap[strtolower($carreraPrimera)])) {
-                    $data['carrera_primera_opcion'] = $carrerasMap[strtolower($carreraPrimera)];
-                }
 
                 if ($carreraSegunda && isset($carrerasMap[strtolower($carreraSegunda)])) {
                     $data['carrera_segunda_opcion'] = $carrerasMap[strtolower($carreraSegunda)];
