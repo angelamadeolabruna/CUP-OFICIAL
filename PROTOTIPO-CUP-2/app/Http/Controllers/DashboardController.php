@@ -30,10 +30,7 @@ class DashboardController extends Controller
         // Postulantes en la gestión
         $postulantesQuery = Postulante::where('id_gestion', $gestionId);
         if ($carreraId) {
-            $postulantesQuery->where(function ($q) use ($carreraId) {
-                $q->where('carrera_primera_opcion', $carreraId)
-                    ->orWhere('carrera_segunda_opcion', $carreraId);
-            });
+            $postulantesQuery->where('carrera_primera_opcion', $carreraId);
         }
 
         $totalPostulantes = (clone $postulantesQuery)->count();
@@ -47,10 +44,7 @@ class DashboardController extends Controller
             ->whereHas('postulante', function ($q) use ($gestionId, $carreraId) {
                 $q->where('id_gestion', $gestionId);
                 if ($carreraId) {
-                    $q->where(function ($qq) use ($carreraId) {
-                        $qq->where('carrera_primera_opcion', $carreraId)
-                            ->orWhere('carrera_segunda_opcion', $carreraId);
-                    });
+                    $q->where('carrera_primera_opcion', $carreraId);
                 }
             })->count();
 

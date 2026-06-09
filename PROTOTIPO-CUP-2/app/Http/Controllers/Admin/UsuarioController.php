@@ -130,7 +130,18 @@ class UsuarioController extends Controller
                         'estado' => 'activa',
                     ]);
 
+                $prepostulante = Prepostulante::create([
+                    'id_gestion' => $gestion->id_gestion,
+                    'correo' => $usuario->email,
+                    'ci' => $usuario->ci ?? 'SIN_CI',
+                    'nombres' => $datos['nombres'] ?? $usuario->nombre_usuario,
+                    'apellidos' => $datos['apellidos'] ?? '',
+                    'telefono' => $datos['telefono'] ?? null,
+                    'estado_proceso' => 'registro_completo',
+                ]);
+
                 Postulante::create([
+                    'id_prepostulante' => $prepostulante->id_prepostulante,
                     'id_usuario' => $usuario->id_usuario,
                     'id_gestion' => $gestion->id_gestion,
                     'carrera_primera_opcion' => $datos['carrera_primera_opcion'] ?? null,
