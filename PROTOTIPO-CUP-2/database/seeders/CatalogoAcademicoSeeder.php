@@ -21,9 +21,10 @@ class CatalogoAcademicoSeeder extends Seeder
         );
 
         $carreras = [
-            ['codigo_carrera' => 'INF', 'nombre_carrera' => 'Ingenieria Informatica'],
-            ['codigo_carrera' => 'SIS', 'nombre_carrera' => 'Ingenieria de Sistemas'],
-            ['codigo_carrera' => 'RED', 'nombre_carrera' => 'Ingenieria en Redes y Telecomunicaciones'],
+            ['codigo_carrera' => 'INF', 'nombre_carrera' => 'ING. INFORMATICA'],
+            ['codigo_carrera' => 'SIS', 'nombre_carrera' => 'ING. SISTEMAS'],
+            ['codigo_carrera' => 'RED', 'nombre_carrera' => 'ING. REDES Y TELECOMUNICACIONES'],
+            ['codigo_carrera' => 'ROB', 'nombre_carrera' => 'ROBOTICA'],
         ];
 
         foreach ($carreras as $carrera) {
