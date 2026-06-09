@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'Sistema CUP FICCT' }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         .nav::-webkit-scrollbar { width: 4px; }
@@ -235,17 +238,19 @@
             </div>
         </div>
     @else
-        <div class="min-h-screen flex bg-blue-institucional">
-            <div class="flex-1 flex flex-col items-center justify-center p-10 relative overflow-hidden">
-                <div class="logo-img w-[140px] h-[140px] relative z-[1] mb-6">
-                    <img src="{{ asset('logo-ficct.png') }}" alt="Logo FICCT" class="w-full h-full object-contain drop-shadow-[0_4px_20px_rgba(0,0,0,0.2)]">
+        <div class="min-h-screen flex">
+            <div class="flex-1 flex flex-col items-center justify-center p-10 relative overflow-hidden bg-gradient-to-br from-slate-50 to-white">
+                <div class="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-guindo/5 -mr-20 -mt-20"></div>
+                <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-blue-institucional/[0.04] -ml-32 -mb-32"></div>
+                <div class="logo-img w-[120px] h-[120px] relative z-[1] mb-6">
+                    <img src="{{ asset('logo-ficct.png') }}" alt="Logo FICCT" class="w-full h-full object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
                 </div>
-                <h1 class="text-[28px] font-extrabold text-white tracking-tight relative z-[1] text-center">Facultad de Ingeniería<br>en Ciencias de la Computación</h1>
-                <div class="w-[60px] h-[3px] bg-guindo rounded-[4px] my-4 relative z-[1]"></div>
-                <p class="text-sm text-white/60 mt-1.5 relative z-[1] text-center max-w-[320px]">Sistema de Admisiones — CUP FICCT · UAGRM</p>
-                <div class="absolute bottom-[30px] text-[11px] text-white/30 z-[1]">© {{ date('Y') }} UAGRM — Todos los derechos reservados</div>
+                <h1 class="text-[26px] font-extrabold text-blue-institucional tracking-tight relative z-[1] text-center leading-tight">Facultad de Ciencias<br>en la Computación y Telecomunicaciones</h1>
+                <div class="w-[50px] h-[3px] bg-guindo rounded-[4px] my-5 relative z-[1]"></div>
+                <p class="text-xs text-slate-400 mt-1 relative z-[1] text-center max-w-[340px] leading-relaxed">Sistema de Información para la Gestión y Admisión del Curso Preuniversitario (CUP) — FICCT · UAGRM</p>
+                <div class="absolute bottom-[30px] text-[11px] text-slate-300 z-[1]">© {{ date('Y') }} UAGRM — Todos los derechos reservados</div>
             </div>
-            <div class="w-[480px] min-w-[480px] bg-white flex items-center justify-center p-10">
+            <div class="w-[480px] min-w-[480px] bg-blue-institucional flex items-center justify-center p-10">
                 <div class="w-full max-w-[380px]">
                     @if (session('status'))
                         <div class="text-[#059669] text-sm font-medium mb-4 px-4.5 py-3 bg-[#ecfdf5] border border-[#a7f3d0] rounded-xl">{{ session('status') }}</div>
