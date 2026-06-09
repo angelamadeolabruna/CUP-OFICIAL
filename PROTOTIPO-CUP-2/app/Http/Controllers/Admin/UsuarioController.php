@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Mail\BienvenidaUsuario;
+use App\Models\Carrera;
+use App\Models\DatosRegistroTemporal;
 use App\Models\GestionAdmision;
 use App\Models\Prepostulante;
 use App\Models\Rol;
@@ -55,19 +57,31 @@ class UsuarioController extends Controller
     public function create()
     {
         $roles = Rol::where('estado_activo', true)->orderBy('nombre_rol')->get();
-        return view('admin.usuarios.crear', compact('roles'));
+        $carreras = Carrera::where('estado_activo', true)->orderBy('codigo_carrera')->get();
+        return view('admin.usuarios.crear', compact('roles', 'carreras'));
     }
 
     // CU05 F3/F4/F5/F6/F7: guardar nuevo usuario y enviar credenciales
     public function store(Request $request)
     {
         $datos = $request->validate([
-            'nombre_usuario' => ['required', 'string', 'max:120'],
-            'email'          => ['required', 'email', 'max:120', 'unique:usuarios,email'],
-            'ci'             => ['nullable', 'string', 'max:20', 'unique:usuarios,ci'],
-            'id_rol'         => ['required', 'exists:roles,id_rol'],
-            'password'       => ['required', 'string', 'min:8', 'confirmed'],
-            'estado'         => ['required', Rule::in(['activo', 'inactivo'])],
+            'nombre_usuario'          => ['required', 'string', 'max:120'],
+            'email'                   => ['required', 'email', 'max:120', 'unique:usuarios,email'],
+            'ci'                      => ['nullable', 'string', 'max:20', 'unique:usuarios,ci'],
+            'id_rol'                  => ['required', 'exists:roles,id_rol'],
+            'password'                => ['required', 'string', 'min:8', 'confirmed'],
+            'estado'                  => ['required', Rule::in(['activo', 'inactivo'])],
+            'nombres'                 => ['nullable', 'string', 'max:120'],
+            'apellidos'               => ['nullable', 'string', 'max:120'],
+            'carrera_primera_opcion'  => ['nullable', 'integer', 'exists:carreras,id_carrera'],
+            'carrera_segunda_opcion'  => ['nullable', 'integer', 'exists:carreras,id_carrera', 'different:carrera_primera_opcion'],
+            'fecha_nacimiento'        => ['nullable', 'date', 'before:' . now()->subYears(14)->format('Y-m-d')],
+            'sexo'                    => ['nullable', 'string', 'max:20'],
+            'direccion'               => ['nullable', 'string', 'max:500'],
+            'telefono'                => ['nullable', 'string', 'max:30'],
+            'colegio_procedencia'     => ['nullable', 'string', 'max:160'],
+            'ciudad'                  => ['nullable', 'string', 'max:80'],
+            'titulo_bachiller'        => ['nullable', 'boolean'],
         ], [
             'email.unique'    => 'El correo ya está registrado. (E1: Usuario duplicado)',
             'ci.unique'       => 'El CI ya está registrado. (E1: Usuario duplicado)',
@@ -115,14 +129,31 @@ class UsuarioController extends Controller
                         'estado' => 'activa',
                     ]);
 
-                Prepostulante::create([
+                $prepostulante = Prepostulante::create([
                     'id_gestion' => $gestion->id_gestion,
                     'correo' => $usuario->email,
                     'ci' => $usuario->ci ?? 'SIN_CI',
-                    'nombres' => $usuario->nombre_usuario,
-                    'apellidos' => '',
-                    'estado_proceso' => 'prepostulado',
+                    'nombres' => $datos['nombres'] ?? $usuario->nombre_usuario,
+                    'apellidos' => $datos['apellidos'] ?? '',
+                    'telefono' => $datos['telefono'] ?? null,
+                    'estado_proceso' => $datos['carrera_primera_opcion'] ? 'registro_completo' : 'prepostulado',
                 ]);
+
+                if ($datos['carrera_primera_opcion'] ?? null) {
+                    DatosRegistroTemporal::create([
+                        'id_prepostulante' => $prepostulante->id_prepostulante,
+                        'carrera_primera_opcion' => $datos['carrera_primera_opcion'],
+                        'carrera_segunda_opcion' => $datos['carrera_segunda_opcion'] ?? null,
+                        'fecha_nacimiento' => $datos['fecha_nacimiento'] ?? now()->subYears(18),
+                        'sexo' => $datos['sexo'] ?? 'No especificado',
+                        'direccion' => $datos['direccion'] ?? '',
+                        'telefono' => $datos['telefono'] ?? '',
+                        'correo' => $usuario->email,
+                        'colegio_procedencia' => $datos['colegio_procedencia'] ?? '',
+                        'ciudad' => $datos['ciudad'] ?? '',
+                        'titulo_bachiller' => $datos['titulo_bachiller'] ?? false,
+                    ]);
+                }
             }
 
             return $usuario;

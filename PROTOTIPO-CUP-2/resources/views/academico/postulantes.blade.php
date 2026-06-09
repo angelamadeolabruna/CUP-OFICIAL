@@ -73,7 +73,7 @@
                                 <th>Promedio</th>
                                 <th>Estado Académico</th>
                                 <th>Admisión</th>
-                                <th style="width:40px;"></th>
+                                <th style="width:80px;">Acción</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -122,9 +122,21 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <button type="button" class="button button-ghost button-sm"
-                                                onclick="toggleDetalle({{ $p->id_postulante }})"
-                                                style="padding:4px 8px;font-size:14px;">▶</button>
+                                        <div style="display:flex;gap:4px;">
+                                            <button type="button" class="button button-ghost button-sm"
+                                                    onclick="toggleDetalle({{ $p->id_postulante }})"
+                                                    style="padding:4px 8px;font-size:14px;" title="Ver detalle">▶</button>
+                                            <a href="{{ route('academico.postulantes.edit', $p->id_postulante) }}"
+                                               class="button button-ghost button-sm"
+                                               style="padding:4px 8px;font-size:12px;text-decoration:none;"
+                                               title="Editar postulante">✎</a>
+                                            @if ($p->estado_postulante !== 'baja')
+                                                <a href="{{ route('academico.postulantes.baja.confirmar', $p->id_postulante) }}"
+                                                   class="button button-ghost button-sm"
+                                                   style="padding:4px 8px;font-size:12px;text-decoration:none;color:#dc2626;"
+                                                   title="Dar de baja">🗑</a>
+                                            @endif
+                                        </div>
                                     </td>
                                 </tr>
                                 <tr id="detalle-{{ $p->id_postulante }}" style="display:none;">

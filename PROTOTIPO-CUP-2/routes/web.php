@@ -147,9 +147,13 @@ Route::middleware('auth')->group(function () {
         Route::post('/promedios/calcular', [AcademicoController::class, 'promediosCalcular'])->name('promedios.calcular');
     });
 
-    // Listar Postulantes (coordinador_academico, administrador)
+    // CU14 + CU15: Listar, Editar y Eliminar Postulantes (coordinador_academico, administrador)
     Route::middleware('rol:coordinador_academico,administrador')->prefix('academico')->name('academico.')->group(function () {
         Route::get('/postulantes', [AcademicoController::class, 'postulantesIndex'])->name('postulantes.index');
+        Route::get('/postulantes/{id}/editar', [AcademicoController::class, 'postulantesEdit'])->name('postulantes.edit');
+        Route::put('/postulantes/{id}', [AcademicoController::class, 'postulantesUpdate'])->name('postulantes.update');
+        Route::get('/postulantes/{id}/baja', [AcademicoController::class, 'postulantesBajaConfirmar'])->name('postulantes.baja.confirmar');
+        Route::post('/postulantes/{id}/baja', [AcademicoController::class, 'postulantesBajaEjecutar'])->name('postulantes.baja.ejecutar');
     });
 
     // CU23: Ejecutar Admisión por Cupos (coordinador_academico y administrador)

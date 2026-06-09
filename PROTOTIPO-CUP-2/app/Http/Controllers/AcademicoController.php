@@ -7,6 +7,7 @@ use App\Models\CargaHoraria;
 use App\Models\Carrera;
 use App\Models\CupoCarrera;
 use App\Models\Docente;
+use App\Models\BajaPostulante;
 use App\Models\Evaluacion;
 use App\Models\GestionAdmision;
 use App\Models\Grupo;
@@ -20,6 +21,7 @@ use App\Services\Seguridad\BitacoraService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 class AcademicoController extends Controller
 {
@@ -724,6 +726,128 @@ class AcademicoController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             return back()->withErrors(['error' => 'Error al ejecutar admisión: ' . $e->getMessage()]);
+        }
+    }
+
+    // CU14: Modificar Información del Postulante
+    public function postulantesEdit($id)
+    {
+        $postulante = Postulante::with([
+            'prepostulante', 'usuario', 'primeraOpcion', 'segundaOpcion',
+        ])->findOrFail($id);
+
+        $carreras = Carrera::where('estado_activo', true)
+            ->orderBy('codigo_carrera')->get();
+
+        return view('academico.editar-postulante', compact('postulante', 'carreras'));
+    }
+
+    public function postulantesUpdate(Request $request, $id)
+    {
+        $postulante = Postulante::with('prepostulante')->findOrFail($id);
+
+        $validated = $request->validate([
+            'nombres'                => ['nullable', 'string', 'max:120'],
+            'apellidos'              => ['nullable', 'string', 'max:120'],
+            'fecha_nacimiento'       => ['nullable', 'date'],
+            'sexo'                   => ['nullable', 'string', 'max:20'],
+            'direccion'              => ['nullable', 'string'],
+            'telefono'               => ['nullable', 'string', 'max:30'],
+            'correo'                 => ['nullable', 'email', 'max:120'],
+            'colegio_procedencia'    => ['nullable', 'string', 'max:160'],
+            'ciudad'                 => ['nullable', 'string', 'max:80'],
+            'titulo_bachiller'       => ['nullable', 'boolean'],
+            'carrera_primera_opcion' => ['nullable', 'integer', 'exists:carreras,id_carrera'],
+            'carrera_segunda_opcion' => ['nullable', 'integer', 'exists:carreras,id_carrera', 'different:carrera_primera_opcion'],
+            'estado_postulante'      => ['nullable', 'string', 'max:40'],
+        ]);
+
+        DB::beginTransaction();
+        try {
+            if ($postulante->prepostulante) {
+                $prepData = [];
+                if ($request->filled('nombres')) {
+                    $prepData['nombres'] = $validated['nombres'];
+                }
+                if ($request->filled('apellidos')) {
+                    $prepData['apellidos'] = $validated['apellidos'];
+                }
+                if (!empty($prepData)) {
+                    $postulante->prepostulante->update($prepData);
+                }
+            }
+
+            $postData = collect($validated)->except(['nombres', 'apellidos'])->filter(fn($v) => !is_null($v))->toArray();
+            $postulante->update($postData);
+
+            $this->bitacoraService->registrar(
+                Auth::id(), 'UPDATE', 'postulantes',
+                "Información del postulante ID {$id} actualizada",
+                $request->ip(), $id
+            );
+
+            DB::commit();
+
+            return redirect()->route('academico.postulantes.edit', $id)
+                ->with('status', 'Información del postulante actualizada correctamente.');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->withErrors(['error' => 'Error al actualizar: ' . $e->getMessage()])
+                ->withInput();
+        }
+    }
+
+    // CU15: Eliminar Registro de Postulante (baja lógica)
+    public function postulantesBajaConfirmar($id)
+    {
+        $postulante = Postulante::with('prepostulante', 'resultado', 'admision')
+            ->findOrFail($id);
+
+        if ($postulante->estado_postulante === 'baja') {
+            return redirect()->route('academico.postulantes.index')
+                ->withErrors(['error' => 'El postulante ya está dado de baja.']);
+        }
+
+        return view('academico.confirmar-baja-postulante', compact('postulante'));
+    }
+
+    public function postulantesBajaEjecutar(Request $request, $id)
+    {
+        $postulante = Postulante::with('prepostulante')->findOrFail($id);
+
+        if ($postulante->estado_postulante === 'baja') {
+            return redirect()->route('academico.postulantes.index')
+                ->withErrors(['error' => 'El postulante ya está dado de baja.']);
+        }
+
+        $validated = $request->validate([
+            'motivo' => ['required', 'string', 'min:10', 'max:500'],
+        ]);
+
+        DB::beginTransaction();
+        try {
+            $postulante->update(['estado_postulante' => 'baja']);
+
+            BajaPostulante::create([
+                'id_postulante' => $postulante->id_postulante,
+                'id_usuario'    => Auth::id(),
+                'motivo'        => $validated['motivo'],
+            ]);
+
+            $this->bitacoraService->registrar(
+                Auth::id(), 'UPDATE', 'postulantes',
+                "Baja lógica del postulante ID {$id}: {$validated['motivo']}",
+                $request->ip(), $id
+            );
+
+            DB::commit();
+
+            return redirect()->route('academico.postulantes.index')
+                ->with('status', "Postulante {$postulante->prepostulante?->nombres} {$postulante->prepostulante?->apellidos} dado de baja correctamente.");
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->withErrors(['error' => 'Error al dar de baja: ' . $e->getMessage()])
+                ->withInput();
         }
     }
 }
