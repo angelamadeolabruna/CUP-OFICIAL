@@ -138,6 +138,7 @@
                             <div style="flex:1;min-width:120px;">
                                 <label for="archivo">Archivo *</label>
                                 <input type="file" name="archivo" id="archivo" accept=".pdf,.jpg,.jpeg,.png" required style="margin:0;font-size:12px;">
+                                <div id="fileName" style="font-size:11px;color:#059669;margin-top:4px;font-weight:500;"></div>
                             </div>
                             <button type="submit" class="button button-sm">Subir</button>
                         </div>
@@ -205,4 +206,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.getElementById('archivo')?.addEventListener('change', function() {
+            const name = this.files?.[0]?.name ?? '';
+            document.getElementById('fileName').textContent = name ? '✓ ' + name : '';
+        });
+    </script>
 </x-layouts.app>
