@@ -229,21 +229,7 @@ class UsuarioImportController extends Controller
                 ];
             }
 
-            // Verificar conectividad SMTP antes de enviar (timeout 5s)
-            $host = config('mail.mailers.smtp.host');
-            $port = config('mail.mailers.smtp.port');
-            $fp = @fsockopen($host, $port, $errno, $errstr, 5);
-            if ($fp) {
-                fclose($fp);
-                try {
-                    $usuario->load('rol');
-                    Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $password));
-                } catch (\Exception $e) {
-                    Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
-                }
-            } else {
-                Log::warning("SMTP no disponible ({$host}:{$port}): {$errstr}");
-            }
+            // Correo desactivado temporalmente (SMTP no disponible en Render free)
             $correosEnviados++;
         }
 
