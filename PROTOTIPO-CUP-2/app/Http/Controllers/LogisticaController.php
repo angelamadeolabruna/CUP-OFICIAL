@@ -70,7 +70,7 @@ class LogisticaController extends Controller
             $gestion->id_gestion
         );
 
-        return back()->with('status', 'Capacidad de aula configurada correctamente: ' . $request->max_estudiantes . ' estudiantes por grupo.');
+        return redirect()->route('logistica.capacidad.index')->with('status', 'Capacidad de aula configurada correctamente: ' . $request->max_estudiantes . ' estudiantes por grupo.');
     }
 
     // CU27: Calcular Cantidad de Grupos Necesarios

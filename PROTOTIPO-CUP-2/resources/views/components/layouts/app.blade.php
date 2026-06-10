@@ -135,6 +135,30 @@
                     @endif
 
                     @if(in_array(auth()->user()->rol?->nombre_rol, ['coordinador_academico', 'administrador']))
+                        <div class="px-6 pt-5 pb-1.5 text-[10px] font-bold uppercase tracking-[1.4px] text-white/30">Organización Logística</div>
+                        <a href="{{ route('logistica.capacidad.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.capacidad.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
+                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">📏</span>
+                            <span>Capacidad de Aula</span>
+                        </a>
+                        <a href="{{ route('logistica.grupos.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.grupos.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
+                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">🧮</span>
+                            <span>Calcular Grupos</span>
+                        </a>
+                        <a href="{{ route('logistica.asignar.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.asignar.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
+                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">📋</span>
+                            <span>Asignar Grupos</span>
+                        </a>
+                        <a href="{{ route('logistica.aulas.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.aulas.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
+                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">🏛️</span>
+                            <span>Aulas</span>
+                        </a>
+                        <a href="{{ route('logistica.horarios.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.horarios.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
+                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">🕐</span>
+                            <span>Horarios</span>
+                        </a>
+                    @endif
+
+                    @if(in_array(auth()->user()->rol?->nombre_rol, ['coordinador_academico', 'administrador']))
                         <div class="px-6 pt-5 pb-1.5 text-[10px] font-bold uppercase tracking-[1.4px] text-white/30">Gestión de Docentes</div>
                         <a href="{{ route('docentes.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('docentes.*') && !request()->routeIs('docentes.carga-horaria*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
                             <span class="icon text-[17px] w-6 text-center flex-shrink-0">👨‍🏫</span>
@@ -175,30 +199,6 @@
                         <a href="{{ route('reportes.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('reportes.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
                             <span class="icon text-[17px] w-6 text-center flex-shrink-0">📋</span>
                             <span>Reportes Obligatorios</span>
-                        </a>
-                    @endif
-
-                    @if(in_array(auth()->user()->rol?->nombre_rol, ['coordinador_academico', 'administrador']))
-                        <div class="px-6 pt-5 pb-1.5 text-[10px] font-bold uppercase tracking-[1.4px] text-white/30">Organización Logística</div>
-                        <a href="{{ route('logistica.capacidad.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.capacidad.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
-                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">📏</span>
-                            <span>Capacidad de Aula</span>
-                        </a>
-                        <a href="{{ route('logistica.grupos.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.grupos.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
-                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">🧮</span>
-                            <span>Calcular Grupos</span>
-                        </a>
-                        <a href="{{ route('logistica.asignar.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.asignar.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
-                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">📋</span>
-                            <span>Asignar Grupos</span>
-                        </a>
-                        <a href="{{ route('logistica.aulas.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.aulas.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
-                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">🏛️</span>
-                            <span>Aulas</span>
-                        </a>
-                        <a href="{{ route('logistica.horarios.index') }}" class="flex items-center gap-3.5 px-6 py-2.5 text-white/55 no-underline text-sm font-medium transition-all duration-[0.18s] border-l-3 border-transparent my-px hover:bg-white/6 hover:text-white/85 @if(request()->routeIs('logistica.horarios.*')) !text-white !border-l-guindo !bg-[linear-gradient(90deg,rgba(123,24,24,0.2)_0%,transparent_100%)] @endif">
-                            <span class="icon text-[17px] w-6 text-center flex-shrink-0">🕐</span>
-                            <span>Horarios</span>
                         </a>
                     @endif
 

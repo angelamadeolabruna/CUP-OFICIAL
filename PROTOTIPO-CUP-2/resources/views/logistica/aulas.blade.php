@@ -12,7 +12,7 @@
                         @csrf
                         <div style="display:flex;gap:10px;flex-wrap:wrap;">
                             <div style="flex:1;min-width:100px;">
-                                <label for="codigo_aula">Código *</label>
+                                <label for="codigo_aula">Código / Número *</label>
                                 <input type="text" name="codigo_aula" id="codigo_aula"
                                        value="{{ old('codigo_aula') }}" required
                                        placeholder="Ej: A-101">
@@ -90,7 +90,7 @@
         </div>
         <form method="POST" action="" id="formEditarAula">
             @csrf
-            <label for="edit_codigo_aula">Código *</label>
+                            <label for="edit_codigo_aula">Código / Número *</label>
             <input type="text" name="codigo_aula" id="edit_codigo_aula" required>
 
             <label for="edit_capacidad">Capacidad *</label>
