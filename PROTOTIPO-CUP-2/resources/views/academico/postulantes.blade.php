@@ -23,9 +23,8 @@
                     <div style="width:180px;">
                         <label for="estado" style="margin-bottom:3px;">Estado</label>
                         <select name="estado" id="estado" style="margin-bottom:0;">
-                            <option value="">Todos</option>
-                            <option value="activo" {{ request('estado') === 'activo' ? 'selected' : '' }}>Activo</option>
-                            <option value="inactivo" {{ request('estado') === 'inactivo' ? 'selected' : '' }}>Inactivo</option>
+                            <option value="">Activos</option>
+                            <option value="baja" {{ request('estado') === 'baja' ? 'selected' : '' }}>Dados de baja</option>
                         </select>
                     </div>
                     <button type="submit" class="button">🔍 Filtrar</button>
@@ -71,6 +70,7 @@
                                 <th>1ra Opción</th>
                                 <th>2da Opción</th>
                                 <th>Promedio</th>
+                                <th>Estado</th>
                                 <th>Estado Académico</th>
                                 <th>Admisión</th>
                                 <th style="width:80px;">Acción</th>
@@ -100,6 +100,13 @@
                                     </td>
                                     <td style="font-weight:600;text-align:center;">
                                         {{ $p->resultado?->promedio_final ?? '—' }}
+                                    </td>
+                                    <td>
+                                        @if ($p->estado_postulante === 'baja')
+                                            <span class="badge badge-baja">BAJA</span>
+                                        @else
+                                            <span class="badge badge-aprobado" style="background:#e0f2fe;color:#0284c7;">ACTIVO</span>
+                                        @endif
                                     </td>
                                     <td>
                                         @if ($p->resultado?->estado_academico === 'aprobado')
@@ -140,7 +147,7 @@
                                     </td>
                                 </tr>
                                 <tr id="detalle-{{ $p->id_postulante }}" style="display:none;">
-                                    <td colspan="9" style="padding:0;">
+                                    <td colspan="10" style="padding:0;">
                                         <div style="padding:16px 20px;background:#f8fafc;border-bottom:1px solid #e2e8f0;">
                                             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;">
                                                 {{-- Datos personales --}}

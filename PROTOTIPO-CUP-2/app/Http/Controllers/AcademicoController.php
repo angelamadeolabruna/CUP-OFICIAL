@@ -317,7 +317,13 @@ class AcademicoController extends Controller
             }
 
             if ($request->filled('estado')) {
-                $query->where('estado_postulante', $request->estado);
+                if ($request->estado === 'activo') {
+                    $query->where('estado_postulante', '!=', 'baja');
+                } elseif ($request->estado === 'baja') {
+                    $query->where('estado_postulante', 'baja');
+                }
+            } else {
+                $query->where('estado_postulante', '!=', 'baja');
             }
 
             $postulantes = $query

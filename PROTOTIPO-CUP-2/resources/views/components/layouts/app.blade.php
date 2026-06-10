@@ -68,6 +68,12 @@
         .metric:nth-child(6)::before { background: #0a2a5e; }
         .metric .label { font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: .05em; }
         .metric strong { font-size: 24px; font-weight: 800; color: #0f172a; display: block; margin-top: 2px; }
+
+        /* ── badges ── */
+        .badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .03em; }
+        .badge-aprobado { background: #dcfce7; color: #059669; }
+        .badge-reprobado { background: #fef2f2; color: #dc2626; }
+        .badge-baja { background: #f1f5f9; color: #64748b; }
     </style>
 </head>
 <body class="bg-[#f1f5f9] text-[#0f172a] antialiased min-h-screen font-['Inter','Segoe_UI',Arial,sans-serif]">
