@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Mail\BienvenidaUsuario;
 use App\Models\Carrera;
 use App\Models\DatosRegistroTemporal;
 use App\Models\GestionAdmision;
@@ -11,13 +10,13 @@ use App\Models\Postulante;
 use App\Models\Prepostulante;
 use App\Models\Rol;
 use App\Models\Usuario;
+use App\Services\EmailService;
 use App\Services\Seguridad\BitacoraService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
 
 class UsuarioController extends Controller
@@ -205,14 +204,8 @@ class UsuarioController extends Controller
             'nombre'   => $usuario->nombre_usuario,
         ]);
 
-        // Enviar correo de bienvenida
-        Log::info("Intentando enviar correo a {$usuario->email} usando " . config('mail.mailers.smtp.host') . ':' . config('mail.mailers.smtp.port') . ' con ' . config('mail.mailers.smtp.username'));
-        try {
-            Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
-            Log::info("Correo enviado exitosamente a {$usuario->email}");
-        } catch (\Exception $e) {
-            Log::error("Error enviar correo a {$usuario->email}: " . $e->getMessage());
-        }
+        // Enviar correo de bienvenida vía Resend API (HTTP, no SMTP)
+        EmailService::enviarCredenciales($usuario, $passwordPlano);
 
         return redirect()->route('admin.usuarios.index')
             ->with('status', "Cuenta de {$usuario->nombre_usuario} creada correctamente.");

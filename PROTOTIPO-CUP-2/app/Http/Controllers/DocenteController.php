@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\BienvenidaUsuario;
 use App\Models\Asistencia;
 use App\Models\CargaHoraria;
 use App\Models\Docente;
@@ -14,13 +13,12 @@ use App\Models\PostulanteGrupo;
 use App\Models\RequisitoDocente;
 use App\Models\Rol;
 use App\Models\Usuario;
+use App\Services\EmailService;
 use App\Services\Seguridad\BitacoraService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Mail;
-
 class DocenteController extends Controller
 {
     public function __construct(private readonly BitacoraService $bitacoraService)
@@ -78,11 +76,7 @@ class DocenteController extends Controller
                 ]);
                 $idUsuario = $usuario->id_usuario;
 
-                try {
-                    Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $request->password));
-                } catch (\Exception $e) {
-                    // Si falla el mail, no detiene el registro
-                }
+                EmailService::enviarCredenciales($usuario, $request->password);
             }
 
             $docente = Docente::create([
@@ -237,11 +231,7 @@ class DocenteController extends Controller
 
             DB::commit();
 
-            try {
-                Mail::to($docente->correo)->send(new BienvenidaUsuario($usuario, $request->password));
-            } catch (\Exception $e) {
-                // No detiene el flujo si falla el mail
-            }
+            EmailService::enviarCredenciales($usuario, $request->password);
 
             $this->bitacoraService->registrar(
                 Auth::id(), 'UPDATE', 'docentes',

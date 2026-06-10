@@ -3,19 +3,18 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Mail\BienvenidaUsuario;
 use App\Models\Carrera;
 use App\Models\GestionAdmision;
 use App\Models\Postulante;
 use App\Models\Prepostulante;
 use App\Models\Rol;
 use App\Models\Usuario;
+use App\Services\EmailService;
 use App\Services\Seguridad\BitacoraService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 
 class UsuarioImportController extends Controller
 {
@@ -229,27 +228,9 @@ class UsuarioImportController extends Controller
                 ];
             }
 
-            // Enviar correo con diagnóstico
-            try {
-                $smtpHost = config('mail.mailers.smtp.host', 'no-configurado');
-                $smtpPort = config('mail.mailers.smtp.port', 'no-configurado');
-
-                if ($smtpHost === 'no-configurado') {
-                    Log::warning("Mail no configurado — salteando envío a {$email}");
-                } else {
-                    $fp = @fsockopen($smtpHost, $smtpPort, $errno, $errstr, 5);
-                    if ($fp) {
-                        fclose($fp);
-                        $usuario->load('rol');
-                        Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $password));
-                        $correosEnviados++;
-                        Log::info("Correo enviado a {$email}");
-                    } else {
-                        Log::error("SMTP no responde ({$smtpHost}:{$smtpPort}) — {$errstr}");
-                    }
-                }
-            } catch (\Exception $e) {
-                Log::error("Error al enviar correo a {$email}: " . $e->getMessage());
+            // Enviar correo de bienvenida vía Resend API (HTTP, no SMTP)
+            if (EmailService::enviarCredenciales($usuario, $password)) {
+                $correosEnviados++;
             }
         }
 

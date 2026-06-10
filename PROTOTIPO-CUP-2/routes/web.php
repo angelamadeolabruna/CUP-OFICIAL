@@ -197,35 +197,28 @@ Route::middleware('auth')->group(function () {
         Route::get('/{tipo}/exportar/{formato}', [\App\Http\Controllers\ReportesController::class, 'exportar'])->name('exportar');
     });
 
-    // Diagnóstico de correo
+    // Diagnóstico de correo vía Resend
     Route::get('/mail-test', function () {
-        $host = config('mail.mailers.smtp.host', 'no configurado');
-        $port = config('mail.mailers.smtp.port', 'no configurado');
-        $enc  = config('mail.mailers.smtp.encryption', 'no configurado');
-        $user = config('mail.mailers.smtp.username', 'no configurado');
-        $from = config('mail.from.address', 'no configurado');
+        $apiKey = env('RESEND_API_KEY', 'no configurado');
+        $result = ['resend_api_key' => $apiKey !== 'no configurado' ? 'configurado' : 'no configurado'];
 
-        $result = [];
-        $result['config'] = compact('host', 'port', 'enc', 'user', 'from');
-
-        $fp = @fsockopen($host, $port, $errno, $errstr, 5);
-        if ($fp) {
-            $result['fsockopen'] = "OK - conexión exitosa a {$host}:{$port}";
-            fclose($fp);
-        } else {
-            $result['fsockopen'] = "FALLO - {$errstr} ({$errno})";
-        }
-
-        if (auth()->check()) {
+        if (auth()->check() && $apiKey !== 'no configurado') {
             try {
-                config()->set('mail.mailers.smtp.timeout', 10);
-                Mail::to(auth()->user()->email)->send(new \App\Mail\BienvenidaUsuario(auth()->user(), 'test-1234'));
-                $result['mail_send'] = "Correo enviado a " . auth()->user()->email;
+                $response = Http::withToken($apiKey)
+                    ->post('https://api.resend.com/emails', [
+                        'from' => 'onboarding@resend.dev',
+                        'to' => [auth()->user()->email],
+                        'subject' => 'Test CUP FICCT',
+                        'html' => '<p>Prueba desde Render vía Resend API</p>',
+                    ]);
+
+                $result['status'] = $response->status();
+                $result['body'] = $response->body();
             } catch (\Exception $e) {
-                $result['mail_send'] = "Error: " . $e->getMessage();
+                $result['error'] = $e->getMessage();
             }
-        } else {
-            $result['mail_send'] = "No autenticado";
+        } elseif (!auth()->check()) {
+            $result['error'] = 'No autenticado';
         }
 
         return response()->json($result);

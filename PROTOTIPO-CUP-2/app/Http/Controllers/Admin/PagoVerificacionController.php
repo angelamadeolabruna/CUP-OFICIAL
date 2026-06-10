@@ -3,18 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Mail\PostulanteConfirmado;
 use App\Models\Pago;
 use App\Models\Postulante;
 use App\Models\Prepostulante;
 use App\Models\Rol;
 use App\Models\Usuario;
+use App\Services\EmailService;
 use App\Services\Seguridad\BitacoraService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Mail;
 
 class PagoVerificacionController extends Controller
 {
@@ -190,11 +189,11 @@ class PagoVerificacionController extends Controller
             DB::commit();
 
             if ($usuario) {
-                try {
-                    Mail::to($usuario->email)->send(new PostulanteConfirmado($usuario, $prepostulante));
-                } catch (\Exception $e) {
-                    Log::error("Error al enviar correo de postulante a {$usuario->email}: " . $e->getMessage());
-                }
+                $html = view('emails.postulante-confirmado', [
+                    'usuario' => $usuario,
+                    'prepostulante' => $prepostulante,
+                ])->render();
+                EmailService::enviar($usuario->email, 'Postulación Confirmada — Bienvenido al CUP FICCT', $html);
             }
 
             return back()->with('status', "Postulante {$prepostulante->nombres} confirmado exitosamente. Se envió correo con sus nuevas credenciales.");
