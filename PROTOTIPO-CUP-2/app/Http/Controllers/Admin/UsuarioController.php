@@ -206,8 +206,10 @@ class UsuarioController extends Controller
         ]);
 
         // Enviar correo de bienvenida
+        Log::info("Intentando enviar correo a {$usuario->email} usando " . config('mail.mailers.smtp.host') . ':' . config('mail.mailers.smtp.port') . ' con ' . config('mail.mailers.smtp.username'));
         try {
             Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
+            Log::info("Correo enviado exitosamente a {$usuario->email}");
         } catch (\Exception $e) {
             Log::error("Error enviar correo a {$usuario->email}: " . $e->getMessage());
         }
