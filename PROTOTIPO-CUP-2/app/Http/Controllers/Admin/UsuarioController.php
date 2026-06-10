@@ -107,7 +107,6 @@ class UsuarioController extends Controller
                 Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
             } catch (\Exception $e) {
                 Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
-                throw $e;
             }
 
             $this->bitacoraService->registrar(
