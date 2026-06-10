@@ -229,15 +229,21 @@ class UsuarioImportController extends Controller
                 ];
             }
 
-            // Enviar correo de bienvenida con credenciales (después de la respuesta)
-            app()->terminating(function () use ($usuario, $password) {
+            // Verificar conectividad SMTP antes de enviar (timeout 5s)
+            $host = config('mail.mailers.smtp.host');
+            $port = config('mail.mailers.smtp.port');
+            $fp = @fsockopen($host, $port, $errno, $errstr, 5);
+            if ($fp) {
+                fclose($fp);
                 try {
                     $usuario->load('rol');
                     Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $password));
                 } catch (\Exception $e) {
                     Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
                 }
-            });
+            } else {
+                Log::warning("SMTP no disponible ({$host}:{$port}): {$errstr}");
+            }
             $correosEnviados++;
         }
 

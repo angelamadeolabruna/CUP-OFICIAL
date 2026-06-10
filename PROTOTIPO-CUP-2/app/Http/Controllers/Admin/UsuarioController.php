@@ -207,14 +207,20 @@ class UsuarioController extends Controller
             ]);
         }
 
-        // Correo después de la respuesta — el usuario no espera
-        app()->terminating(function () use ($usuario, $passwordPlano) {
+        // Verificar conectividad SMTP antes de enviar (timeout 5s)
+        $host = config('mail.mailers.smtp.host');
+        $port = config('mail.mailers.smtp.port');
+        $fp = @fsockopen($host, $port, $errno, $errstr, 5);
+        if ($fp) {
+            fclose($fp);
             try {
                 Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
             } catch (\Exception $e) {
                 Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
             }
-        });
+        } else {
+            Log::warning("SMTP no disponible ({$host}:{$port}): {$errstr}");
+        }
 
         return redirect()->route('admin.usuarios.index')
             ->with('status', "Cuenta de {$usuario->nombre_usuario} creada correctamente.");
