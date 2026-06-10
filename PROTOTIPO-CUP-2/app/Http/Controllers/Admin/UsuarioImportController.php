@@ -150,14 +150,16 @@ class UsuarioImportController extends Controller
                         'estado' => 'activa',
                     ]);
 
-                Prepostulante::withoutEvents(fn() => Prepostulante::create([
-                    'id_gestion' => $gestion->id_gestion,
-                    'correo' => $email,
-                    'ci' => $ci ?? 'SIN_CI',
-                    'nombres' => $nombreUsuario,
-                    'apellidos' => '',
-                    'estado_proceso' => 'prepostulado',
-                ]));
+                Prepostulante::withoutEvents(fn() => Prepostulante::firstOrCreate(
+                    ['correo' => $email],
+                    [
+                        'id_gestion' => $gestion->id_gestion,
+                        'ci' => $ci ?? 'SIN_CI',
+                        'nombres' => $nombreUsuario,
+                        'apellidos' => '',
+                        'estado_proceso' => 'prepostulado',
+                    ]
+                ));
             }
 
             if ($rolNombre === 'postulante_oficial') {
@@ -170,15 +172,17 @@ class UsuarioImportController extends Controller
                         'estado' => 'activa',
                     ]);
 
-                $prepostulante = Prepostulante::withoutEvents(fn() => Prepostulante::create([
-                    'id_gestion' => $gestion->id_gestion,
-                    'correo' => $email,
-                    'ci' => $ci ?? 'SIN_CI',
-                    'nombres' => $nombreUsuario,
-                    'apellidos' => trim($fila['apellidos'] ?? ''),
-                    'telefono' => trim($fila['telefono'] ?? ''),
-                    'estado_proceso' => 'registro_completo',
-                ]));
+                $prepostulante = Prepostulante::withoutEvents(fn() => Prepostulante::firstOrCreate(
+                    ['correo' => $email],
+                    [
+                        'id_gestion' => $gestion->id_gestion,
+                        'ci' => $ci ?? 'SIN_CI',
+                        'nombres' => $nombreUsuario,
+                        'apellidos' => trim($fila['apellidos'] ?? ''),
+                        'telefono' => trim($fila['telefono'] ?? ''),
+                        'estado_proceso' => 'registro_completo',
+                    ]
+                ));
 
                 $carreraPrimera = trim($fila['carrera_primera_opcion'] ?? '');
                 $carreraSegunda = trim($fila['carrera_segunda_opcion'] ?? '');
@@ -209,7 +213,10 @@ class UsuarioImportController extends Controller
                     $data['carrera_segunda_opcion'] = $carrerasMap[strtolower($carreraSegunda)];
                 }
 
-                Postulante::withoutEvents(fn() => Postulante::create($data));
+                Postulante::withoutEvents(fn() => Postulante::firstOrCreate(
+                    ['id_prepostulante' => $prepostulante->id_prepostulante],
+                    $data
+                ));
             }
 
             $creados++;
