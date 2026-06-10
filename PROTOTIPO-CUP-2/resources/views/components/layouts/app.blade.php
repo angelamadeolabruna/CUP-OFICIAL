@@ -12,6 +12,53 @@
         .nav::-webkit-scrollbar { width: 4px; }
         .nav::-webkit-scrollbar-track { background: transparent; }
         .nav::-webkit-scrollbar-thumb { background: rgba(255,255,255,.12); border-radius: 4px; }
+        @keyframes dropdownIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ── legacy layout classes ── */
+        .flex-between { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .grid-2-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .filter-field { width: 250px; }
+        @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } .grid-2-4 { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) { .filter-field { width: 100%; } }
+
+        /* ── card ── */
+        .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; }
+        .card + .card { margin-top: 16px; }
+        .card h3 { font-size: 15px; font-weight: 700; color: #0f172a; }
+
+        /* ── page title ── */
+        .page-title { font-size: 22px; font-weight: 800; color: #0a2a5e; letter-spacing: -0.02em; margin: 0; }
+        .page-desc { font-size: 14px; color: #64748b; margin: 2px 0 16px; }
+
+        /* ── button system ── */
+        .button { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 10px; border: 0; cursor: pointer; text-decoration: none; transition: background .18s, box-shadow .18s; background: #0a2a5e; color: #fff; }
+        .button:hover { background: #0f3d7a; }
+        .button-secondary { background: #f1f5f9; color: #334155; border: 1px solid #e2e8f0; }
+        .button-secondary:hover { background: #e2e8f0; }
+        .button-ghost { background: transparent; color: #0a2a5e; }
+        .button-ghost:hover { background: #f1f5f9; }
+        .button-sm { font-size: 11px; padding: 5px 12px; border-radius: 8px; }
+        .button-danger { background: #dc2626; color: #fff; }
+        .button-danger:hover { background: #b91c1c; }
+
+        /* ── error ── */
+        .error { font-size: 13px; font-weight: 500; padding: 10px 16px; background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; border-radius: 10px; margin-bottom: 12px; display: block; }
+
+        /* ── table ── */
+        .table { width: 100%; font-size: 13px; border-collapse: separate; border-spacing: 0; }
+        .table th { text-align: left; padding: 12px 16px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: .04em; font-size: 11px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+        .table td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; }
+        .table tr:last-child td { border-bottom: 0; }
+        .table th:first-child { border-radius: 8px 0 0 0; }
+        .table th:last-child { border-radius: 0 8px 0 0; }
+        .table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+        .table tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+        .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; }
+        @media (max-width: 480px) { .table th, .table td { padding: 8px 10px; font-size: 12px; } }
+
+        /* ── metric ── */
+        .metric { position: relative; padding: 16px 20px 16px 24px; background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; }
         .metric::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; border-radius: 12px 0 0 12px; }
         .metric:nth-child(1)::before { background: #7B1818; }
         .metric:nth-child(2)::before { background: #0a2a5e; }
@@ -19,18 +66,8 @@
         .metric:nth-child(4)::before { background: #0a2a5e; }
         .metric:nth-child(5)::before { background: #7B1818; }
         .metric:nth-child(6)::before { background: #0a2a5e; }
-        @keyframes dropdownIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
-        .login-brand::before { content: ''; position: absolute; top: -30%; right: -20%; width: 500px; height: 500px; border-radius: 50%; background: rgba(255,255,255,.03); }
-        .login-brand::after { content: ''; position: absolute; bottom: -20%; left: -10%; width: 400px; height: 400px; border-radius: 50%; background: rgba(123,24,24,.1); }
-        .table th:first-child { border-radius: 8px 0 0 0; }
-        .table th:last-child { border-radius: 0 8px 0 0; }
-        .table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
-        .table tr:last-child td:last-child { border-radius: 0 0 8px 0; }
-        .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; }
-        .filter-field { width: 250px; }
-        @media (max-width: 600px) { .filter-field { width: 100%; } }
-        @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } .grid-2-4 { grid-template-columns: 1fr; } }
-        @media (max-width: 480px) { .table th, .table td { padding: 8px 10px; font-size: 12px; } }
+        .metric .label { font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: .05em; }
+        .metric strong { font-size: 24px; font-weight: 800; color: #0f172a; display: block; margin-top: 2px; }
     </style>
 </head>
 <body class="bg-[#f1f5f9] text-[#0f172a] antialiased min-h-screen font-['Inter','Segoe_UI',Arial,sans-serif]">
@@ -41,7 +78,7 @@
                     <div class="w-10 h-10 flex-shrink-0 rounded-xl overflow-hidden">
                         <img src="{{ asset('logo-ficct.png') }}" alt="Logo" class="w-full h-full object-contain">
                     </div>
-                    <div class="brand-text">
+                    <div>
                         <h2 class="text-lg font-extrabold tracking-tight text-white leading-tight">CUP FICCT</h2>
                         <p class="text-[10px] text-white/50 font-medium">UAGRM — Admisiones</p>
                     </div>

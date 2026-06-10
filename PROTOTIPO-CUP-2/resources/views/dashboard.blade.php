@@ -49,31 +49,31 @@
 
     {{-- Tarjetas de métricas --}}
     <div class="grid grid-cols-3 gap-4 mb-6 max-lg:grid-cols-2 max-sm:grid-cols-1">
-        <div class="metric relative bg-white border border-slate-200 rounded-xl px-5 py-4 pl-[22px]">
-            <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.5px]">Total Inscritos</div>
-            <div class="text-[24px] font-extrabold text-slate-900 mt-0.5">{{ $totalPostulantes }}</div>
+        <div class="metric">
+            <div class="label">Total Inscritos</div>
+            <strong>{{ $totalPostulantes }}</strong>
         </div>
-        <div class="metric relative bg-white border border-slate-200 rounded-xl px-5 py-4 pl-[22px]">
-            <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.5px]">Aprobados</div>
-            <div class="text-[24px] font-extrabold text-slate-900 mt-0.5">{{ $totalAprobados }}</div>
+        <div class="metric">
+            <div class="label">Aprobados</div>
+            <strong>{{ $totalAprobados }}</strong>
             <div class="text-[11px] text-slate-400 mt-0.5">{{ $porcentajeAprobados }}% del total</div>
         </div>
-        <div class="metric relative bg-white border border-slate-200 rounded-xl px-5 py-4 pl-[22px]">
-            <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.5px]">Reprobados</div>
-            <div class="text-[24px] font-extrabold text-slate-900 mt-0.5">{{ $totalReprobados }}</div>
+        <div class="metric">
+            <div class="label">Reprobados</div>
+            <strong>{{ $totalReprobados }}</strong>
             <div class="text-[11px] text-slate-400 mt-0.5">{{ $porcentajeReprobados }}% del total</div>
         </div>
-        <div class="metric relative bg-white border border-slate-200 rounded-xl px-5 py-4 pl-[22px]">
-            <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.5px]">Sin Resultado</div>
-            <div class="text-[24px] font-extrabold text-slate-900 mt-0.5">{{ $sinResultado }}</div>
+        <div class="metric">
+            <div class="label">Sin Resultado</div>
+            <strong>{{ $sinResultado }}</strong>
         </div>
-        <div class="metric relative bg-white border border-slate-200 rounded-xl px-5 py-4 pl-[22px]">
-            <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.5px]">Admitidos</div>
-            <div class="text-[24px] font-extrabold text-slate-900 mt-0.5">{{ $totalAdmitidos }}</div>
+        <div class="metric">
+            <div class="label">Admitidos</div>
+            <strong>{{ $totalAdmitidos }}</strong>
         </div>
-        <div class="metric relative bg-white border border-slate-200 rounded-xl px-5 py-4 pl-[22px]">
-            <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-[0.5px]">Grupos Habilitados</div>
-            <div class="text-[24px] font-extrabold text-slate-900 mt-0.5">{{ $totalGrupos }}</div>
+        <div class="metric">
+            <div class="label">Grupos Habilitados</div>
+            <strong>{{ $totalGrupos }}</strong>
         </div>
     </div>
 
