@@ -198,35 +198,18 @@ class UsuarioController extends Controller
             return $usuario;
         });
 
-        // En desarrollo mostrar credenciales en pantalla
-        if (app()->environment('local')) {
-            session()->flash('dev_credenciales', [
-                'email'    => $usuario->email,
-                'password' => $passwordPlano,
-                'nombre'   => $usuario->nombre_usuario,
-            ]);
-        }
+        // Mostrar credenciales al admin por si el correo no llega
+        session()->flash('dev_credenciales', [
+            'email'    => $usuario->email,
+            'password' => $passwordPlano,
+            'nombre'   => $usuario->nombre_usuario,
+        ]);
 
-        // Enviar correo con diagnóstico
+        // Enviar correo de bienvenida
         try {
-            $smtpHost = config('mail.mailers.smtp.host', 'no-configurado');
-            $smtpPort = config('mail.mailers.smtp.port', 'no-configurado');
-            $mailUser = config('mail.mailers.smtp.username', 'no-configurado');
-
-            if ($smtpHost === 'no-configurado') {
-                Log::warning("Mail no configurado — salteando envío a {$usuario->email}");
-            } else {
-                $fp = @fsockopen($smtpHost, $smtpPort, $errno, $errstr, 5);
-                if ($fp) {
-                    fclose($fp);
-                    Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
-                    Log::info("Correo enviado a {$usuario->email}");
-                } else {
-                    Log::error("SMTP no responde ({$smtpHost}:{$smtpPort}) — {$errstr}");
-                }
-            }
+            Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
         } catch (\Exception $e) {
-            Log::error("Error al enviar correo a {$usuario->email}: " . $e->getMessage());
+            Log::error("Error enviar correo a {$usuario->email}: " . $e->getMessage());
         }
 
         return redirect()->route('admin.usuarios.index')

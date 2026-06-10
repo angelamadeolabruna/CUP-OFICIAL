@@ -12,7 +12,7 @@
 
     @if (session('dev_credenciales'))
         <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin-bottom:18px;font-size:13px;">
-            <strong style="color:#1e40af;">🔑 Credenciales generadas (Modo desarrollo):</strong>
+            <strong style="color:#1e40af;">🔑 Credenciales generadas:</strong>
             @if (is_array(session('dev_credenciales')) && isset(session('dev_credenciales')[0]))
                 @foreach (session('dev_credenciales') as $cred)
                     <div style="margin-top:8px;display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:center;padding:6px 0;border-bottom:1px solid #e2e8f0;font-size:13px;">
