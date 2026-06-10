@@ -229,8 +229,28 @@ class UsuarioImportController extends Controller
                 ];
             }
 
-            // Correo desactivado temporalmente (SMTP no disponible en Render free)
-            $correosEnviados++;
+            // Enviar correo con diagnóstico
+            try {
+                $smtpHost = config('mail.mailers.smtp.host', 'no-configurado');
+                $smtpPort = config('mail.mailers.smtp.port', 'no-configurado');
+
+                if ($smtpHost === 'no-configurado') {
+                    Log::warning("Mail no configurado — salteando envío a {$email}");
+                } else {
+                    $fp = @fsockopen($smtpHost, $smtpPort, $errno, $errstr, 5);
+                    if ($fp) {
+                        fclose($fp);
+                        $usuario->load('rol');
+                        Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $password));
+                        $correosEnviados++;
+                        Log::info("Correo enviado a {$email}");
+                    } else {
+                        Log::error("SMTP no responde ({$smtpHost}:{$smtpPort}) — {$errstr}");
+                    }
+                }
+            } catch (\Exception $e) {
+                Log::error("Error al enviar correo a {$email}: " . $e->getMessage());
+            }
         }
 
         // CU06 F6: bitácora de la importación
