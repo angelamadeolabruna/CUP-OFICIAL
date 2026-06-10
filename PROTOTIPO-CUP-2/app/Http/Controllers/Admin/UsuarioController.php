@@ -103,12 +103,6 @@ class UsuarioController extends Controller
 
             $usuario->load('rol');
 
-            try {
-                Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
-            } catch (\Exception $e) {
-                Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
-            }
-
             $this->bitacoraService->registrar(
                 Auth::id(),
                 'CREATE',
@@ -129,17 +123,21 @@ class UsuarioController extends Controller
                         'estado' => 'activa',
                     ]);
 
-                $prepostulante = Prepostulante::create([
-                    'id_gestion' => $gestion->id_gestion,
-                    'correo' => $usuario->email,
-                    'ci' => $usuario->ci ?? 'SIN_CI',
-                    'nombres' => $datos['nombres'] ?? $usuario->nombre_usuario,
-                    'apellidos' => $datos['apellidos'] ?? '',
-                    'telefono' => $datos['telefono'] ?? null,
-                    'estado_proceso' => 'registro_completo',
-                ]);
+                $prepostulante = Prepostulante::firstOrCreate(
+                    ['correo' => $usuario->email],
+                    [
+                        'id_gestion' => $gestion->id_gestion,
+                        'ci' => $usuario->ci ?? 'SIN_CI',
+                        'nombres' => $datos['nombres'] ?? $usuario->nombre_usuario,
+                        'apellidos' => $datos['apellidos'] ?? '',
+                        'telefono' => $datos['telefono'] ?? null,
+                        'estado_proceso' => 'registro_completo',
+                    ]
+                );
 
-                Postulante::create([
+                Postulante::firstOrCreate(
+                    ['id_prepostulante' => $prepostulante->id_prepostulante],
+                    [
                     'id_prepostulante' => $prepostulante->id_prepostulante,
                     'id_usuario' => $usuario->id_usuario,
                     'id_gestion' => $gestion->id_gestion,
@@ -168,15 +166,17 @@ class UsuarioController extends Controller
                         'estado' => 'activa',
                     ]);
 
-                $prepostulante = Prepostulante::create([
-                    'id_gestion' => $gestion->id_gestion,
-                    'correo' => $usuario->email,
-                    'ci' => $usuario->ci ?? 'SIN_CI',
-                    'nombres' => $datos['nombres'] ?? $usuario->nombre_usuario,
-                    'apellidos' => $datos['apellidos'] ?? '',
-                    'telefono' => $datos['telefono'] ?? null,
-                    'estado_proceso' => $datos['carrera_primera_opcion'] ? 'registro_completo' : 'prepostulado',
-                ]);
+                $prepostulante = Prepostulante::firstOrCreate(
+                    ['correo' => $usuario->email],
+                    [
+                        'id_gestion' => $gestion->id_gestion,
+                        'ci' => $usuario->ci ?? 'SIN_CI',
+                        'nombres' => $datos['nombres'] ?? $usuario->nombre_usuario,
+                        'apellidos' => $datos['apellidos'] ?? '',
+                        'telefono' => $datos['telefono'] ?? null,
+                        'estado_proceso' => $datos['carrera_primera_opcion'] ? 'registro_completo' : 'prepostulado',
+                    ]
+                );
 
                 if ($datos['carrera_primera_opcion'] ?? null) {
                     DatosRegistroTemporal::create([
@@ -197,6 +197,13 @@ class UsuarioController extends Controller
 
             return $usuario;
         });
+
+        // Correo fuera de la transacción para no bloquear BD si el SMTP falla
+        try {
+            Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
+        } catch (\Exception $e) {
+            Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
+        }
 
         // En desarrollo mostrar credenciales en pantalla
         if (app()->environment('local')) {
