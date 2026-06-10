@@ -229,15 +229,16 @@ class UsuarioImportController extends Controller
                 ];
             }
 
-            // Enviar correo de bienvenida con credenciales
-            try {
-                $usuario->load('rol');
-                Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $password));
-                $correosEnviados++;
-            } catch (\Exception $e) {
-                Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
-                $errores[] = "Fila {$linea}: cuenta creada pero no se pudo enviar el correo de credenciales a '{$email}'.";
-            }
+            // Enviar correo de bienvenida con credenciales (después de la respuesta)
+            app()->terminating(function () use ($usuario, $password) {
+                try {
+                    $usuario->load('rol');
+                    Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $password));
+                } catch (\Exception $e) {
+                    Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
+                }
+            });
+            $correosEnviados++;
         }
 
         // CU06 F6: bitácora de la importación

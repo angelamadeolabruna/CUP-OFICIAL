@@ -198,13 +198,6 @@ class UsuarioController extends Controller
             return $usuario;
         });
 
-        // Correo fuera de la transacción para no bloquear BD si el SMTP falla
-        try {
-            Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
-        } catch (\Exception $e) {
-            Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
-        }
-
         // En desarrollo mostrar credenciales en pantalla
         if (app()->environment('local')) {
             session()->flash('dev_credenciales', [
@@ -213,6 +206,15 @@ class UsuarioController extends Controller
                 'nombre'   => $usuario->nombre_usuario,
             ]);
         }
+
+        // Correo después de la respuesta — el usuario no espera
+        app()->terminating(function () use ($usuario, $passwordPlano) {
+            try {
+                Mail::to($usuario->email)->send(new BienvenidaUsuario($usuario, $passwordPlano));
+            } catch (\Exception $e) {
+                Log::error("Error al enviar correo de bienvenida a {$usuario->email}: " . $e->getMessage());
+            }
+        });
 
         return redirect()->route('admin.usuarios.index')
             ->with('status', "Cuenta de {$usuario->nombre_usuario} creada correctamente.");
