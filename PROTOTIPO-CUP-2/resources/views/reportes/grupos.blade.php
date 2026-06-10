@@ -30,7 +30,7 @@
                         <strong>Horarios:</strong>
                         @foreach ($g->horarios as $gh)
                             <span style="display:inline-block;padding:2px 8px;background:#e0f2fe;border-radius:4px;margin-right:4px;">
-                                {{ $gh->horario?->dia ?? '' }} {{ $gh->horario?->hora_inicio ?? '' }}-{{ $gh->horario?->hora_fin ?? '' }}
+                                {{ $gh->horario?->dia_semana ?? '' }} {{ $gh->horario?->hora_inicio ?? '' }}-{{ $gh->horario?->hora_fin ?? '' }}
                             </span>
                         @endforeach
                     </div>

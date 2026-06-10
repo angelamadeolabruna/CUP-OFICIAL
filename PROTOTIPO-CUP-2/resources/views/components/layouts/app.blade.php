@@ -42,8 +42,11 @@
         .button-danger { background: #dc2626; color: #fff; }
         .button-danger:hover { background: #b91c1c; }
 
-        /* ── error ── */
+        /* ── error / alert ── */
         .error { font-size: 13px; font-weight: 500; padding: 10px 16px; background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; border-radius: 10px; margin-bottom: 12px; display: block; }
+        .alert { font-size: 14px; font-weight: 500; padding: 12px 18px; border-radius: 10px; margin-bottom: 16px; }
+        .alert-success { background: #ecfdf5; border: 1px solid #a7f3d0; color: #059669; }
+        .alert-error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; }
 
         /* ── table ── */
         .table { width: 100%; font-size: 13px; border-collapse: separate; border-spacing: 0; }
@@ -69,11 +72,23 @@
         .metric .label { font-size: 11px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: .05em; }
         .metric strong { font-size: 24px; font-weight: 800; color: #0f172a; display: block; margin-top: 2px; }
 
+        /* ── form elements ── */
+        label { display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 4px; }
+        input:not([type="checkbox"]):not([type="radio"]), select, textarea { width: 100%; padding: 9px 12px; font-size: 14px; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; color: #0f172a; outline: none; transition: border-color .18s, box-shadow .18s; box-sizing: border-box; }
+        input:not([type="checkbox"]):not([type="radio"]):focus, select:focus, textarea:focus { border-color: #0a2a5e; box-shadow: 0 0 0 3px rgba(10,42,94,.1); }
+        input[type="checkbox"] { width: auto; margin-right: 6px; accent-color: #0a2a5e; }
+
         /* ── badges ── */
         .badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: .03em; }
         .badge-aprobado { background: #dcfce7; color: #059669; }
         .badge-reprobado { background: #fef2f2; color: #dc2626; }
         .badge-baja { background: #f1f5f9; color: #64748b; }
+        .badge-activo { background: #e0f2fe; color: #0284c7; }
+        .badge-inactivo { background: #f1f5f9; color: #64748b; }
+        .badge-pendiente { background: #fef3c7; color: #92400e; }
+
+        /* ── success / status (alias de alert-success) ── */
+        .success, .status { font-size: 14px; font-weight: 500; padding: 12px 18px; border-radius: 10px; margin-bottom: 16px; background: #ecfdf5; border: 1px solid #a7f3d0; color: #059669; }
     </style>
 </head>
 <body class="bg-[#f1f5f9] text-[#0f172a] antialiased min-h-screen font-['Inter','Segoe_UI',Arial,sans-serif]">

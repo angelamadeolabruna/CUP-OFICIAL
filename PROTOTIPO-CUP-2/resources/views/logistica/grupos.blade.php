@@ -7,7 +7,7 @@
             <strong>Gestión activa:</strong> {{ $gestion?->nombre_gestion ?? '—' }}
         </div>
 
-        @php $totalMaterias = $totalMaterias ?? \App\Models\Materia::where('estado_activo', true)->count(); @endphp
+        {{-- $totalMaterias debe venir del controlador --}}
 
         @if ($error)
             <div class="error">{{ $error }}</div>
@@ -58,3 +58,4 @@
         </div>
     </div>
 </x-layouts.app>
+

@@ -18,8 +18,8 @@
                     <label style="margin-bottom:3px;">Estado</label>
                     <select name="estado_postulante" style="margin-bottom:0;" onchange="this.form.submit()">
                         <option value="">Todos</option>
-                        <option value="activo" {{ request('estado_postulante') === 'activo' ? 'selected' : '' }}>Activo</option>
-                        <option value="inactivo" {{ request('estado_postulante') === 'inactivo' ? 'selected' : '' }}>Inactivo</option>
+                        <option value="inscrito" {{ request('estado_postulante') === 'inscrito' ? 'selected' : '' }}>Inscrito</option>
+                        <option value="baja" {{ request('estado_postulante') === 'baja' ? 'selected' : '' }}>Baja</option>
                     </select>
                 </div>
                 <div style="width:250px;">

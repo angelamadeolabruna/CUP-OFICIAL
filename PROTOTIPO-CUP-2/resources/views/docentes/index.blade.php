@@ -50,7 +50,7 @@
                                 </td>
                                 <td>
                                     @php
-                                        $estados = ['pendiente' => ['badge-activo', 'Pendiente'], 'aprobado' => ['badge-aprobado', 'Aprobado'], 'rechazado' => ['badge-reprobado', 'Rechazado']];
+                                        $estados = ['pendiente' => ['badge-pendiente', 'Pendiente'], 'aprobado' => ['badge-aprobado', 'Aprobado'], 'rechazado' => ['badge-reprobado', 'Rechazado']];
                                         $badge = $estados[$docente->estado_docente] ?? ['badge-inactivo', $docente->estado_docente];
                                     @endphp
                                     <span class="badge {{ $badge[0] }}">{{ $badge[1] }}</span>

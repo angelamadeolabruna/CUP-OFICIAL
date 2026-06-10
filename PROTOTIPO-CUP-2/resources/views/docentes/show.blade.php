@@ -1,6 +1,6 @@
 <x-layouts.app title="Docente: {{ $docente->nombre_completo }}">
     <div>
-        <a href="{{ route('docentes.index') }}" style="font-size:13px;color:#2563eb;text-decoration:none;display:inline-block;margin-bottom:12px;">← Volver a docentes</a>
+        <a href="{{ route('docentes.index') }}" style="font-size:13px;color:#0a2a5e;text-decoration:none;display:inline-block;margin-bottom:12px;">← Volver a docentes</a>
 
         <div style="display:flex;gap:20px;flex-wrap:wrap;">
             {{-- Columna izquierda: datos del docente --}}
@@ -8,7 +8,7 @@
                 <div class="card" style="padding:24px;">
                     <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:20px;">
                         <div style="display:flex;align-items:center;gap:12px;">
-                            <div style="width:48px;height:48px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;">
+                            <div style="width:48px;height:48px;border-radius:50%;background:#0a2a5e;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;">
                                 {{ strtoupper(substr($docente->nombres, 0, 1)) }}{{ strtoupper(substr($docente->apellidos, 0, 1)) }}
                             </div>
                             <div>
@@ -17,7 +17,7 @@
                             </div>
                         </div>
                         @php
-                            $estados = ['pendiente' => ['badge-activo', 'Pendiente'], 'aprobado' => ['badge-aprobado', 'Aprobado'], 'rechazado' => ['badge-reprobado', 'Rechazado']];
+                            $estados = ['pendiente' => ['badge-pendiente', 'Pendiente'], 'aprobado' => ['badge-aprobado', 'Aprobado'], 'rechazado' => ['badge-reprobado', 'Rechazado']];
                             $badge = $estados[$docente->estado_docente] ?? ['badge-inactivo', $docente->estado_docente];
                         @endphp
                         <span class="badge {{ $badge[0] }}" style="font-size:13px;padding:4px 14px;">{{ $badge[1] }}</span>
@@ -37,7 +37,7 @@
                             @else
                                 Sin usuario
                                 <button onclick="document.getElementById('formCrearUsuario').style.display='block'"
-                                        style="background:none;border:none;color:#2563eb;cursor:pointer;font-size:12px;text-decoration:underline;margin-left:6px;">
+                                        style="background:none;border:none;color:#0a2a5e;cursor:pointer;font-size:12px;text-decoration:underline;margin-left:6px;">
                                     Crear ahora
                                 </button>
                             @endif

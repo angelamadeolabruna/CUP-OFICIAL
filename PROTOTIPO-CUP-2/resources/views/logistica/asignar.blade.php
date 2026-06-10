@@ -157,7 +157,7 @@
                                                             @forelse ($horarios as $h)
                                                                 <label style="display:flex;align-items:center;gap:2px;font-size:11px;font-weight:400;cursor:pointer;padding:2px 6px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:4px;">
                                                                     <input type="checkbox" name="id_horarios[]" value="{{ $h->id_horario }}"
-                                                                           style="width:auto;margin:0;accent-color:#2563eb;">
+                                                                           style="width:auto;margin:0;accent-color:#0a2a5e;">
                                                                     {{ $h->dia_semana }} {{ substr($h->hora_inicio, 0, 5) }}
                                                                 </label>
                                                             @empty
@@ -300,7 +300,7 @@
                             @foreach (['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'] as $dia)
                                 <label style="display:flex;align-items:center;gap:3px;font-weight:400;font-size:13px;cursor:pointer;">
                                     <input type="checkbox" name="dias[]" value="{{ $dia }}"
-                                           style="width:auto;margin:0;accent-color:#2563eb;">
+                                           style="width:auto;margin:0;accent-color:#0a2a5e;">
                                     {{ $dia }}
                                 </label>
                             @endforeach
@@ -382,7 +382,7 @@
                     card.onmouseout = function() { this.style.background = ''; };
                     const iniciales = (p.nombre || '?').charAt(0).toUpperCase();
                     card.innerHTML = '' +
-                        '<div style="width:36px;height:36px;border-radius:50%;background:#2563eb;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;">' + iniciales + '</div>' +
+                        '<div style="width:36px;height:36px;border-radius:50%;background:#0a2a5e;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0;">' + iniciales + '</div>' +
                         '<div style="flex:1;min-width:0;">' +
                             '<div style="font-weight:600;font-size:14px;color:#0f172a;">' + p.nombre + '</div>' +
                             '<div style="font-size:12px;color:#64748b;">CI: ' + p.ci + '</div>' +
@@ -395,3 +395,4 @@
         }
     </script>
 </x-layouts.app>
+

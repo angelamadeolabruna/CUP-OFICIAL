@@ -28,9 +28,7 @@
                 @csrf
                 @method('PUT')
 
-                <h3 style="margin:20px 0 10px;font-size:15px;color:#1f2937;border-bottom:1px solid #e2e8f0;padding-bottom:6px;">
-                    Datos Personales
-                </h3>
+                <h3 style="margin:20px 0 10px;font-size:15px;color:#1f2937;border-bottom:1px solid #e2e8f0;padding-bottom:6px;">Datos Personales</h3>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
                     <div>
                         <label for="nombres">Nombres</label>
@@ -62,9 +60,7 @@
                     </div>
                 </div>
 
-                <h3 style="margin:20px 0 10px;font-size:15px;color:#1f2937;border-bottom:1px solid #e2e8f0;padding-bottom:6px;">
-                    Contacto
-                </h3>
+                <h3 style="margin:20px 0 10px;font-size:15px;color:#1f2937;border-bottom:1px solid #e2e8f0;padding-bottom:6px;">Contacto</h3>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
                     <div>
                         <label for="correo">Correo Electrónico</label>
@@ -92,9 +88,7 @@
                     </div>
                 </div>
 
-                <h3 style="margin:20px 0 10px;font-size:15px;color:#1f2937;border-bottom:1px solid #e2e8f0;padding-bottom:6px;">
-                    Datos Académicos
-                </h3>
+                <h3 style="margin:20px 0 10px;font-size:15px;color:#1f2937;border-bottom:1px solid #e2e8f0;padding-bottom:6px;">Datos Académicos</h3>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
                     <div>
                         <label for="colegio_procedencia">Colegio de Procedencia</label>
@@ -138,17 +132,12 @@
                     </div>
                 </div>
 
-                <h3 style="margin:20px 0 10px;font-size:15px;color:#1f2937;border-bottom:1px solid #e2e8f0;padding-bottom:6px;">
-                    Estado
-                </h3>
+                <h3 style="margin:20px 0 10px;font-size:15px;color:#1f2937;border-bottom:1px solid #e2e8f0;padding-bottom:6px;">Estado</h3>
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
                     <div>
                         <label for="estado_postulante">Estado del Postulante</label>
                         <select name="estado_postulante" id="estado_postulante">
                             <option value="inscrito" {{ old('estado_postulante', $postulante->estado_postulante) === 'inscrito' ? 'selected' : '' }}>Inscrito</option>
-                            <option value="activo" {{ old('estado_postulante', $postulante->estado_postulante) === 'activo' ? 'selected' : '' }}>Activo</option>
-                            <option value="inactivo" {{ old('estado_postulante', $postulante->estado_postulante) === 'inactivo' ? 'selected' : '' }}>Inactivo</option>
-                            <option value="egresado" {{ old('estado_postulante', $postulante->estado_postulante) === 'egresado' ? 'selected' : '' }}>Egresado</option>
                             <option value="baja" {{ old('estado_postulante', $postulante->estado_postulante) === 'baja' ? 'selected' : '' }}>Baja</option>
                         </select>
                         @error('estado_postulante') <span class="error">{{ $message }}</span> @enderror
